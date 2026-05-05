@@ -48,7 +48,6 @@ const Demo = () => {
     message: "",
   });
 
-  const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const [selectedDemo, setSelectedDemo] = useState("live");
 
@@ -136,31 +135,12 @@ const Demo = () => {
     }, 1000);
   };
 
-  const nextStep = () => {
-    if (validateStep()) {
-      setStep(step + 1);
-    }
-  };
 
-  const prevStep = () => setStep(step - 1);
-
-  const validateStep = () => {
-    switch (step) {
-      case 1:
-        return formData.firstName && formData.lastName && formData.email;
-      case 2:
-        return formData.company && formData.industry;
-      case 3:
-        return formData.preferredDate && formData.preferredTime && formData.timezone;
-      default:
-        return true;
-    }
-  };
 
   // Success Screen
   if (submitted) {
     return (
-      <div className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <div className="min-h-screen pt-20 flex items-center justify-center bg-surface">
         <ParticleBackground />
         <motion.div 
           initial={{ scale: 0.8, opacity: 0 }} 
@@ -176,7 +156,7 @@ const Demo = () => {
             <FaCheckCircle />
           </motion.div>
 
-          <h2 className="text-5xl font-bold mb-6 text-gray-900">Demo Scheduled!</h2>
+          <h2 className="text-5xl font-bold mb-6 text-primary">Demo Scheduled!</h2>
           <p className="text-xl text-gray-700 mb-8">
             Thank you, {formData.firstName}! We've confirmed your demo for:
           </p>
@@ -189,11 +169,11 @@ const Demo = () => {
           >
             <div className="flex items-center justify-center space-x-8 text-lg">
               <div className="flex items-center space-x-2">
-                <FaCalendar className="text-blue-600" />
+                <FaCalendar className="text-primary" />
                 <span className="text-gray-700">{new Date(formData.preferredDate).toLocaleDateString()}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <FaClock className="text-purple-600" />
+                <FaClock className="text-primary-dim" />
                 <span className="text-gray-700">{formData.preferredTime}</span>
               </div>
               <div className="flex items-center space-x-2">
@@ -210,7 +190,7 @@ const Demo = () => {
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Link 
               to="/" 
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all"
+              className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all"
             >
               <span>Back to Home</span>
               <FaArrowRight />
@@ -222,27 +202,27 @@ const Demo = () => {
   }
 
   return (
-    <div className="min-h-screen pt-20 bg-white overflow-hidden">
+    <div className="min-h-screen pt-20 bg-surface overflow-hidden">
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="relative py-20 bg-surface">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center space-x-2 bg-surface-container-low border border-outline-variant/30 px-4 py-2 mb-6"
           >
-            <HiSparkles className="text-purple-600" />
+            <HiSparkles className="text-primary-dim" />
             <span className="text-sm font-medium text-gray-700">Experience AI-Powered Market Research</span>
           </motion.div>
 
           <motion.h1 
             initial={{ opacity: 0, y: -50 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900"
+            className="text-5xl md:text-6xl lg:text-7xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase"
           >
-            See the Platform in <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Action</span>
+            See the Platform in <span className="text-primary-dim">Action</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0 }} 
@@ -256,12 +236,12 @@ const Demo = () => {
       </section>
 
       {/* Demo Types */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Choose Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Demo Experience</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Choose Your <span className="text-primary-dim">Demo Experience</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Select the demo type that best fits your needs
@@ -279,14 +259,14 @@ const Demo = () => {
                   selectedDemo === demo.id ? "border-blue-600" : "border-gray-100"
                 }`}
               >
-                <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${
+                <div className={`w-16 h-16 rounded-xl bg-primary ${
                   demo.id === 'live' ? 'from-blue-500 to-cyan-500' :
                   demo.id === 'industry' ? 'from-purple-500 to-pink-500' :
                   'from-green-500 to-emerald-500'
                 } flex items-center justify-center text-white mb-4`}>
                   {demo.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">{demo.title}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-primary">{demo.title}</h3>
                 <p className="text-gray-600 mb-4">{demo.description}</p>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-sm text-gray-500">Duration: {demo.duration}</span>
@@ -294,7 +274,7 @@ const Demo = () => {
                     <motion.div 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
-                      className="w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center"
+                      className="w-6 h-6 bg-primary-full flex items-center justify-center"
                     >
                       <FaCheckCircle className="text-white text-xs" />
                     </motion.div>
@@ -341,8 +321,8 @@ const Demo = () => {
                   whileHover={{ y: -5 }}
                   className="bg-gray-50 p-6 rounded-xl text-center"
                 >
-                  <div className="text-3xl text-blue-600 mb-3">{item.icon}</div>
-                  <h4 className="font-semibold text-gray-900 mb-2">{item.title}</h4>
+                  <div className="text-3xl text-primary mb-3">{item.icon}</div>
+                  <h4 className="font-semibold text-primary mb-2">{item.title}</h4>
                   <p className="text-sm text-gray-600">{item.description}</p>
                 </motion.div>
               </AnimatedSection>
@@ -351,433 +331,169 @@ const Demo = () => {
         </div>
       </section>
 
-      {/* Schedule Form */}
-      <section className="py-20 bg-gray-50">
+      {/* Schedule Form — Single Step */}
+      <section className="py-20 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Progress Indicator */}
             <div className="mb-8">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-3xl font-bold text-gray-900">Schedule Your Demo</h2>
-                <span className="text-sm text-gray-600">Step {step} of 3</span>
-              </div>
-
-              <div className="flex items-center justify-between mb-8">
-                {[1, 2, 3].map((num) => (
-                  <div key={num} className="flex items-center flex-1">
-                    <motion.div
-                      animate={{
-                        scale: step >= num ? 1 : 0.8,
-                        backgroundColor: step >= num ? "#3B82F6" : "#E5E7EB",
-                      }}
-                      className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold ${
-                        step > num ? "bg-blue-600 text-white" : step === num ? "bg-blue-600 text-white" : "bg-gray-300 text-gray-600"
-                      }`}
-                    >
-                      {step > num ? <FaCheckCircle /> : num}
-                    </motion.div>
-                    {num < 3 && (
-                      <div className="flex-1 h-1 mx-2 bg-gray-200 rounded">
-                        <motion.div 
-                          initial={{ width: 0 }} 
-                          animate={{ width: step > num ? "100%" : "0%" }} 
-                          className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded" 
-                        />
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+              <h2 className="text-3xl font-headline font-bold text-primary uppercase tracking-tighter">Schedule Your Demo</h2>
+              <p className="text-on-surface-variant mt-2">Fill in your details and we'll set up a personalized walkthrough.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="bg-white shadow-xl p-8 rounded-2xl border border-gray-100">
-              <AnimatePresence mode="wait">
-                {/* Step 1: Personal Information */}
-                {step === 1 && (
-                  <motion.div 
-                    key="step1" 
-                    initial={{ opacity: 0, x: 50 }} 
-                    animate={{ opacity: 1, x: 0 }} 
-                    exit={{ opacity: 0, x: -50 }}
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Your Information</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block mb-2 text-gray-700">First Name *</label>
-                        <div className="relative">
-                          <FaUser className="absolute left-3 top-3.5 text-gray-400" />
-                          <input
-                            type="text"
-                            name="firstName"
-                            value={formData.firstName}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                            placeholder="John"
-                            required
-                          />
-                        </div>
-                      </div>
+            <form onSubmit={handleSubmit} className="bg-white shadow-xl p-8 border border-outline-variant/30">
+              {/* Personal Information */}
+              <h3 className="text-xs font-mono tracking-[0.2em] uppercase text-on-surface-variant mb-4 border-b border-outline-variant/30 pb-2">PERSONAL_INFORMATION</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">First Name *</label>
+                  <div className="relative">
+                    <FaUser className="absolute left-3 top-3.5 text-gray-400" />
+                    <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary transition-colors"
+                      placeholder="John" required />
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Last Name *</label>
+                  <div className="relative">
+                    <FaUser className="absolute left-3 top-3.5 text-gray-400" />
+                    <input type="text" name="lastName" value={formData.lastName} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary transition-colors"
+                      placeholder="Doe" required />
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Email *</label>
+                  <div className="relative">
+                    <FaEnvelope className="absolute left-3 top-3.5 text-gray-400" />
+                    <input type="email" name="email" value={formData.email} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary transition-colors"
+                      placeholder="john@company.com" required />
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Phone</label>
+                  <div className="relative">
+                    <FaPhone className="absolute left-3 top-3.5 text-gray-400" />
+                    <input type="tel" name="phone" value={formData.phone} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary transition-colors"
+                      placeholder="+1 (555) 123-4567" />
+                  </div>
+                </div>
+              </div>
 
-                      <div>
-                        <label className="block mb-2 text-gray-700">Last Name *</label>
-                        <div className="relative">
-                          <FaUser className="absolute left-3 top-3.5 text-gray-400" />
-                          <input
-                            type="text"
-                            name="lastName"
-                            value={formData.lastName}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                            placeholder="Doe"
-                            required
-                          />
-                        </div>
-                      </div>
+              {/* Company Information */}
+              <h3 className="text-xs font-mono tracking-[0.2em] uppercase text-on-surface-variant mb-4 border-b border-outline-variant/30 pb-2">COMPANY_DETAILS</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Company Name *</label>
+                  <div className="relative">
+                    <FaBuilding className="absolute left-3 top-3.5 text-gray-400" />
+                    <input type="text" name="company" value={formData.company} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary transition-colors"
+                      placeholder="Acme Corporation" required />
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Job Title</label>
+                  <input type="text" name="jobTitle" value={formData.jobTitle} onChange={handleInputChange}
+                    className="w-full bg-surface-container-low border border-outline-variant/50 px-4 py-3 focus:border-primary transition-colors"
+                    placeholder="e.g., Marketing Director" />
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Industry *</label>
+                  <div className="relative">
+                    <FaIndustry className="absolute left-3 top-3.5 text-gray-400 z-10" />
+                    <select name="industry" value={formData.industry} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary appearance-none cursor-pointer transition-colors" required>
+                      <option value="">Select your industry</option>
+                      {industries.map((industry) => (<option key={industry} value={industry}>{industry}</option>))}
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Company Size</label>
+                  <div className="relative">
+                    <FaUsers className="absolute left-3 top-3.5 text-gray-400 z-10" />
+                    <select name="companySize" value={formData.companySize} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary appearance-none cursor-pointer transition-colors">
+                      <option value="">Select company size</option>
+                      {companySizes.map((size) => (<option key={size} value={size}>{size}</option>))}
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-                      <div>
-                        <label className="block mb-2 text-gray-700">Email *</label>
-                        <div className="relative">
-                          <FaEnvelope className="absolute left-3 top-3.5 text-gray-400" />
-                          <input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                            placeholder="john@company.com"
-                            required
-                          />
-                        </div>
-                      </div>
+              {/* Schedule */}
+              <h3 className="text-xs font-mono tracking-[0.2em] uppercase text-on-surface-variant mb-4 border-b border-outline-variant/30 pb-2">SCHEDULE_PREFERENCES</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Preferred Date *</label>
+                  <div className="relative">
+                    <FaCalendar className="absolute left-3 top-3.5 text-gray-400" />
+                    <input type="date" name="preferredDate" value={formData.preferredDate} onChange={handleInputChange}
+                      min={new Date().toISOString().split("T")[0]}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary transition-colors" required />
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Preferred Time *</label>
+                  <div className="relative">
+                    <FaClock className="absolute left-3 top-3.5 text-gray-400 z-10" />
+                    <select name="preferredTime" value={formData.preferredTime} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary appearance-none cursor-pointer transition-colors" required>
+                      <option value="">Select time</option>
+                      <option value="9:00 AM">9:00 AM</option>
+                      <option value="10:00 AM">10:00 AM</option>
+                      <option value="11:00 AM">11:00 AM</option>
+                      <option value="2:00 PM">2:00 PM</option>
+                      <option value="3:00 PM">3:00 PM</option>
+                      <option value="4:00 PM">4:00 PM</option>
+                    </select>
+                  </div>
+                </div>
+                <div>
+                  <label className="block mb-2 text-sm font-medium text-on-surface">Timezone *</label>
+                  <div className="relative">
+                    <FaGlobe className="absolute left-3 top-3.5 text-gray-400 z-10" />
+                    <select name="timezone" value={formData.timezone} onChange={handleInputChange}
+                      className="w-full bg-surface-container-low border border-outline-variant/50 px-10 py-3 focus:border-primary appearance-none cursor-pointer transition-colors" required>
+                      <option value="">Select timezone</option>
+                      {timezones.map((tz) => (<option key={tz} value={tz}>{tz}</option>))}
+                    </select>
+                  </div>
+                </div>
+              </div>
 
-                      <div>
-                        <label className="block mb-2 text-gray-700">Phone</label>
-                                                <div className="relative">
-                          <FaPhone className="absolute left-3 top-3.5 text-gray-400" />
-                          <input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                            placeholder="+1 (555) 123-4567"
-                          />
-                        </div>
-                      </div>
+              {/* Message */}
+              <div className="mb-8">
+                <label className="block mb-2 text-sm font-medium text-on-surface">Additional Information (Optional)</label>
+                <textarea name="message" value={formData.message} onChange={handleInputChange} rows="3"
+                  className="w-full bg-surface-container-low border border-outline-variant/50 px-4 py-3 focus:border-primary resize-none transition-colors"
+                  placeholder="Tell us about your specific needs or questions..."></textarea>
+              </div>
 
-                      <div className="md:col-span-2">
-                        <label className="block mb-2 text-gray-700">Job Title</label>
-                        <input
-                          type="text"
-                          name="jobTitle"
-                          value={formData.jobTitle}
-                          onChange={handleInputChange}
-                          className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                          placeholder="e.g., Marketing Director, CEO"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="mt-8 flex justify-end">
-                      <motion.button
-                        type="button"
-                        onClick={nextStep}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        disabled={!validateStep()}
-                        className={`px-8 py-3 rounded-full font-semibold flex items-center space-x-2 transition-all ${
-                          validateStep() 
-                            ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg" 
-                            : "bg-gray-300 cursor-not-allowed text-gray-500"
-                        }`}
-                      >
-                        <span>Next</span>
-                        <FaArrowRight />
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Step 2: Company Information */}
-                {step === 2 && (
-                  <motion.div 
-                    key="step2" 
-                    initial={{ opacity: 0, x: 50 }} 
-                    animate={{ opacity: 1, x: 0 }} 
-                    exit={{ opacity: 0, x: -50 }}
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Company Details</h3>
-                    <div className="space-y-6">
-                      <div>
-                        <label className="block mb-2 text-gray-700">Company Name *</label>
-                        <div className="relative">
-                          <FaBuilding className="absolute left-3 top-3.5 text-gray-400" />
-                          <input
-                            type="text"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                            placeholder="Acme Corporation"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block mb-2 text-gray-700">Industry *</label>
-                          <div className="relative">
-                            <FaIndustry className="absolute left-3 top-3.5 text-gray-400 z-10" />
-                            <select
-                              name="industry"
-                              value={formData.industry}
-                              onChange={handleInputChange}
-                              className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white appearance-none cursor-pointer transition-colors"
-                              required
-                            >
-                              <option value="">Select your industry</option>
-                              {industries.map((industry) => (
-                                <option key={industry} value={industry}>
-                                  {industry}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-                        </div>
-
-                        <div>
-                          <label className="block mb-2 text-gray-700">Company Size</label>
-                          <div className="relative">
-                            <FaUsers className="absolute left-3 top-3.5 text-gray-400 z-10" />
-                            <select
-                              name="companySize"
-                              value={formData.companySize}
-                              onChange={handleInputChange}
-                              className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white appearance-none cursor-pointer transition-colors"
-                            >
-                              <option value="">Select company size</option>
-                              {companySizes.map((size) => (
-                                <option key={size} value={size}>
-                                  {size}
-                                </option>
-                              ))}
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block mb-4 text-gray-700">Areas of Interest</label>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {interests.map((interest) => (
-                            <motion.div
-                              key={interest}
-                              whileHover={{ scale: 1.02 }}
-                              whileTap={{ scale: 0.98 }}
-                              onClick={() => handleArrayToggle(interest)}
-                              className={`p-4 rounded-lg cursor-pointer transition-all ${
-                                formData.interests.includes(interest) 
-                                  ? "bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-600" 
-                                  : "bg-gray-50 border-2 border-gray-200 hover:border-gray-300"
-                              }`}
-                            >
-                              <div className="flex items-center space-x-3">
-                                <div
-                                  className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                                    formData.interests.includes(interest) ? "border-blue-600 bg-blue-600" : "border-gray-400"
-                                  }`}
-                                >
-                                  {formData.interests.includes(interest) && (
-                                    <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} className="w-2 h-2 bg-white rounded-full" />
-                                  )}
-                                </div>
-                                <span className="font-medium text-gray-900">{interest}</span>
-                              </div>
-                            </motion.div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 flex justify-between">
-                      <motion.button 
-                        type="button" 
-                        onClick={prevStep} 
-                        whileHover={{ scale: 1.05 }} 
-                        whileTap={{ scale: 0.95 }} 
-                        className="bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:border-gray-400 hover:shadow-md transition-all"
-                      >
-                        Previous
-                      </motion.button>
-                      <motion.button
-                        type="button"
-                        onClick={nextStep}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        disabled={!validateStep()}
-                        className={`px-8 py-3 rounded-full font-semibold flex items-center space-x-2 transition-all ${
-                          validateStep() 
-                            ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:shadow-lg" 
-                            : "bg-gray-300 cursor-not-allowed text-gray-500"
-                        }`}
-                      >
-                        <span>Next</span>
-                        <FaArrowRight />
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                )}
-
-                {/* Step 3: Schedule */}
-                {step === 3 && (
-                  <motion.div 
-                    key="step3" 
-                    initial={{ opacity: 0, x: 50 }} 
-                    animate={{ opacity: 1, x: 0 }} 
-                    exit={{ opacity: 0, x: -50 }}
-                  >
-                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Schedule Your Demo</h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                      <div>
-                                                <label className="block mb-2 text-gray-700">Date *</label>
-                        <div className="relative">
-                          <FaCalendar className="absolute left-3 top-3.5 text-gray-400" />
-                          <input
-                            type="date"
-                            name="preferredDate"
-                            value={formData.preferredDate}
-                            onChange={handleInputChange}
-                            min={new Date().toISOString().split("T")[0]}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white transition-colors"
-                            required
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block mb-2 text-gray-700">Time *</label>
-                        <div className="relative">
-                          <FaClock className="absolute left-3 top-3.5 text-gray-400 z-10" />
-                          <select
-                            name="preferredTime"
-                            value={formData.preferredTime}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white appearance-none cursor-pointer transition-colors"
-                            required
-                          >
-                            <option value="">Select time</option>
-                            <option value="9:00 AM">9:00 AM</option>
-                            <option value="10:00 AM">10:00 AM</option>
-                            <option value="11:00 AM">11:00 AM</option>
-                            <option value="2:00 PM">2:00 PM</option>
-                            <option value="3:00 PM">3:00 PM</option>
-                            <option value="4:00 PM">4:00 PM</option>
-                          </select>
-                        </div>
-                      </div>
-
-                      <div>
-                        <label className="block mb-2 text-gray-700">Timezone *</label>
-                        <div className="relative">
-                          <FaGlobe className="absolute left-3 top-3.5 text-gray-400 z-10" />
-                          <select
-                            name="timezone"
-                            value={formData.timezone}
-                            onChange={handleInputChange}
-                            className="w-full bg-gray-50 border border-gray-300 rounded-lg px-10 py-3 focus:outline-none focus:border-blue-600 focus:bg-white appearance-none cursor-pointer transition-colors"
-                            required
-                          >
-                            <option value="">Select timezone</option>
-                            {timezones.map((tz) => (
-                              <option key={tz} value={tz}>
-                                {tz}
-                              </option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="mb-8">
-                      <label className="block mb-2 text-gray-700">Additional Information (Optional)</label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        rows="4"
-                        className="w-full bg-gray-50 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-600 focus:bg-white resize-none transition-colors"
-                        placeholder="Tell us about your specific needs or questions..."
-                      ></textarea>
-                    </div>
-
-                    {/* Demo Details */}
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200 p-6 rounded-xl mb-8">
-                      <h4 className="font-semibold mb-4 flex items-center space-x-2 text-gray-900">
-                        <FaCheckCircle className="text-green-600" />
-                        <span>What's Included in Your Demo:</span>
-                      </h4>
-                      <ul className="space-y-2 text-gray-700">
-                        <li className="flex items-start space-x-2">
-                          <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>Live walkthrough of our AI-powered platform</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>Industry-specific use cases and examples</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>Q&A session with our product experts</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                          <span>Customized recommendations for your business</span>
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="mt-8 flex justify-between">
-                      <motion.button 
-                        type="button" 
-                        onClick={prevStep} 
-                        whileHover={{ scale: 1.05 }} 
-                        whileTap={{ scale: 0.95 }} 
-                        className="bg-white border-2 border-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold hover:border-gray-400 hover:shadow-md transition-all"
-                      >
-                        Previous
-                      </motion.button>
-                      <motion.button
-                        type="submit"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        disabled={!validateStep()}
-                        className={`px-8 py-3 rounded-full font-semibold flex items-center space-x-2 transition-all ${
-                          validateStep() 
-                            ? "bg-gradient-to-r from-green-600 to-emerald-600 text-white hover:shadow-lg" 
-                            : "bg-gray-300 cursor-not-allowed text-gray-500"
-                        }`}
-                      >
-                        <span>Schedule Demo</span>
-                        <FaCheckCircle />
-                      </motion.button>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {/* Submit */}
+              <div className="flex justify-end">
+                <motion.button type="submit" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+                  className="bg-primary text-white px-10 py-4 font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-primary-dim transition-all flex items-center space-x-2">
+                  <span>SCHEDULE_DEMO</span>
+                  <FaCheckCircle />
+                </motion.button>
+              </div>
             </form>
           </div>
         </div>
       </section>
 
+
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Why Schedule a <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Demo?</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Why Schedule a <span className="text-primary-dim">Demo?</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -814,10 +530,10 @@ const Demo = () => {
                   whileHover={{ y: -10 }}
                   className="bg-white shadow-lg p-6 rounded-xl text-center h-full border border-gray-100"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${benefit.color} rounded-xl flex items-center justify-center text-white mx-auto mb-4`}>
+                  <div className={`w-16 h-16 bg-primary rounded-xl flex items-center justify-center text-white mx-auto mb-4`}>
                     {benefit.icon}
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{benefit.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-primary">{benefit.title}</h3>
                   <p className="text-sm text-gray-600">{benefit.description}</p>
                 </motion.div>
               </AnimatedSection>
@@ -825,69 +541,13 @@ const Demo = () => {
           </div>
         </div>
       </section>
-
-      {/* Testimonials */}
-      {/* <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                What Clients Say About <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Our Demos</span>
-              </h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                quote: "The demo was incredibly insightful. We immediately saw how it could transform our research process.",
-                author: "Sarah Chen",
-                role: "VP Marketing, TechCorp",
-                rating: 5,
-              },
-              {
-                quote: "In just 30 minutes, they showed us exactly what we needed. Implementation was seamless.",
-                author: "Michael Roberts",
-                role: "CEO, RetailPlus",
-                rating: 5,
-              },
-              {
-                                quote: "The personalized approach made all the difference. They tailored everything to our industry needs.",
-                author: "Lisa Wang",
-                role: "Data Director, FinanceHub",
-                rating: 5,
-              },
-            ].map((testimonial, index) => (
-              <AnimatedSection key={index}>
-                <motion.div
-                  whileHover={{ y: -10 }}
-                  className="bg-white shadow-lg p-6 rounded-xl h-full border border-gray-100"
-                >
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <FaStar key={i} className="text-yellow-500" />
-                    ))}
-                  </div>
-                  <FaQuoteLeft className="text-3xl text-blue-200 mb-4" />
-                  <p className="text-gray-700 mb-4">{testimonial.quote}</p>
-                  <div>
-                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Demo <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">FAQs</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Demo <span className="text-primary-dim">FAQs</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -918,9 +578,9 @@ const Demo = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <details className="bg-gray-50 p-6 rounded-2xl group cursor-pointer">
-                    <summary className="font-semibold text-gray-900 flex items-center justify-between">
+                    <summary className="font-semibold text-primary flex items-center justify-between">
                       {faq.question}
-                      <span className="text-blue-600 group-open:rotate-180 transition-transform">
+                      <span className="text-primary group-open:rotate-180 transition-transform">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
@@ -936,7 +596,7 @@ const Demo = () => {
       </section>
 
       {/* Final CTA */}
-      {/* <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+      {/* <section className="py-20 relative overflow-hidden bg-[#0B132B]">
         <div className="absolute inset-0 bg-black opacity-10" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -963,7 +623,7 @@ const Demo = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-flex items-center justify-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all"
+                className="inline-flex items-center justify-center space-x-2 bg-white text-[#0B132B] px-8 py-4 font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-slate-200 transition-all"
               >
                 <span>Schedule Your Demo Now</span>
                 <FaArrowRight />
@@ -985,7 +645,7 @@ const Demo = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-full shadow-2xl text-white group relative"
+          className="bg-primary p-4 rounded-full shadow-2xl text-white group relative"
         >
           <div className="relative">
             <FaBrain className="text-xl" />

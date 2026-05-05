@@ -22,7 +22,7 @@ const StatsCounter = () => {
         <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">
+              <div className="text-4xl md:text-5xl font-bold text-primary">
                 {inView && <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />}
               </div>
               <p className="text-gray-400 mt-2">{stat.label}</p>

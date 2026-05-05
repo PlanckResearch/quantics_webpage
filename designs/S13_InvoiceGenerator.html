@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FINANCIAL_INITIALIZATION_DOSSIER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-background": "#1a1c1c",
+                        "inverse-surface": "#2f3131",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-fixed-variant": "#3d4851",
+                        "on-tertiary-fixed": "#191c1d",
+                        "error": "#ba1a1a",
+                        "primary": "#0B132B",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#131a33",
+                        "on-tertiary-fixed-variant": "#444748",
+                        "surface": "#f9f9f9",
+                        "on-surface": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-container": "#5a666f",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "tertiary-fixed-dim": "#c4c7c7",
+                        "tertiary-container": "#191c1d",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#bec5e5",
+                        "secondary-fixed": "#d8e4ef",
+                        "on-primary-fixed-variant": "#3e4660",
+                        "surface-tint": "#565d79",
+                        "tertiary-fixed": "#e1e3e3",
+                        "background": "#f9f9f9",
+                        "secondary-container": "#d8e4ef",
+                        "inverse-primary": "#bec5e5",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#818485",
+                        "surface-container": "#f2f4f4",
+                        "primary-container": "#131a33",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#76767e",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#bcc8d3",
+                        "surface-dim": "#dadada",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary": "#546069",
+                        "on-secondary-fixed": "#121d25",
+                        "on-primary-container": "#7b83a0",
+                        "outline-variant": "#c6c6ce",
+                        "on-secondary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #0B132B;
+        }
+        input:focus {
+            outline: none;
+        }
+        .tight-tracking { letter-spacing: -0.04em; }
+        .wide-tracking { letter-spacing: 0.1em; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #f9f9f9; }
+        ::-webkit-scrollbar-thumb { background: #0B132B; }
+    </style>
+</head>
+<body class="antialiased overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-[#f2f4f4] dark:bg-[#131a33] h-screen w-64 left-0 border-r-0">
+<div class="p-8">
+<div class="text-2xl font-black tracking-tighter text-[#0B132B] dark:text-[#f9f9f9] mb-1">DOSSIER</div>
+<div class="text-[10px] font-bold opacity-50 wide-tracking">INIT_SEQUENCE_v1.0</div>
+</div>
+<nav class="flex-1 px-4 space-y-2 mt-8">
+<!-- Identity - Active -->
+<div class="bg-[#E2EEF9] dark:bg-[#0B132B] text-[#0B132B] dark:text-[#E2EEF9] font-bold border-l-4 border-[#0B132B] flex items-center px-4 py-3 cursor-pointer">
+<span class="material-symbols-outlined mr-4" data-icon="fingerprint">fingerprint</span>
+<span class="text-[11px] font-medium wide-tracking uppercase">Identity</span>
+</div>
+<!-- Assets -->
+<div class="text-[#0B132B]/60 dark:text-[#f9f9f9]/60 hover:bg-[#f3f3f3] dark:hover:bg-[#1a2238] transition-none flex items-center px-4 py-3 cursor-pointer">
+<span class="material-symbols-outlined mr-4" data-icon="account_balance">account_balance</span>
+<span class="text-[11px] font-medium wide-tracking uppercase">Assets</span>
+</div>
+<!-- Liabilities -->
+<div class="text-[#0B132B]/60 dark:text-[#f9f9f9]/60 hover:bg-[#f3f3f3] dark:hover:bg-[#1a2238] transition-none flex items-center px-4 py-3 cursor-pointer">
+<span class="material-symbols-outlined mr-4" data-icon="payments">payments</span>
+<span class="text-[11px] font-medium wide-tracking uppercase">Liabilities</span>
+</div>
+<!-- Risk Profile -->
+<div class="text-[#0B132B]/60 dark:text-[#f9f9f9]/60 hover:bg-[#f3f3f3] dark:hover:bg-[#1a2238] transition-none flex items-center px-4 py-3 cursor-pointer">
+<span class="material-symbols-outlined mr-4" data-icon="security">security</span>
+<span class="text-[11px] font-medium wide-tracking uppercase">Risk Profile</span>
+</div>
+<!-- Finalize -->
+<div class="text-[#0B132B]/60 dark:text-[#f9f9f9]/60 hover:bg-[#f3f3f3] dark:hover:bg-[#1a2238] transition-none flex items-center px-4 py-3 cursor-pointer">
+<span class="material-symbols-outlined mr-4" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="text-[11px] font-medium wide-tracking uppercase">Finalize</span>
+</div>
+</nav>
+<div class="p-8">
+<button class="w-full bg-[#0B132B] text-[#f9f9f9] py-3 text-[12px] font-black wide-tracking transition-none hover:opacity-90">
+                EXECUTE
+            </button>
+</div>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-8 z-50 bg-[#f9f9f9] dark:bg-[#0B132B]">
+<div class="text-lg font-black tracking-widest text-[#0B132B] dark:text-[#f9f9f9]">FINANCIAL_INITIALIZATION</div>
+<div class="flex items-center space-x-8">
+<nav class="flex space-x-6 text-[11px] font-bold wide-tracking">
+<a class="text-[#0B132B]/50 dark:text-[#f9f9f9]/50 hover:text-[#0B132B] transition-none" href="#">REPORTS</a>
+<a class="text-[#0B132B]/50 dark:text-[#f9f9f9]/50 hover:text-[#0B132B] transition-none" href="#">AUDIT</a>
+<a class="text-[#0B132B]/50 dark:text-[#f9f9f9]/50 hover:text-[#0B132B] transition-none" href="#">LOGS</a>
+</nav>
+<div class="flex items-center space-x-4 ml-4">
+<span class="material-symbols-outlined text-[#0B132B] cursor-pointer" data-icon="settings">settings</span>
+<span class="material-symbols-outlined text-[#0B132B] cursor-pointer" data-icon="notifications_active">notifications_active</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 h-screen overflow-y-auto bg-[#f9f9f9]">
+<div class="max-w-6xl mx-auto p-12">
+<!-- Page Heading -->
+<section class="mb-16">
+<h1 class="font-headline font-black text-7xl uppercase tight-tracking text-[#0B132B] leading-none mb-4">
+                    FINANCIAL_INIT_LOGIC
+                </h1>
+<div class="h-1 w-32 bg-[#0B132B]"></div>
+</section>
+<!-- Progress Step Indicators (Brutalist Squared Blocks) -->
+<section class="mb-12 flex items-center space-x-4">
+<div class="flex items-center space-x-2">
+<div class="w-12 h-12 bg-[#0B132B] text-white flex items-center justify-center font-black text-xl">1</div>
+<span class="text-[10px] font-bold wide-tracking uppercase">Parameters</span>
+</div>
+<div class="h-[2px] w-12 bg-[#0B132B]/20"></div>
+<div class="flex items-center space-x-2">
+<div class="w-12 h-12 bg-[#f2f4f4] text-[#0B132B]/40 flex items-center justify-center font-black text-xl">2</div>
+<span class="text-[10px] font-bold wide-tracking uppercase opacity-40">Validation</span>
+</div>
+<div class="h-[2px] w-12 bg-[#0B132B]/20"></div>
+<div class="flex items-center space-x-2">
+<div class="w-12 h-12 bg-[#f2f4f4] text-[#0B132B]/40 flex items-center justify-center font-black text-xl">3</div>
+<span class="text-[10px] font-bold wide-tracking uppercase opacity-40">Authorization</span>
+</div>
+</section>
+<!-- Main Layout Grid (Asymmetric) -->
+<div class="grid grid-cols-12 gap-12">
+<!-- Active Form Area (Monolithic) -->
+<div class="col-span-12 lg:col-span-7 bg-[#f2f4f4] p-12 relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="text-[10px] font-mono opacity-30">REF_ID: 992-AX-01</span>
+</div>
+<h2 class="text-[11px] font-bold wide-tracking uppercase mb-12 opacity-60">Sequence_Input_Fields</h2>
+<form class="space-y-12">
+<!-- Vendor Input -->
+<div class="group">
+<label class="block text-[10px] font-bold wide-tracking uppercase mb-2">Vendor</label>
+<input class="w-full bg-transparent border-b-2 border-[#0B132B]/20 focus:border-[#0B132B] py-3 text-lg font-medium placeholder:opacity-30 transition-colors" placeholder="ENTER ENTITY IDENTIFIER" type="text"/>
+</div>
+<!-- Date Range Input -->
+<div class="group">
+<label class="block text-[10px] font-bold wide-tracking uppercase mb-2">Date Range</label>
+<div class="flex items-center space-x-4">
+<input class="w-full bg-transparent border-b-2 border-[#0B132B]/20 focus:border-[#0B132B] py-3 text-lg font-medium placeholder:opacity-30 transition-colors" placeholder="YYYY-MM-DD" type="text"/>
+<span class="material-symbols-outlined opacity-40" data-icon="arrow_forward">arrow_forward</span>
+<input class="w-full bg-transparent border-b-2 border-[#0B132B]/20 focus:border-[#0B132B] py-3 text-lg font-medium placeholder:opacity-30 transition-colors" placeholder="YYYY-MM-DD" type="text"/>
+</div>
+</div>
+<!-- Currency Selection -->
+<div class="group">
+<label class="block text-[10px] font-bold wide-tracking uppercase mb-2">Currency Selection</label>
+<select class="w-full bg-transparent border-b-2 border-[#0B132B]/20 focus:border-[#0B132B] py-3 text-lg font-medium appearance-none cursor-pointer">
+<option>USD_UNITED_STATES_DOLLAR</option>
+<option>EUR_EURO_ZONE</option>
+<option>GBP_BRITISH_POUND</option>
+<option>JPY_JAPANESE_YEN</option>
+</select>
+</div>
+<!-- Form Actions -->
+<div class="flex justify-end pt-8 space-x-4">
+<button class="px-8 py-4 border-2 border-[#0B132B] text-[#0B132B] font-black text-sm wide-tracking hover:bg-[#0B132B] hover:text-white transition-none" type="button">
+                                RESET_VALUES
+                            </button>
+<button class="px-12 py-4 bg-[#0B132B] text-white font-black text-sm wide-tracking hover:opacity-90 transition-none" type="button">
+                                INITIALIZE_SEQUENCE
+                            </button>
+</div>
+</form>
+</div>
+<!-- Visuals / Technical Data Side -->
+<div class="col-span-12 lg:col-span-5 space-y-8">
+<!-- Data Visualization Card -->
+<div class="bg-white border-l-8 border-[#0B132B] p-8">
+<h3 class="text-[11px] font-bold wide-tracking uppercase mb-6">Historical_Volatility_Index</h3>
+<div class="aspect-video relative overflow-hidden bg-[#f9f9f9]">
+<!-- Mock Technical Line Art -->
+<img alt="Technical graph" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="abstract technical monochrome financial line art graph showing sharp geometric peaks and valleys minimalist brutalist design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWnZfFbqAhweIpDFFMRV20zucJIUIy_b9tTI6MDSwSHZeaURQpyoWGrWmpvtqBgWCjhMguQdg53AAdso2V8BwC7XdJPlztwJyNOEuqa1Te5oCIbXWb1uVNGSVWUKtOB1MBCzV7LHFGFED3wYQ_PA_fkSkGIu528x_FtYaVkXRBlalX8JHCdQBLB23U8BN4ulYFapXKuJJXNMzOo6C40uvnXkG3AvxEcvVefUIGTz35jdpNS8ccSVKZ4iuLqvyJbgfnkPQQQuGw_dMO"/>
+<div class="absolute inset-0 bg-gradient-to-t from-white/20 to-transparent"></div>
+</div>
+<div class="mt-4 grid grid-cols-2 gap-4">
+<div>
+<div class="text-[9px] opacity-40 uppercase font-bold">Risk_Factor</div>
+<div class="text-xl font-black">0.842</div>
+</div>
+<div>
+<div class="text-[9px] opacity-40 uppercase font-bold">Reliability</div>
+<div class="text-xl font-black">99.9%</div>
+</div>
+</div>
+</div>
+<!-- Informational Monolith -->
+<div class="bg-[#E2EEF9] p-8 text-[#0B132B]">
+<span class="material-symbols-outlined mb-4" data-icon="info">info</span>
+<p class="text-xs font-medium leading-relaxed">
+<span class="font-black">WARNING:</span> ALL ACTIONS INITIATED WITHIN THIS PROTOCOL ARE SUBJECT TO HIGH-LEVEL AUDIT LOGGING. UNAUTHORIZED PARAMETER OVERRIDES WILL TRIGGER AUTOMATIC SYSTEM LOCKDOWN. ENSURE VENDOR IDENTIFIERS MATCH THE PRE-CLEARED DOSSIER REPOSITORY.
+                        </p>
+</div>
+<!-- Visual Accent -->
+<div class="h-48 overflow-hidden">
+<img alt="Architectural detail" class="w-full h-full object-cover grayscale brightness-110" data-alt="macro detail of architectural concrete texture with sharp shadows and monolithic geometric edges brutalist style high contrast" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvWpIoAJtrs0sOSAOyVinwdx3PW-_aAwpzpmx3UxNCQ8wwg__q7UG4TOkdQOnJBBAcEv_4zpR-eLYEzCdIj2_4Bse9OTRkXu_3haLiUr7ZOK5wL37MR6MTf9IwrLWDjBz7XgNDqgDeAlaT-38dVarr_qcJtTDZYaldFySBlryG5cITPtaMgZ8iQp0ZmEmH8a_jt6hb2EIc5BZxh_gceR_Mf04jpQzaFVM-sUUabS_LTkWv9MV9jxjrb5i1C2H7og8JPgnlqxN4IM0n"/>
+</div>
+</div>
+</div>
+<!-- Footer Metadata -->
+<footer class="mt-24 pt-8 border-t border-[#0B132B]/10 flex justify-between items-center text-[9px] font-bold wide-tracking uppercase opacity-30">
+<div>SYSTEM_STATUS: OPERATIONAL</div>
+<div>SECURE_ENCRYPTION_LAYER_v4.2</div>
+<div>© 2024 INTELLIGENCE_DOSSIER_CORP</div>
+</footer>
+</div>
+</main>
+<!-- Contextual FAB Suppression: Suppression active as per design mandate for Transactional pages -->
+</body></html>

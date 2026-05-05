@@ -1,95 +1,39 @@
+/* Portal-Style Global Overrides */
+
 #root {
-  max-width: 1280px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* Glass effect for initial navbar state */
-/* .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-} */
-
-/* Global styles for light theme */
+/* Body base */
 body {
-  background-color: #ffffff;
-  color: #1a202c;
+  background-color: #f9f9f9;
+  color: #2d3435;
+  font-family: 'Inter', sans-serif;
 }
 
-/* Glass effect for light theme */
+/* Glass effect for portal navbar */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Update text colors for better contrast */
-.text-primary {
-  color: #2563eb;
+/* Focus state for inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #0B132B !important;
 }
 
-.text-secondary {
-  color: #3b82f6;
+/* Shadow styles */
+.shadow-portal {
+  box-shadow: 0 1px 3px 0 rgba(11, 19, 43, 0.08), 0 1px 2px 0 rgba(11, 19, 43, 0.04);
 }
 
-.text-accent {
-  color: #8b5cf6;
-}
-
-/* Ensure proper contrast for headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #111827;
-}
-
-/* Update link hover states */
-a:hover {
-  color: #2563eb;
-}
-
-/* Shadow styles for light theme */
-.shadow-light {
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-}
-
-.shadow-light-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.shadow-portal-lg {
+  box-shadow: 0 10px 15px -3px rgba(11, 19, 43, 0.08), 0 4px 6px -2px rgba(11, 19, 43, 0.03);
 }

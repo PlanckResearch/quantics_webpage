@@ -4,32 +4,72 @@
 
 @layer base {
   body {
-    @apply bg-dark text-white overflow-x-hidden;
+    @apply bg-surface text-on-surface overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-primary;
+    @apply bg-surface-container-low;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-secondary rounded-full;
+    @apply bg-primary;
+  }
+
+  /* Sharp heading style */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
   }
 }
 
 @layer components {
   .gradient-bg {
-    @apply bg-gradient-to-br from-primary via-dark to-accent;
+    background-color: #f9f9f9;
   }
 
   .glass-effect {
-    @apply backdrop-blur-md bg-white/5 border border-white/10;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .neon-glow {
-    @apply shadow-[0_0_20px_rgba(139,92,246,0.5)];
+    @apply shadow-[0_0_20px_rgba(11,19,43,0.15)];
+  }
+
+  /* Portal-style monospace data */
+  .mono-data {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  /* Portal-style label */
+  .portal-label {
+    @apply text-[10px] font-bold tracking-[0.2em] uppercase;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Portal-style section header */
+  .portal-heading {
+    @apply font-headline font-extrabold tracking-tighter uppercase;
+  }
+
+  /* Sharp card style */
+  .portal-card {
+    @apply bg-white border border-outline-variant/30 p-6 transition-all duration-300;
+  }
+
+  .portal-card:hover {
+    @apply shadow-lg border-primary/20;
+  }
+
+  /* Portal badge */
+  .portal-badge {
+    @apply inline-flex items-center space-x-2 bg-surface-container-low px-4 py-2 text-sm font-medium text-on-surface-variant;
   }
 }

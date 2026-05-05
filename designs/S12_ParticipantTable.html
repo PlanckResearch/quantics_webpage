@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#565d79",
+              "on-secondary-fixed": "#74231d",
+              "on-secondary-container": "#8c352d",
+              "surface-container": "#ebeeef",
+              "tertiary-container": "#d5e3fd",
+              "surface-container-high": "#e4e9ea",
+              "on-primary-container": "#49516c",
+              "background": "#f9f9f9",
+              "tertiary-fixed-dim": "#c7d5ee",
+              "on-surface-variant": "#5a6061",
+              "on-primary-fixed": "#373e58",
+              "tertiary-fixed": "#d5e3fd",
+              "on-background": "#2d3435",
+              "surface-container-highest": "#dde4e5",
+              "primary-fixed": "#dbe1ff",
+              "surface-dim": "#d4dbdd",
+              "inverse-primary": "#d2d9fa",
+              "surface": "#f9f9f9",
+              "primary-fixed-dim": "#ccd3f4",
+              "secondary-fixed": "#ffdad5",
+              "error-container": "#ff8b9a",
+              "surface-tint": "#565d79",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary-fixed-variant": "#4e5c71",
+              "inverse-surface": "#0c0f0f",
+              "tertiary": "#526075",
+              "surface-variant": "#dde4e5",
+              "on-secondary": "#fff7f6",
+              "on-primary-fixed-variant": "#535a76",
+              "primary-container": "#dbe1ff",
+              "on-tertiary-fixed": "#324054",
+              "on-secondary-fixed-variant": "#993f36",
+              "secondary-container": "#ffdad5",
+              "on-tertiary": "#f8f8ff",
+              "on-tertiary-container": "#455367",
+              "outline": "#757c7d",
+              "error-dim": "#4f0116",
+              "inverse-on-surface": "#9c9d9d",
+              "surface-bright": "#f9f9f9",
+              "error": "#9e3f4e",
+              "on-error": "#fff7f7",
+              "tertiary-dim": "#465469",
+              "secondary": "#9e4239",
+              "on-surface": "#2d3435",
+              "surface-container-low": "#f2f4f4",
+              "outline-variant": "#adb3b4",
+              "on-primary": "#f8f7ff",
+              "primary-dim": "#4a516d",
+              "on-error-container": "#782232",
+              "secondary-dim": "#8e372e",
+              "secondary-fixed-dim": "#ffc7c0",
+              "brand-dark": "#0B132B"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Inter"],
+              "mono": ["JetBrains Mono"]
+            },
+            borderRadius: {
+                "none": "0px",
+                "DEFAULT": "0px", 
+                "lg": "0px", 
+                "xl": "0px", 
+                "full": "0px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #f9f9f9; }
+        ::-webkit-scrollbar-thumb { background: #0B132B; }
+        .no-divider { border: none !important; }
+        .table-cell-border { border: 1px solid #0B132B; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-brand-dark selection:text-white">
+<!-- SIDE NAV RAIL (Immutable Logic) -->
+<aside class="fixed left-0 top-0 h-full z-50 overflow-y-auto bg-[#f2f4f4] dark:bg-slate-900 h-full w-20 flex flex-col items-center border-none rounded-none flat no shadows">
+<div class="py-6 flex flex-col items-center gap-2">
+<div class="w-10 h-10 bg-brand-dark flex items-center justify-center mb-4">
+<span class="text-white font-headline font-bold text-lg leading-none">01</span>
+</div>
+<div class="font-['Space_Grotesk'] uppercase tracking-widest text-[8px] text-center leading-tight opacity-60">
+                INTEL_UNIT_01
+            </div>
+</div>
+<nav class="flex-1 w-full mt-4">
+<!-- Intelligence (Inactive) -->
+<a class="text-[#757c7d] dark:text-slate-400 w-full flex flex-col items-center py-4 transition-none hover:bg-[#dde4e5] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-[8px]">Intelligence</span>
+</a>
+<!-- Ledger (Active mapped to Terminal/Ledger context) -->
+<a class="bg-[#0B132B] text-white dark:bg-slate-100 dark:text-slate-950 w-full flex flex-col items-center py-4 transition-none" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="terminal">terminal</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-[8px]">Terminal</span>
+</a>
+<!-- Assets (Inactive) -->
+<a class="text-[#757c7d] dark:text-slate-400 w-full flex flex-col items-center py-4 transition-none hover:bg-[#dde4e5] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="database">database</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-[8px]">Assets</span>
+</a>
+<!-- Archive (Inactive) -->
+<a class="text-[#757c7d] dark:text-slate-400 w-full flex flex-col items-center py-4 transition-none hover:bg-[#dde4e5] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="folder_open">folder_open</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-[8px]">Archive</span>
+</a>
+</nav>
+<div class="pb-8 mt-auto w-full">
+<a class="text-[#757c7d] dark:text-slate-400 w-full flex flex-col items-center py-4 transition-none hover:bg-[#dde4e5] dark:hover:bg-slate-800" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] uppercase tracking-widest text-[8px]">Settings</span>
+</a>
+</div>
+</aside>
+<!-- TOP APP BAR -->
+<header class="sticky top-0 right-0 w-[calc(100%-5rem)] ml-20 z-40 flex justify-between items-center px-8 bg-[#f9f9f9] dark:bg-slate-950 h-16 border-none rounded-none flat no shadows">
+<div class="flex items-center gap-6">
+<h1 class="font-['Space_Grotesk'] font-black text-xl tracking-tighter text-[#0B132B] dark:text-white uppercase">SILENT_AUTHORITY_OS</h1>
+<nav class="hidden md:flex items-center gap-8 ml-8">
+<a class="text-[#757c7d] dark:text-slate-500 font-['JetBrains_Mono'] font-normal text-xs tracking-tighter hover:text-[#0B132B] dark:hover:text-white" href="#">RECON</a>
+<a class="text-[#0B132B] dark:text-white font-['JetBrains_Mono'] font-black text-xs tracking-tighter underline decoration-2 underline-offset-4" href="#">LEDGER</a>
+<a class="text-[#757c7d] dark:text-slate-500 font-['JetBrains_Mono'] font-normal text-xs tracking-tighter hover:text-[#0B132B] dark:hover:text-white" href="#">NODES</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<input class="bg-[#dde4e5] border-none text-[10px] font-mono px-4 py-2 w-48 focus:ring-1 focus:ring-brand-dark transition-all" placeholder="CMD_SEARCH..." type="text"/>
+</div>
+<button class="bg-brand-dark text-white px-6 py-2 font-['JetBrains_Mono'] font-medium text-xs tracking-tighter hover:ring-2 hover:ring-brand-dark">EXECUTE</button>
+<button class="border border-brand-dark text-brand-dark px-6 py-2 font-['JetBrains_Mono'] font-medium text-xs tracking-tighter hover:bg-brand-dark hover:text-white">EXPORT</button>
+</div>
+</header>
+<!-- MAIN CONTENT -->
+<main class="ml-20 w-[calc(100%-5rem)] p-12 min-h-screen">
+<!-- Header Section -->
+<section class="mb-12">
+<div class="flex justify-between items-end border-b-4 border-brand-dark pb-4">
+<div>
+<span class="font-mono text-[10px] tracking-widest text-on-surface-variant opacity-60">SYSTEM_LOG_v4.02</span>
+<h2 class="font-headline font-black text-6xl tracking-tighter text-brand-dark uppercase">TRAFFIC_LEDGER</h2>
+</div>
+<div class="text-right">
+<div class="font-mono text-[10px] uppercase text-on-surface-variant">Active_Nodes</div>
+<div class="font-headline font-bold text-2xl text-brand-dark">12,840</div>
+</div>
+</div>
+</section>
+<!-- Search & Filter Slab -->
+<section class="mb-8 flex flex-wrap gap-4 items-center bg-surface-container-low p-6">
+<div class="flex-1 min-w-[300px] relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-outline text-sm">search</span>
+<input class="w-full bg-surface-container-highest border-none pl-10 pr-4 py-3 font-mono text-xs focus:ring-2 focus:ring-brand-dark" placeholder="FILTER_BY_HASH_OR_NODE_ID..." type="text"/>
+</div>
+<div class="flex gap-2">
+<select class="bg-surface-container-highest border-none font-mono text-[10px] px-6 py-3 appearance-none cursor-pointer focus:ring-2 focus:ring-brand-dark">
+<option>STATUS: ALL_SYSTEMS</option>
+<option>STATUS: COMPLETE</option>
+<option>STATUS: DISQUALIFIED</option>
+<option>STATUS: QUOTA_FULL</option>
+</select>
+<select class="bg-surface-container-highest border-none font-mono text-[10px] px-6 py-3 appearance-none cursor-pointer focus:ring-2 focus:ring-brand-dark">
+<option>NODE: GLOBAL_CLUSTER</option>
+<option>NODE: US_EAST_01</option>
+<option>NODE: EU_WEST_12</option>
+</select>
+<button class="bg-brand-dark text-white font-mono text-[10px] px-8 py-3 hover:opacity-90">REFRESH_DATA</button>
+</div>
+</section>
+<!-- Participant Table -->
+<section class="bg-white overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-brand-dark text-white font-mono text-[10px] tracking-widest uppercase">
+<th class="p-4 table-cell-border font-medium">PARTICIPANT_HASH</th>
+<th class="p-4 table-cell-border font-medium">TIMESTAMP</th>
+<th class="p-4 table-cell-border font-medium">ENTRY_NODE</th>
+<th class="p-4 table-cell-border font-medium">DURATION</th>
+<th class="p-4 table-cell-border font-medium">STATUS</th>
+<th class="p-4 table-cell-border font-medium text-center">ACTION</th>
+</tr>
+</thead>
+<tbody class="font-mono text-[11px] text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4 table-cell-border font-medium">0x7F2A...3B91</td>
+<td class="p-4 table-cell-border opacity-70">2023-10-24 14:02:11</td>
+<td class="p-4 table-cell-border">X-GAMMA-CORE</td>
+<td class="p-4 table-cell-border">122.4s</td>
+<td class="p-4 table-cell-border">
+<span class="inline-block bg-[#526075] text-white px-2 py-1 text-[9px] font-bold uppercase tracking-tighter">COMPLETE</span>
+</td>
+<td class="p-4 table-cell-border text-center">
+<button class="material-symbols-outlined text-outline group-hover:text-brand-dark">visibility</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4 table-cell-border font-medium">0x1C4D...90E2</td>
+<td class="p-4 table-cell-border opacity-70">2023-10-24 14:01:58</td>
+<td class="p-4 table-cell-border">NODE_OMEGA_9</td>
+<td class="p-4 table-cell-border">15.1s</td>
+<td class="p-4 table-cell-border">
+<span class="inline-block bg-[#4A0404] text-white px-2 py-1 text-[9px] font-bold uppercase tracking-tighter">DISQUALIFIED</span>
+</td>
+<td class="p-4 table-cell-border text-center">
+<button class="material-symbols-outlined text-outline group-hover:text-brand-dark">visibility</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4 table-cell-border font-medium">0xBD89...224C</td>
+<td class="p-4 table-cell-border opacity-70">2023-10-24 14:00:44</td>
+<td class="p-4 table-cell-border">X-GAMMA-CORE</td>
+<td class="p-4 table-cell-border">0.0s</td>
+<td class="p-4 table-cell-border">
+<span class="inline-block bg-[#dde4e5] text-brand-dark px-2 py-1 text-[9px] font-bold uppercase tracking-tighter">QUOTA_FULL</span>
+</td>
+<td class="p-4 table-cell-border text-center">
+<button class="material-symbols-outlined text-outline group-hover:text-brand-dark">visibility</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4 table-cell-border font-medium">0xFE33...771A</td>
+<td class="p-4 table-cell-border opacity-70">2023-10-24 13:59:12</td>
+<td class="p-4 table-cell-border">VECTOR_SOUTH</td>
+<td class="p-4 table-cell-border">445.8s</td>
+<td class="p-4 table-cell-border">
+<span class="inline-block bg-[#526075] text-white px-2 py-1 text-[9px] font-bold uppercase tracking-tighter">COMPLETE</span>
+</td>
+<td class="p-4 table-cell-border text-center">
+<button class="material-symbols-outlined text-outline group-hover:text-brand-dark">visibility</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4 table-cell-border font-medium">0x4102...B83F</td>
+<td class="p-4 table-cell-border opacity-70">2023-10-24 13:58:30</td>
+<td class="p-4 table-cell-border">X-GAMMA-CORE</td>
+<td class="p-4 table-cell-border">12.2s</td>
+<td class="p-4 table-cell-border">
+<span class="inline-block bg-[#4A0404] text-white px-2 py-1 text-[9px] font-bold uppercase tracking-tighter">DISQUALIFIED</span>
+</td>
+<td class="p-4 table-cell-border text-center">
+<button class="material-symbols-outlined text-outline group-hover:text-brand-dark">visibility</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-4 table-cell-border font-medium">0x99A1...11D9</td>
+<td class="p-4 table-cell-border opacity-70">2023-10-24 13:57:05</td>
+<td class="p-4 table-cell-border">NODE_OMEGA_9</td>
+<td class="p-4 table-cell-border">210.3s</td>
+<td class="p-4 table-cell-border">
+<span class="inline-block bg-[#526075] text-white px-2 py-1 text-[9px] font-bold uppercase tracking-tighter">COMPLETE</span>
+</td>
+<td class="p-4 table-cell-border text-center">
+<button class="material-symbols-outlined text-outline group-hover:text-brand-dark">visibility</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Slab -->
+<div class="flex justify-between items-center bg-brand-dark text-white p-4">
+<div class="font-mono text-[10px] uppercase tracking-widest">
+                    SHOWING 1-50 OF 12,840 ENTRIES
+                </div>
+<div class="flex gap-[1px] bg-white">
+<button class="bg-brand-dark px-4 py-2 hover:bg-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">first_page</span>
+</button>
+<button class="bg-brand-dark px-4 py-2 hover:bg-on-primary-container transition-colors border-l border-white/20">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<div class="bg-white text-brand-dark px-6 py-2 font-mono text-xs font-bold flex items-center">
+                        PAGE_01
+                    </div>
+<button class="bg-brand-dark px-4 py-2 hover:bg-on-primary-container transition-colors border-r border-white/20">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="bg-brand-dark px-4 py-2 hover:bg-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">last_page</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Auxiliary Intelligence Panels -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-low p-8 border-l-8 border-brand-dark">
+<h3 class="font-headline font-bold text-xs uppercase tracking-widest text-brand-dark mb-4">NODE_HEALTH_METRIC</h3>
+<div class="flex items-center gap-4">
+<div class="flex-1 bg-surface-container-highest h-2">
+<div class="bg-brand-dark w-[92%] h-full"></div>
+</div>
+<span class="font-mono text-sm font-bold">92.4%</span>
+</div>
+<p class="font-mono text-[9px] mt-4 opacity-60">System nodes operating within nominal thermal parameters. Latency variance ±4ms.</p>
+</div>
+<div class="bg-surface-container-low p-8 border-l-8 border-brand-dark">
+<h3 class="font-headline font-bold text-xs uppercase tracking-widest text-brand-dark mb-4">THREAT_LEVEL_ASSESSMENT</h3>
+<div class="flex items-center gap-4">
+<span class="bg-[#4A0404] text-white px-3 py-1 font-mono text-[10px] font-bold">LEVEL_02: STABLE</span>
+</div>
+<p class="font-mono text-[9px] mt-4 opacity-60">Zero high-priority anomalies detected in current batch reconciliation cycle.</p>
+</div>
+<div class="bg-brand-dark p-8 text-white relative overflow-hidden group">
+<h3 class="font-headline font-bold text-xs uppercase tracking-widest mb-4">LEDGER_SIGNATURE</h3>
+<div class="font-mono text-[10px] opacity-80 leading-relaxed mb-6">
+                    SHA-256: 8e372e8c352d49516c74231d993f36...
+                </div>
+<button class="w-full border border-white/20 py-2 font-mono text-[10px] tracking-widest hover:bg-white hover:text-brand-dark transition-colors">RE_VALIDATE_CHAIN</button>
+<!-- Decorative background pattern -->
+<div class="absolute -bottom-4 -right-4 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-9xl">verified_user</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Terminal Command Bar -->
+<footer class="fixed bottom-0 right-0 w-[calc(100%-5rem)] h-12 bg-brand-dark flex items-center px-8 z-50">
+<div class="flex items-center gap-4 w-full">
+<span class="text-white font-mono text-sm">&gt;</span>
+<input class="bg-transparent border-none text-primary-fixed-dim font-mono text-xs w-full focus:ring-0 placeholder:opacity-30" placeholder="CMD_TERMINAL_INPUT: /RECONCILE_ALL --FORCE" type="text"/>
+<div class="flex gap-4 items-center whitespace-nowrap">
+<span class="text-white/40 font-mono text-[9px] uppercase tracking-tighter">OS_VER: 4.02.1</span>
+<span class="text-white/40 font-mono text-[9px] uppercase tracking-tighter">SYS_TIME: 14:05:22</span>
+<div class="w-2 h-2 bg-slate-400 animate-pulse"></div>
+</div>
+</div>
+</footer>
+</body></html>

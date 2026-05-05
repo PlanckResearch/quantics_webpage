@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SOVEREIGN | SURVEY DETAIL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;500;600;700&amp;family=Inter+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary": "#000000",
+              "surface-variant": "#e1e3e3",
+              "on-error-container": "#93000a",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "on-background": "#191c1d",
+              "on-tertiary-fixed": "#121d25",
+              "on-secondary-fixed": "#061b3a",
+              "secondary-container": "#c5d7ff",
+              "on-surface-variant": "#45464d",
+              "inverse-primary": "#bec5e5",
+              "on-primary-fixed": "#131a33",
+              "outline-variant": "#c6c6ce",
+              "primary": "#000000",
+              "on-secondary-container": "#4c5d80",
+              "surface-dim": "#d8dada",
+              "surface-container": "#eceeee",
+              "on-primary": "#ffffff",
+              "surface-tint": "#565d79",
+              "on-primary-fixed-variant": "#3e4660",
+              "inverse-on-surface": "#eff1f1",
+              "surface-container-high": "#e6e8e8",
+              "on-secondary": "#ffffff",
+              "background": "#f8fafa",
+              "primary-container": "#131a33",
+              "tertiary-fixed": "#d8e4ef",
+              "on-tertiary-container": "#7a858f",
+              "inverse-surface": "#2e3131",
+              "outline": "#76767e",
+              "error-container": "#ffdad6",
+              "on-surface": "#191c1d",
+              "tertiary-container": "#121d25",
+              "primary-fixed-dim": "#bec5e5",
+              "on-primary-container": "#7b83a0",
+              "surface": "#f8fafa",
+              "surface-container-low": "#f2f4f4",
+              "on-tertiary-fixed-variant": "#3d4851",
+              "on-error": "#ffffff",
+              "primary-fixed": "#dbe1ff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed-dim": "#bcc8d3",
+              "secondary": "#4d5f81",
+              "surface-bright": "#f8fafa",
+              "on-secondary-fixed-variant": "#354768",
+              "surface-container-highest": "#e1e3e3",
+              "secondary-fixed": "#d7e3ff",
+              "secondary-fixed-dim": "#b4c7ee"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Public Sans"],
+              "label": ["Public Sans"],
+              "mono": ["Inter Mono", "monospace"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Public Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+        .mono-text { font-family: 'Inter Mono', monospace; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #131a33; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container overflow-hidden">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-20 z-50 flex flex-col items-center py-6 bg-[#0B132B] dark:bg-[#050914] border-r border-slate-800">
+<div class="mb-10 text-center">
+<span class="text-xs font-black tracking-widest text-white uppercase block">SOVEREIGN</span>
+<span class="text-[8px] text-slate-500 font-mono">OP-INTEL</span>
+</div>
+<nav class="flex flex-col w-full flex-grow space-y-2">
+<!-- Dossier Tab (Active) -->
+<button class="bg-[#c5d7ff] text-[#0B132B] rounded-none w-full flex flex-col items-center py-4 transition-none group">
+<span class="material-symbols-outlined mb-1" data-icon="folder_managed">folder_managed</span>
+<span class="text-[9px] font-medium font-label tracking-wider uppercase">Dossier</span>
+</button>
+<button class="text-slate-400 hover:text-white hover:bg-slate-800 w-full flex flex-col items-center py-4 transition-none group">
+<span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
+<span class="text-[9px] font-medium font-label tracking-wider uppercase">Intel</span>
+</button>
+<button class="text-slate-400 hover:text-white hover:bg-slate-800 w-full flex flex-col items-center py-4 transition-none group">
+<span class="material-symbols-outlined mb-1" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="text-[9px] font-medium font-label tracking-wider uppercase">Operations</span>
+</button>
+<button class="text-slate-400 hover:text-white hover:bg-slate-800 w-full flex flex-col items-center py-4 transition-none group">
+<span class="material-symbols-outlined mb-1" data-icon="database">database</span>
+<span class="text-[9px] font-medium font-label tracking-wider uppercase">Assets</span>
+</button>
+<button class="text-slate-400 hover:text-white hover:bg-slate-800 w-full flex flex-col items-center py-4 transition-none group">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2">inventory_2</span>
+<span class="text-[9px] font-medium font-label tracking-wider uppercase">Archive</span>
+</button>
+</nav>
+<div class="mt-auto border-t border-slate-800 pt-6 w-full flex flex-col items-center">
+<img alt="System Operator Avatar" class="w-8 h-8 rounded-none grayscale hover:grayscale-0 cursor-pointer" data-alt="Close-up portrait of a high-tech intelligence operator with focused expression, neutral lighting, cinematic grain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ0ADjBwNH1_Zb7bgfDd1QRooag5EsdysavzO2MGGTqBDm8v182Z-HDkHiNK_qhqiiNCmgkd9AOsPQ-_AcI8TEzx1l4Uw6Ze8fgTeLf1VQ0GcZWrAD6Ckh1wBJU-4UBwDyiQL3Nd1GRfTru_D1OSQ5sVCgQlVMkgQe3xugMDfcN2Dc-3wIEwZ83uFFXfcT6rB4Ogcx-TK6sVHFJtVs4gIisiRZZbYDEueeQEygCEz57JL2ANpjdMbh9XCS7DndaOOdvFsMpdZtP-7Z"/>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 left-20 right-0 h-14 z-40 flex justify-between items-center px-6 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50">
+<div class="flex items-center gap-8">
+<h1 class="text-lg font-bold tracking-tighter text-slate-900 dark:text-slate-50 font-headline uppercase">SURVEY DETAIL</h1>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label text-xs tracking-widest hover:text-slate-900 transition-none uppercase" href="#">SYSTEM</a>
+<a class="text-slate-900 dark:text-white border-b-2 border-slate-900 dark:border-white pb-1 font-medium font-label text-xs tracking-widest uppercase" href="#">ENCRYPT</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium font-label text-xs tracking-widest hover:text-slate-900 transition-none uppercase" href="#">REDACT</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container px-3 py-1 border-r-0">
+<span class="material-symbols-outlined text-sm text-slate-500 mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none text-[10px] font-mono focus:ring-0 w-48 uppercase tracking-widest" placeholder="GLOBAL QUERY..." type="text"/>
+</div>
+<button class="p-1 hover:bg-slate-100 transition-none">
+<span class="material-symbols-outlined text-slate-700" data-icon="notifications">notifications</span>
+</button>
+<button class="p-1 hover:bg-slate-100 transition-none">
+<span class="material-symbols-outlined text-slate-700" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-20 mt-14 h-[calc(100vh-3.5rem)] overflow-y-auto bg-surface">
+<!-- Dossier Header -->
+<div class="relative w-full bg-primary-container p-8 text-white overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-30">
+<span class="mono-text text-[10px] tracking-widest uppercase">SERIAL: SRV-7729-ALPHA</span>
+</div>
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 text-[10px] font-bold font-mono tracking-tighter uppercase">ACTIVE_THREAT</span>
+<span class="text-on-primary-container text-[10px] font-mono tracking-widest">LOC: 34.0522 N, 118.2437 W</span>
+</div>
+<h2 class="text-5xl font-extrabold tracking-[0.1em] font-headline uppercase">PROTOCOL #121001</h2>
+<p class="text-on-primary-container mt-2 font-body text-sm max-w-2xl uppercase tracking-wider font-light">
+                        Automated high-frequency intelligence gathering regarding deep-sector asset allocation and regional geopolitical shifts in the Pacific corridor.
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="bg-white text-black px-6 py-3 font-bold font-label text-xs tracking-widest uppercase hover:bg-secondary-container transition-none">PAUSE OPS</button>
+<button class="border border-white/20 text-white px-6 py-3 font-bold font-label text-xs tracking-widest uppercase hover:bg-white/10 transition-none">EXPORT LOG</button>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-[1px] bg-white/10"></div>
+</div>
+<div class="p-6 grid grid-cols-12 gap-6">
+<!-- Panel 1: KPI OVERVIEW (Bento Grid Style) -->
+<section class="col-span-12 lg:col-span-8 space-y-6">
+<div class="bg-surface-container-low p-6 relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+<h3 class="text-xs font-bold font-headline tracking-[0.2em] mb-6 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="monitoring">monitoring</span>
+                        KPI OVERVIEW
+                    </h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-highest p-4 flex flex-col justify-between h-32">
+<span class="text-[10px] font-label font-bold text-slate-500 tracking-widest uppercase">COMPLETES</span>
+<div>
+<div class="text-3xl font-mono font-bold">14,202</div>
+<div class="text-[9px] font-mono text-green-600 mt-1 uppercase">+12% VS BASELINE</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 flex flex-col justify-between h-32">
+<span class="text-[10px] font-label font-bold text-slate-500 tracking-widest uppercase">IR (INCIDENCE)</span>
+<div>
+<div class="text-3xl font-mono font-bold">08.4%</div>
+<div class="text-[9px] font-mono text-red-600 mt-1 uppercase">-0.2% VS ESTIMATE</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 flex flex-col justify-between h-32">
+<span class="text-[10px] font-label font-bold text-slate-500 tracking-widest uppercase">LOI (LENGTH)</span>
+<div>
+<div class="text-3xl font-mono font-bold">12:45</div>
+<div class="text-[9px] font-mono text-slate-500 mt-1 uppercase">MM:SS (MEDIAN)</div>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 flex flex-col justify-between h-32">
+<span class="text-[10px] font-label font-bold text-slate-500 tracking-widest uppercase">CPI (COST)</span>
+<div>
+<div class="text-3xl font-mono font-bold">$1.85</div>
+<div class="text-[9px] font-mono text-slate-500 mt-1 uppercase">USD PER UNIT</div>
+</div>
+</div>
+</div>
+<!-- Visual Data Feed -->
+<div class="mt-6 bg-white border border-outline-variant/20 p-6 h-64 relative flex items-end gap-1">
+<div class="absolute top-4 left-4 flex gap-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-primary"></span>
+<span class="text-[9px] font-mono uppercase tracking-widest">Projected Velocity</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 bg-secondary-container"></span>
+<span class="text-[9px] font-mono uppercase tracking-widest">Actual Capture</span>
+</div>
+</div>
+<!-- Mock Bars -->
+<div class="flex-grow bg-slate-100 h-12"></div>
+<div class="flex-grow bg-slate-200 h-24"></div>
+<div class="flex-grow bg-primary h-40"></div>
+<div class="flex-grow bg-slate-100 h-16"></div>
+<div class="flex-grow bg-slate-200 h-32"></div>
+<div class="flex-grow bg-primary h-48"></div>
+<div class="flex-grow bg-slate-100 h-20"></div>
+<div class="flex-grow bg-slate-200 h-44"></div>
+<div class="flex-grow bg-primary h-56"></div>
+<div class="flex-grow bg-secondary-container h-48"></div>
+<div class="flex-grow bg-secondary-container h-32"></div>
+<div class="flex-grow bg-secondary-container h-12"></div>
+</div>
+</div>
+<!-- Panel 2: VENDOR MAPPINGS -->
+<div class="bg-surface-container-low p-6 relative">
+<div class="absolute top-0 left-0 w-1 h-full bg-secondary"></div>
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xs font-bold font-headline tracking-[0.2em] uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="hub">hub</span>
+                            VENDOR MAPPINGS
+                        </h3>
+<span class="text-[10px] font-mono text-slate-500">TOTAL NODES: 04</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-highest">
+<th class="p-3 text-[10px] font-label font-bold tracking-widest uppercase text-slate-500">NODE ID</th>
+<th class="p-3 text-[10px] font-label font-bold tracking-widest uppercase text-slate-500">TYPE</th>
+<th class="p-3 text-[10px] font-label font-bold tracking-widest uppercase text-slate-500">FLOW</th>
+<th class="p-3 text-[10px] font-label font-bold tracking-widest uppercase text-slate-500">LATENCY</th>
+<th class="p-3 text-[10px] font-label font-bold tracking-widest uppercase text-slate-500">STATUS</th>
+</tr>
+</thead>
+<tbody class="mono-text text-[11px]">
+<tr class="border-b border-outline-variant/10 hover:bg-secondary-fixed transition-none cursor-pointer">
+<td class="p-3 font-bold">VNDR_EXECUTIVE_PANEL</td>
+<td class="p-3">DIRECT_API</td>
+<td class="p-3">452/SEC</td>
+<td class="p-3">12ms</td>
+<td class="p-3"><span class="bg-green-100 text-green-800 px-2 py-0.5">NOMINAL</span></td>
+</tr>
+<tr class="border-b border-outline-variant/10 bg-white/40 hover:bg-secondary-fixed transition-none cursor-pointer">
+<td class="p-3 font-bold">GLOBAL_QUOTA_REACH</td>
+<td class="p-3">WEBHOOK</td>
+<td class="p-3">1,202/SEC</td>
+<td class="p-3">85ms</td>
+<td class="p-3"><span class="bg-green-100 text-green-800 px-2 py-0.5">NOMINAL</span></td>
+</tr>
+<tr class="border-b border-outline-variant/10 hover:bg-secondary-fixed transition-none cursor-pointer">
+<td class="p-3 font-bold">DATA_SYNTH_CORP</td>
+<td class="p-3">SECURE_BRIDGE</td>
+<td class="p-3">12/SEC</td>
+<td class="p-3">442ms</td>
+<td class="p-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-0.5">THROTTLED</span></td>
+</tr>
+<tr class="hover:bg-secondary-fixed transition-none cursor-pointer">
+<td class="p-3 font-bold">SHADOW_RECRUIT_INT</td>
+<td class="p-3">ENCRYPT_TUNNEL</td>
+<td class="p-3">0/SEC</td>
+<td class="p-3">---</td>
+<td class="p-3"><span class="bg-slate-200 text-slate-600 px-2 py-0.5">INACTIVE</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Sidebar Panels (Right Side) -->
+<aside class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Panel 3: STATUS LOG -->
+<div class="bg-surface-container-highest p-6 relative">
+<h3 class="text-xs font-bold font-headline tracking-[0.2em] mb-6 uppercase flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+                        OPERATIONAL STATUS LOG
+                    </h3>
+<div class="space-y-6 relative before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[1px] before:bg-outline-variant">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-4 h-4 bg-primary border-4 border-surface-container-highest"></div>
+<div class="mono-text text-[10px] text-slate-500 mb-1">2024-05-24 14:02:11 UTC</div>
+<div class="text-xs font-bold uppercase tracking-tight">CRITICAL THRESHOLD REACHED</div>
+<p class="text-[11px] text-slate-600 mt-1 uppercase">Sample capture velocity exceeded projected 400% baseline. Automatic load balancer engaged.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-4 h-4 bg-secondary border-4 border-surface-container-highest"></div>
+<div class="mono-text text-[10px] text-slate-500 mb-1">2024-05-24 12:44:59 UTC</div>
+<div class="text-xs font-bold uppercase tracking-tight">GATEWAY ROTATION</div>
+<p class="text-[11px] text-slate-600 mt-1 uppercase">Primary ingestion server migrated from US-EAST-1 to AP-SOUTH-1 for reduced latency.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-4 h-4 bg-outline border-4 border-surface-container-highest"></div>
+<div class="mono-text text-[10px] text-slate-500 mb-1">2024-05-24 09:00:00 UTC</div>
+<div class="text-xs font-bold uppercase tracking-tight">DAILY RE-INDEXING</div>
+<p class="text-[11px] text-slate-600 mt-1 uppercase">System-wide data validation protocol complete. 0 checksum failures reported.</p>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1.5 w-4 h-4 bg-green-500 border-4 border-surface-container-highest"></div>
+<div class="mono-text text-[10px] text-slate-500 mb-1">2024-05-23 23:15:22 UTC</div>
+<div class="text-xs font-bold uppercase tracking-tight">PROTOCOL INITIALIZED</div>
+<p class="text-[11px] text-slate-600 mt-1 uppercase">Full deployment of Survey #121001 to global vendor network.</p>
+</div>
+</div>
+</div>
+<!-- Asset Detail Card -->
+<div class="bg-[#0B132B] text-white p-6">
+<h3 class="text-xs font-bold font-headline tracking-[0.2em] mb-6 uppercase flex items-center gap-2 text-secondary-container">
+<span class="material-symbols-outlined text-sm" data-icon="fingerprint">fingerprint</span>
+                        SYSTEM FOOTPRINT
+                    </h3>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-white/10 pb-2">
+<span class="text-[10px] font-label text-slate-400 uppercase">ENCRYPTION</span>
+<span class="mono-text text-[10px]">AES-256-GCM</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-2">
+<span class="text-[10px] font-label text-slate-400 uppercase">THREAT LEVEL</span>
+<span class="mono-text text-[10px] text-yellow-400">ELEVATED</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-2">
+<span class="text-[10px] font-label text-slate-400 uppercase">GEO-FENCING</span>
+<span class="mono-text text-[10px]">REDACTED</span>
+</div>
+</div>
+<div class="mt-8">
+<img alt="Regional Heatmap" class="w-full h-32 object-cover grayscale brightness-50 contrast-125 mb-4" data-alt="Digital blue heatmap of a metropolitan city showing data density clusters with high-tech UI overlays and grid lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAehbmRBqqQC2lse6b8PCddcfp84_w9ZtAxICWMyrj0ANAvyBk33dwTFofnNKaMuwbEO7XQuLhmXJc5YGj-cJy3--Z2mbSTAgcQr_ebgSAWetpntDP4POS-UkNKgB95M2MUMWUVm-loRuLSbUbDWUeRl-Kf7r1CW1lXuTWEl6bIDZ_oG27tU1B2asc9gnfV6IXj8vSM1aWKoZLn7mTztUFH5I1LVfZOD1xvSNEQv3MD-LbqtqjWf_-3hifBBFbl9KAv62gM_eZub3e2"/>
+<p class="text-[9px] font-mono text-slate-500 uppercase leading-relaxed">
+                            INTEL_NOTE: Asset movement suggests heavy traffic in Quadrant 4. Monitor closely for LOI spikes during peak hours.
+                        </p>
+</div>
+</div>
+</aside>
+</div>
+<!-- Footer Data Strip -->
+<footer class="mt-12 bg-surface-container p-4 border-t border-outline-variant/20 flex flex-wrap justify-between items-center gap-4">
+<div class="flex gap-8">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-green-500"></span>
+<span class="mono-text text-[9px] uppercase tracking-widest">SYSTEM_LIVE: 99.999%</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="mono-text text-[9px] uppercase tracking-widest">THROUGHPUT: 1.2 GB/S</span>
+</div>
+</div>
+<div class="text-[9px] font-mono text-slate-400 uppercase">
+                © 2024 SOVEREIGN ARCHITECTURAL COMMAND // UNAUTHORIZED ACCESS IS PROHIBITED
+            </div>
+</footer>
+</main>
+</body></html>

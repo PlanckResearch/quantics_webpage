@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
 import logo from "../../../favicon/favicon.svg";
@@ -7,12 +7,13 @@ import logo from "../../../favicon/favicon.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "Solutions", path: "/solutions" },
-    { name: "Industries", path: "/industries" },
+    { name: "HOME", path: "/" },
+    { name: "SERVICES", path: "/services" },
+    { name: "SOLUTIONS", path: "/solutions" },
+    { name: "INDUSTRIES", path: "/industries" },
   ];
 
   // Handle scroll effect
@@ -31,69 +32,59 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
+  const isActive = (path) => location.pathname === path;
+
   return (
     <>
-      {/* Blur overlay for content behind navbar when scrolled */}
-      {scrolled && (
-        <div
-          className="fixed top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/80 to-transparent backdrop-blur-sm z-40 pointer-events-none"
-          style={{ height: '80px' }}
-        />
-      )}
-
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "top-4" : "top-0"
+      <nav className="fixed top-0 left-0 right-0 z-50">
+        {/* Main dark top bar — portal style */}
+        <div className={`w-full transition-all duration-300 ${
+          scrolled 
+            ? "bg-[#0B132B] shadow-lg" 
+            : "bg-[#0B132B]"
         }`}>
-        {/* Container with rounded background and border */}
-        <div className={`mx-4 lg:mx-8 transition-all duration-300 ${scrolled
-            ? "bg-white/95 backdrop-blur-md rounded-full shadow-lg ring-1 ring-gray-900/10 border border-gray-200"
-            : "bg-transparent"
-          }`}>
-          <div className="px-4 lg:px-8">
-            <div className={`flex justify-between items-center transition-all duration-300 ${scrolled ? "h-16" : "h-20"
-              }`}>
+          <div className="px-6 lg:px-10">
+            <div className="flex justify-between items-center h-16">
               {/* Logo */}
-              <Link to="/" className="flex items-center" onClick={scrollToTop}>
+              <Link to="/" className="flex items-center gap-3" onClick={scrollToTop}>
                 <img
                   src={logo}
-                  alt="MarketInsight Logo"
-                  className={`transition-all duration-300 ${scrolled ? "w-[150px]" : "w-[200px]"} h-auto`}
+                  alt="The Quantics"
+                  className="w-[140px] h-auto brightness-0 invert"
                 />
               </Link>
 
-              {/* Desktop Menu - Right aligned */}
-              <div className="hidden lg:flex items-center space-x-2">
+              {/* Desktop Navigation — Right aligned */}
+              <div className="hidden lg:flex items-center gap-1">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.path}
                     onClick={scrollToTop}
-                    className={`px-5 py-2 rounded-full transition-all duration-300 ${scrolled
-                        ? "text-gray-700 hover:text-gray-900 hover:bg-blue-400"
-                        : "text-gray-600 hover:text-gray-800"
-                      }`}
+                    className={`px-4 py-2 font-mono text-[11px] tracking-[0.15em] transition-all duration-200 ${
+                      isActive(item.path)
+                        ? "bg-white text-[#0B132B] font-bold"
+                        : "text-slate-300 hover:bg-white/10 hover:text-white"
+                    }`}
                   >
                     {item.name}
                   </Link>
                 ))}
 
-                {/* Experience a Demo button */}
+                {/* CTA Button */}
                 <Link
                   to="/demo"
                   onClick={scrollToTop}
-                  className={`px-6 py-2 rounded-full transition-all duration-300 ml-2 ${scrolled
-                      ? "bg-blue-600 text-white hover:bg-blue-700 shadow-sm"
-                      : "bg-blue-600 text-white hover:bg-blue-700"
-                    }`}
+                  className="ml-4 px-6 py-2 bg-white text-[#0B132B] font-mono text-[11px] tracking-[0.15em] font-bold hover:bg-slate-200 transition-colors duration-200"
                 >
-                  Experience a Demo
+                  EXPERIENCE_DEMO
                 </Link>
               </div>
 
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`lg:hidden text-2xl transition-colors duration-300 ${scrolled ? "text-gray-800" : "text-gray-600"
-                  }`}
+                className="lg:hidden text-white text-2xl p-2 hover:bg-white/10 transition-colors"
               >
                 {isOpen ? <HiX /> : <HiMenu />}
               </button>
@@ -105,19 +96,23 @@ const Navbar = () => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
               className="lg:hidden"
             >
-              <div className="bg-white rounded-2xl shadow-lg mx-4 mt-2 p-4 border border-gray-300">
-                <div className="space-y-2">
+              <div className="bg-[#0B132B] border-t border-white/10 mx-0 p-4">
+                <div className="space-y-1">
                   {navItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.path}
-                      className="block px-4 py-3 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                      className={`block px-4 py-3 font-mono text-[11px] tracking-[0.15em] transition-colors duration-200 ${
+                        isActive(item.path)
+                          ? "bg-white text-[#0B132B] font-bold"
+                          : "text-slate-300 hover:bg-white/10"
+                      }`}
                       onClick={() => {
                         setIsOpen(false);
                         scrollToTop();
@@ -126,26 +121,26 @@ const Navbar = () => {
                       {item.name}
                     </Link>
                   ))}
-                  <div className="pt-2 border-t border-gray-200">
+                  <div className="pt-3 border-t border-white/10 space-y-2">
                     <Link
                       to="/demo"
-                      className="block w-full text-center bg-blue-600 text-white px-4 py-3 rounded-full hover:bg-blue-700 transition-colors duration-200 mb-2"
+                      className="block w-full text-center bg-white text-[#0B132B] px-4 py-3 font-mono text-[11px] tracking-[0.15em] font-bold hover:bg-slate-200 transition-colors duration-200"
                       onClick={() => {
                         setIsOpen(false);
                         scrollToTop();
                       }}
                     >
-                      Experience a Demo
+                      EXPERIENCE_DEMO
                     </Link>
                     <Link
                       to="/contact"
-                      className="block w-full text-center border-2 border-gray-800 text-gray-800 px-4 py-3 rounded-full hover:bg-gray-800 hover:text-white transition-colors duration-200"
+                      className="block w-full text-center border border-white/30 text-white px-4 py-3 font-mono text-[11px] tracking-[0.15em] hover:bg-white/10 transition-colors duration-200"
                       onClick={() => {
                         setIsOpen(false);
                         scrollToTop();
                       }}
                     >
-                      Get in touch
+                      GET_IN_TOUCH
                     </Link>
                   </div>
                 </div>
@@ -154,8 +149,6 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </nav>
-
-      {/*  */}
     </>
   );
 };

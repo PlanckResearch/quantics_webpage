@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Intelligence Dossier | Client Operations Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Helvetica Now Display';
+            src: url('https://fonts.cdnfonts.com/css/helvetica-now-display');
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #0B132B;
+            margin: 0;
+            padding: 0;
+        }
+        .font-mono-inter {
+            font-family: 'Inter', monospace;
+            font-feature-settings: "tnum";
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        /* Custom scrollbar for brutalist feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f2f4f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0B132B;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "secondary-fixed-dim": "#bcc8d3",
+                "surface-container-lowest": "#ffffff",
+                "outline-variant": "#c6c6ce",
+                "on-tertiary-container": "#818485",
+                "on-primary-container": "#7b83a0",
+                "inverse-on-surface": "#f1f1f1",
+                "secondary-container": "#E2EEF9",
+                "on-background": "#1a1c1c",
+                "tertiary-container": "#191c1d",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#2f3131",
+                "on-secondary-fixed-variant": "#3d4851",
+                "error-container": "#ffdad6",
+                "tertiary-fixed-dim": "#c4c7c7",
+                "surface-variant": "#e2e2e2",
+                "on-surface-variant": "#45464d",
+                "surface": "#f9f9f9",
+                "inverse-primary": "#bec5e5",
+                "surface-container-high": "#e8e8e8",
+                "error": "#ba1a1a",
+                "surface-container-low": "#f3f3f3",
+                "on-secondary": "#ffffff",
+                "on-primary-fixed-variant": "#3e4660",
+                "outline": "#76767e",
+                "on-tertiary": "#ffffff",
+                "surface-tint": "#565d79",
+                "secondary-fixed": "#d8e4ef",
+                "primary-fixed-dim": "#bec5e5",
+                "on-tertiary-fixed-variant": "#444748",
+                "on-primary-fixed": "#131a33",
+                "primary-container": "#131a33",
+                "surface-container-highest": "#e2e2e2",
+                "surface-container": "#eeeeee",
+                "on-secondary-fixed": "#121d25",
+                "on-primary": "#ffffff",
+                "on-error": "#ffffff",
+                "surface-dim": "#dadada",
+                "tertiary": "#000000",
+                "secondary": "#546069",
+                "on-surface": "#1a1c1c",
+                "primary-fixed": "#dbe1ff",
+                "background": "#f9f9f9",
+                "on-secondary-container": "#5a666f",
+                "surface-bright": "#f9f9f9",
+                "tertiary-fixed": "#e1e3e3",
+                "primary": "#0B132B",
+                "on-tertiary-fixed": "#191c1d"
+              },
+              fontFamily: {
+                "headline": ["Inter"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-primary">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-[#e2e2e2] dark:bg-[#0B132B] w-64 border-r-0">
+<div class="p-6">
+<div class="text-lg font-black tracking-tighter text-[#0B132B] dark:text-[#f9f9f9] mb-1">STRATEGIC COMMAND</div>
+<div class="font-['Inter'] font-medium text-[10px] tracking-widest uppercase opacity-60">CLEARANCE LEVEL 5</div>
+</div>
+<nav class="flex-1 mt-4">
+<!-- Active Tab: Dossier -->
+<a class="flex items-center px-6 py-4 bg-[#E2EEF9] dark:bg-[#131a33] text-[#0B132B] dark:text-[#E2EEF9] border-l-4 border-[#0B132B] dark:border-[#E2EEF9] font-['Inter'] font-medium text-xs tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="folder_shared">folder_shared</span>
+                Dossier
+            </a>
+<a class="flex items-center px-6 py-4 text-[#0B132B] dark:text-[#f9f9f9] opacity-70 hover:opacity-100 hover:bg-[#f2f4f4] dark:hover:bg-[#1c2541] transition-none font-['Inter'] font-medium text-xs tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="biotech">biotech</span>
+                Intel
+            </a>
+<a class="flex items-center px-6 py-4 text-[#0B132B] dark:text-[#f9f9f9] opacity-70 hover:opacity-100 hover:bg-[#f2f4f4] dark:hover:bg-[#1c2541] transition-none font-['Inter'] font-medium text-xs tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="military_tech">military_tech</span>
+                Operations
+            </a>
+<a class="flex items-center px-6 py-4 text-[#0B132B] dark:text-[#f9f9f9] opacity-70 hover:opacity-100 hover:bg-[#f2f4f4] dark:hover:bg-[#1c2541] transition-none font-['Inter'] font-medium text-xs tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="inventory_2">inventory_2</span>
+                Assets
+            </a>
+<a class="flex items-center px-6 py-4 text-[#0B132B] dark:text-[#f9f9f9] opacity-70 hover:opacity-100 hover:bg-[#f2f4f4] dark:hover:bg-[#1c2541] transition-none font-['Inter'] font-medium text-xs tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="inventory">inventory</span>
+                Archive
+            </a>
+</nav>
+<div class="p-6 space-y-4">
+<button class="w-full bg-primary text-white py-3 font-bold text-xs tracking-widest uppercase transition-none hover:bg-primary-container">
+                NEW OPERATION
+            </button>
+<div class="pt-4 border-t border-primary/10">
+<a class="flex items-center text-[#0B132B] dark:text-[#f9f9f9] opacity-70 hover:opacity-100 py-2 font-['Inter'] font-medium text-[10px] tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3 text-sm" data-icon="help_outline">help_outline</span>
+                    Help
+                </a>
+<a class="flex items-center text-[#0B132B] dark:text-[#f9f9f9] opacity-70 hover:opacity-100 py-2 font-['Inter'] font-medium text-[10px] tracking-widest uppercase" href="#">
+<span class="material-symbols-outlined mr-3 text-sm" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- TopAppBar Shell -->
+<header class="flex justify-between items-center w-full px-10 h-16 bg-[#f9f9f9] dark:bg-[#0B132B]">
+<div class="flex items-center flex-1">
+<div class="relative w-96">
+<span class="absolute left-0 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary/40" data-icon="search">search</span>
+<input class="w-full pl-8 pr-4 py-2 bg-transparent border-none focus:ring-0 font-['Inter'] text-xs tracking-widest uppercase placeholder:text-primary/30" placeholder="SEARCH DOSSIER..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-8">
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-primary hover:bg-[#e2e2e2] p-2 transition-none" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-primary hover:bg-[#e2e2e2] p-2 transition-none" data-icon="settings">settings</button>
+</div>
+<div class="h-8 w-8 bg-surface-container-highest flex items-center justify-center">
+<img alt="Operator Profile" class="w-full h-full object-cover" data-alt="close-up portrait of a serious intelligence officer in a dark suit with a neutral expression and sharp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJj8gdIqg0cJcdL03gRD94GCrQr7sNI0vmhsyWNoiabZcEXtlMgXX35Sf6TVGXPUUqUFsmsp1k33McM0YXUn9us36o63MMAbUEToQAzD9jWSS3UMfM-JI2Jli5-FfnzWepO-zSpTpqnsFww03sJZsp6qUuZSar-V-8BgaBovybpbsSIUmIiOs5hNeEdi1_Ts1fVgauqlzkDvNTwDVEe2hHvhlO7YmawniCkdBDzoT9d_Ib0GwnoyGdJWtylLzL5sVLBPJwZgCcvWMq"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="px-10 py-12">
+<!-- Breadcrumbs & Header -->
+<div class="mb-12">
+<div class="flex items-center space-x-2 text-[10px] font-bold tracking-widest text-primary/40 uppercase mb-4">
+<span>Dossier</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span>Clients</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary">GLOBAL_VENDOR_ALPHA</span>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-['Helvetica_Now_Display'] font-black text-6xl tracking-tighter uppercase leading-none text-primary">
+                            GLOBAL_VENDOR_ALPHA
+                        </h1>
+<p class="mt-2 font-mono-inter text-sm tracking-[0.2em] text-primary/60 font-medium">
+                            CLIENT_REF: #882-QX <span class="mx-4">|</span> REQUISITIONED: 2024-05-12
+                        </p>
+</div>
+<div class="flex space-x-4">
+<button class="px-6 py-3 border border-primary/10 text-xs font-bold tracking-widest uppercase hover:bg-surface-container-low transition-none">
+                            EXPORT REPORT
+                        </button>
+<button class="px-6 py-3 bg-primary text-white text-xs font-bold tracking-widest uppercase hover:bg-primary-container transition-none">
+                            EDIT RECORD
+                        </button>
+</div>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-1 mb-12">
+<!-- Profile Block / Visual Anchor -->
+<div class="col-span-12 lg:col-span-4 bg-surface-container-highest p-0 flex flex-col h-full">
+<div class="aspect-video w-full bg-primary relative overflow-hidden">
+<img alt="Command Emblem" class="w-full h-full object-cover opacity-50 mix-blend-multiply" data-alt="low angle architectural shot of a massive concrete brutalist skyscraper against a stark white sky, high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArAojI-lZUYcEoUARZmtmws6w6bIGhgYwwHjo8fsuaQxELfQyzklys7nY1Jlt7y21FY88Jsjtq99R6Z_zf0ridnjcCfGJRhgtAfHJQbrdUStUPAYB3UBxNl7QPYnNjeHXruUO9cKo57WPXHNwUWFFQq4Jyw6fQ9tx3DwxT2rc5uz5dpbYM3gMZGrGsDXDUU_0jUTyUMgLlLn1d131WsXKIST5dY5ZZAzmlVlRQ2pBFjbtuwRBM5z8ooSIeOwG86U1nGRho8Kq3n3aa"/>
+<div class="absolute inset-0 p-8 flex flex-col justify-end bg-gradient-to-t from-primary/80 to-transparent">
+<h2 class="text-white font-black text-2xl tracking-tighter uppercase">CLIENT PROFILE</h2>
+<p class="text-white/60 text-xs font-medium tracking-widest">SUB-SECTOR: AEROSPACE_LOGISTICS</p>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<p class="text-xs leading-relaxed opacity-80 mb-6">
+                            Global Vendor Alpha serves as the primary contractor for orbital logistical frameworks. Operational history spans 12 years with a consistent risk rating of LOW. Preferred communication protocol: ENCRYPTED_ALPHA_6.
+                        </p>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-b border-primary/5">
+<span class="text-[10px] font-bold tracking-widest opacity-40 uppercase">Assigned Officer</span>
+<span class="text-xs font-bold uppercase">Cpt. Elias Vance</span>
+</div>
+<div class="flex justify-between items-center py-2 border-b border-primary/5">
+<span class="text-[10px] font-bold tracking-widest opacity-40 uppercase">Contact Node</span>
+<span class="text-xs font-bold uppercase">Frankfurt_Terminal_04</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Brutalist Metric Blocks -->
+<div class="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-3 gap-1">
+<div class="bg-surface-container p-10 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-[10px] font-black tracking-[0.2em] uppercase opacity-40">TOTAL_SPEND</span>
+<span class="material-symbols-outlined opacity-20" data-icon="payments">payments</span>
+</div>
+<div class="mt-8">
+<div class="font-mono-inter text-5xl font-black tracking-tight">$1.2M</div>
+<div class="flex items-center mt-2 text-[10px] font-bold text-emerald-600">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+                                +14.2% VS PREV_Q
+                            </div>
+</div>
+</div>
+<div class="bg-surface-container p-10 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-[10px] font-black tracking-[0.2em] uppercase opacity-40">ACTIVE_PROTOCOLS</span>
+<span class="material-symbols-outlined opacity-20" data-icon="lan">lan</span>
+</div>
+<div class="mt-8">
+<div class="font-mono-inter text-5xl font-black tracking-tight text-primary">14</div>
+<div class="flex items-center mt-2 text-[10px] font-bold opacity-40 uppercase">
+                                4 PENDING_APPROVAL
+                            </div>
+</div>
+</div>
+<div class="bg-secondary-container p-10 flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<span class="text-[10px] font-black tracking-[0.2em] uppercase text-primary">STATUS</span>
+<span class="material-symbols-outlined text-primary/40" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="mt-8">
+<div class="font-mono-inter text-4xl font-black tracking-tighter text-primary uppercase">OPERATIONAL</div>
+<div class="flex items-center mt-2 text-[10px] font-bold text-primary/60 uppercase">
+                                SYSTEM_STABILITY: 99.9%
+                            </div>
+</div>
+</div>
+<!-- Asymmetric Information Block -->
+<div class="col-span-1 md:col-span-3 bg-surface-container-low p-10 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-4 md:mb-0">
+<h3 class="font-bold text-xs tracking-widest uppercase mb-1">STRATEGIC ALERTS</h3>
+<p class="text-xs opacity-60">Critical intelligence update required for protocol #88-X-RAY</p>
+</div>
+<button class="bg-primary text-white px-8 py-3 text-[10px] font-black tracking-widest uppercase transition-none hover:bg-primary-container">
+                            ACKNOWLEDGE_ALL
+                        </button>
+</div>
+</div>
+</div>
+<!-- Active Protocols Table Section -->
+<section class="bg-white">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-['Helvetica_Now_Display'] font-black text-2xl tracking-tight uppercase">ACTIVE PROTOCOLS (SURVEYS)</h2>
+<div class="flex space-x-2">
+<button class="p-2 bg-surface-container text-primary material-symbols-outlined" data-icon="filter_list">filter_list</button>
+<button class="p-2 bg-surface-container text-primary material-symbols-outlined" data-icon="sort">sort</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-white text-[10px] font-black tracking-widest uppercase">
+<th class="px-8 py-4">PROTOCOL_ID</th>
+<th class="px-8 py-4">STATUS</th>
+<th class="px-8 py-4">CPI</th>
+<th class="px-8 py-4">COMPLETES</th>
+<th class="px-8 py-4">INCIDENCE</th>
+<th class="px-8 py-4 text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="text-xs font-medium">
+<!-- Zebra Striped Rows -->
+<tr class="bg-surface hover:bg-surface-container-low transition-none cursor-pointer">
+<td class="px-8 py-6 font-mono-inter font-bold tracking-tight">#PRT-204-X</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-emerald-100 text-emerald-800 font-bold uppercase text-[9px]">LIVE</span>
+</td>
+<td class="px-8 py-6 font-mono-inter">$4.50</td>
+<td class="px-8 py-6">
+<div class="flex items-center space-x-2">
+<span class="font-mono-inter">842</span>
+<span class="text-primary/40">/ 1000</span>
+<div class="w-24 h-1 bg-surface-container overflow-hidden">
+<div class="bg-primary h-full" style="width: 84.2%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono-inter">12.5%</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="bg-[#f2f4f4] hover:bg-surface-container-low transition-none cursor-pointer">
+<td class="px-8 py-6 font-mono-inter font-bold tracking-tight">#PRT-512-Y</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-emerald-100 text-emerald-800 font-bold uppercase text-[9px]">LIVE</span>
+</td>
+<td class="px-8 py-6 font-mono-inter">$12.00</td>
+<td class="px-8 py-6">
+<div class="flex items-center space-x-2">
+<span class="font-mono-inter">45</span>
+<span class="text-primary/40">/ 150</span>
+<div class="w-24 h-1 bg-surface-container overflow-hidden">
+<div class="bg-primary h-full" style="width: 30%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono-inter">2.1%</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="bg-surface hover:bg-surface-container-low transition-none cursor-pointer">
+<td class="px-8 py-6 font-mono-inter font-bold tracking-tight">#PRT-901-Z</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-amber-100 text-amber-800 font-bold uppercase text-[9px]">PAUSED</span>
+</td>
+<td class="px-8 py-6 font-mono-inter">$3.25</td>
+<td class="px-8 py-6">
+<div class="flex items-center space-x-2">
+<span class="font-mono-inter">1200</span>
+<span class="text-primary/40">/ 1200</span>
+<div class="w-24 h-1 bg-surface-container overflow-hidden">
+<div class="bg-emerald-500 h-full" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono-inter">45.0%</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="bg-[#f2f4f4] hover:bg-surface-container-low transition-none cursor-pointer">
+<td class="px-8 py-6 font-mono-inter font-bold tracking-tight">#PRT-004-A</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-primary text-white font-bold uppercase text-[9px]">DRAFT</span>
+</td>
+<td class="px-8 py-6 font-mono-inter">$0.00</td>
+<td class="px-8 py-6">
+<div class="flex items-center space-x-2">
+<span class="font-mono-inter">0</span>
+<span class="text-primary/40">/ 500</span>
+<div class="w-24 h-1 bg-surface-container overflow-hidden">
+<div class="bg-primary/10 h-full" style="width: 0%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono-inter">--</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="bg-surface hover:bg-surface-container-low transition-none cursor-pointer">
+<td class="px-8 py-6 font-mono-inter font-bold tracking-tight">#PRT-772-B</td>
+<td class="px-8 py-6">
+<span class="px-2 py-1 bg-emerald-100 text-emerald-800 font-bold uppercase text-[9px]">LIVE</span>
+</td>
+<td class="px-8 py-6 font-mono-inter">$6.75</td>
+<td class="px-8 py-6">
+<div class="flex items-center space-x-2">
+<span class="font-mono-inter">560</span>
+<span class="text-primary/40">/ 600</span>
+<div class="w-24 h-1 bg-surface-container overflow-hidden">
+<div class="bg-primary h-full" style="width: 93%"></div>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-mono-inter">18.2%</td>
+<td class="px-8 py-6 text-right">
+<button class="material-symbols-outlined opacity-40 hover:opacity-100" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Footer / Metadata Area -->
+<footer class="mt-24 pt-8 border-t border-primary/10 flex justify-between items-center">
+<div class="text-[10px] font-black tracking-widest text-primary/30 uppercase">
+                    © 2024 INTELLIGENCE DOSSIER CLASSIFIED SYSTEMS // GLOBAL_OPS
+                </div>
+<div class="flex space-x-8 text-[10px] font-black tracking-widest text-primary/30 uppercase">
+<a class="hover:text-primary transition-none" href="#">End Point Security</a>
+<a class="hover:text-primary transition-none" href="#">Terminal Logs</a>
+<a class="hover:text-primary transition-none" href="#">Encryption Key #1288-00</a>
+</div>
+</footer>
+</div>
+</main>
+</body></html>

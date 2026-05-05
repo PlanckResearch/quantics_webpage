@@ -65,7 +65,7 @@ const ServicesGrid = () => {
     <AnimatedSection className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-          Our <span className="bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent">Services</span>
+          Our <span className="text-primary">Services</span>
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -78,7 +78,7 @@ const ServicesGrid = () => {
               whileHover={{ scale: 1.05 }}
               className="glass-effect p-6 rounded-2xl hover:shadow-xl transition-all duration-300"
             >
-              <div className={`text-4xl mb-4 bg-gradient-to-r ${service.color} bg-clip-text text-transparent`}>{service.icon}</div>
+              <div className={`text-4xl mb-4 text-primary`}>{service.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-400">{service.description}</p>
             </motion.div>

@@ -83,7 +83,7 @@ const Solutions = () => {
         "Inventory optimization AI",
         "Dynamic pricing intelligence"
       ],
-      stats: { accuracy: "94%", insights: "Real-time", data: "50M+" },
+      stats: { accuracy: "94%", insights: "Real-time", data: "100K+" },
       color: "from-blue-500 to-cyan-500",
     },
     {
@@ -122,7 +122,7 @@ const Solutions = () => {
         "Product launch insights",
         "Distribution optimization"
       ],
-      stats: { markets: "150+", brands: "10K+", accuracy: "95%" },
+      stats: { markets: "50+", brands: "50+", accuracy: "95%" },
       color: "from-green-500 to-emerald-500",
     },
   ];
@@ -300,7 +300,7 @@ const Solutions = () => {
     {
       icon: <HiChip className="text-3xl" />,
       title: "Neural Processing",
-      description: "50M+ parameters processing complex patterns",
+      description: "1M+ parameters processing complex patterns",
       metric: "99.9%"
     },
     {
@@ -339,14 +339,14 @@ const Solutions = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 bg-white overflow-hidden">
+    <div className="min-h-screen pt-20 bg-surface overflow-hidden">
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="relative py-20 bg-surface">
         {/* Animated background elements */}
-        <motion.div style={{ y: y1 }} className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full blur-3xl opacity-30" />
-        <motion.div style={{ y: y2 }} className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full blur-3xl opacity-30" />
+        <motion.div style={{ y: y1 }} className="absolute top-20 left-10 w-72 h-72 bg-surface-container rounded-full blur-3xl opacity-30" />
+        <motion.div style={{ y: y2 }} className="absolute bottom-20 right-10 w-96 h-96 bg-surface-container rounded-full blur-3xl opacity-30" />
 
         <div className="container mx-auto px-4 relative z-10">
           <motion.div initial={{ opacity: 0, y: -50 }} animate={{ opacity: 1, y: 0 }} className="text-center">
@@ -354,14 +354,14 @@ const Solutions = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-6"
+              className="inline-flex items-center space-x-2 bg-surface-container-low border border-outline-variant/30 px-4 py-2 mb-6"
             >
-              <HiSparkles className="text-purple-600" />
+              <HiSparkles className="text-primary-dim" />
               <span className="text-sm font-medium text-gray-700">AI-Powered Solutions for Every Need</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-900">
-              Tailored <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">AI Solutions</span> for Your Industry
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+              Tailored <span className="text-primary-dim">AI Solutions</span> for Your Industry
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-12">
               Leverage cutting-edge AI technology designed specifically for your industry, use case, and role
@@ -375,10 +375,10 @@ const Solutions = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setSelectedSolution(category.id)}
-                  className={`flex items-center space-x-2 px-6 py-3 rounded-full font-medium transition-all ${
+                  className={`flex items-center space-x-2 px-6 py-3 font-mono text-[11px] tracking-[0.15em] uppercase font-bold transition-all ${
                     selectedSolution === category.id 
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg" 
-                      : "bg-white border border-gray-300 text-gray-700 hover:border-gray-400 hover:shadow-md"
+                      ? "bg-primary text-white" 
+                      : "bg-surface-container-low border border-outline-variant/30 text-on-surface hover:border-primary/40 hover:shadow-md"
                   }`}
                 >
                   <span className="text-xl">{category.icon}</span>
@@ -391,7 +391,7 @@ const Solutions = () => {
       </section>
 
       {/* Dynamic Solutions Grid */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatePresence mode="wait">
             <motion.div 
@@ -412,10 +412,10 @@ const Solutions = () => {
                     onHoverEnd={() => setHoveredCard(null)}
                     className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col"
                   >
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${solution.color} flex items-center justify-center text-white mb-4`}>
+                    <div className={`w-16 h-16 rounded-xl bg-primary flex items-center justify-center text-white mb-4`}>
                       {solution.icon}
                     </div>
-                    <h3 className="text-xl font-semibold mb-3 text-gray-900">{solution.title}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{solution.title}</h3>
                     <p className="text-gray-600 mb-4 flex-grow">{solution.description}</p>
                     
                     {/* Features/Benefits List */}
@@ -433,7 +433,7 @@ const Solutions = () => {
                       <div className="grid grid-cols-3 gap-2 mb-4 pt-4 border-t border-gray-100">
                         {Object.entries(solution.stats || solution.specs).slice(0, 3).map(([key, value], idx) => (
                           <div key={idx} className="text-center">
-                                                        <div className="text-lg font-bold text-gray-900">{value}</div>
+                                                        <div className="text-lg font-bold text-primary">{value}</div>
                             <div className="text-xs text-gray-500 capitalize">{key}</div>
                           </div>
                         ))}
@@ -457,7 +457,7 @@ const Solutions = () => {
 
                     <Link
                       to="/demo"
-                      className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                      className="inline-flex items-center text-primary font-medium hover:text-primary-dim transition-colors"
                     >
                       Learn more <FaArrowRight className="ml-2 text-sm" />
                     </Link>
@@ -470,20 +470,20 @@ const Solutions = () => {
       </section>
 
       {/* AI Capabilities Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-4"
+                className="inline-flex items-center space-x-2 bg-surface-container border border-outline-variant/30 px-4 py-2 mb-4"
               >
-                <FaBrain className="text-purple-600" />
+                <FaBrain className="text-primary-dim" />
                 <span className="text-sm font-medium text-gray-700">Powered by Advanced AI</span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                AI Technology That <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Powers Every Solution</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                AI Technology That <span className="text-primary-dim">Powers Every Solution</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Our AI infrastructure adapts to your specific needs, delivering insights that matter
@@ -498,12 +498,12 @@ const Solutions = () => {
                   whileHover={{ y: -5 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl flex items-center justify-center text-blue-600 mb-4">
+                  <div className="w-14 h-14 bg-surface-container rounded-xl flex items-center justify-center text-primary mb-4">
                     {capability.icon}
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-gray-900">{capability.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-primary">{capability.title}</h3>
                   <p className="text-gray-600 text-sm mb-3">{capability.description}</p>
-                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  <div className="text-2xl font-bold text-primary-dim">
                     {capability.metric}
                   </div>
                 </motion.div>
@@ -514,12 +514,12 @@ const Solutions = () => {
       </section>
 
       {/* Implementation Process */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Simple <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Implementation Process</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Simple <span className="text-primary-dim">Implementation Process</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Get started with your AI-powered solution in minutes, not months
@@ -530,7 +530,7 @@ const Solutions = () => {
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Connection line */}
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-200 via-purple-200 to-pink-200"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-outline-variant"></div>
               
               {[
                 {
@@ -578,25 +578,25 @@ const Solutions = () => {
                       >
                         <div className="flex items-center space-x-4 mb-3">
                           {index % 2 !== 0 && (
-                            <div className="text-3xl text-blue-600">{step.icon}</div>
+                            <div className="text-3xl text-primary">{step.icon}</div>
                           )}
                           <div className={`flex-1 ${index % 2 === 0 ? "text-right" : ""}`}>
-                            <span className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            <span className="text-4xl font-bold text-primary-dim">
                               {step.number}
                             </span>
-                            <h3 className="text-xl font-semibold text-gray-900 mt-2">{step.title}</h3>
+                            <h3 className="text-xl font-semibold text-primary mt-2">{step.title}</h3>
                           </div>
                           {index % 2 === 0 && (
-                            <div className="text-3xl text-purple-600">{step.icon}</div>
+                            <div className="text-3xl text-primary-dim">{step.icon}</div>
                           )}
                         </div>
                         <p className="text-gray-600">{step.description}</p>
-                        <div className="mt-3 text-sm text-blue-600 font-medium">{step.duration}</div>
+                        <div className="mt-3 text-sm text-primary font-medium">{step.duration}</div>
                       </motion.div>
                     </div>
                     
                     {/* Center dot */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full border-4 border-white shadow-lg z-10"></div>
+                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-primary-full border-4 border-white shadow-lg z-10"></div>
                   </motion.div>
                 </AnimatedSection>
               ))}
@@ -606,12 +606,12 @@ const Solutions = () => {
       </section>
 
       {/* Success Metrics */}
-      <section ref={statsRef} className="py-20 bg-gray-50">
+      <section ref={statsRef} className="py-20 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Solutions That <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Deliver Results</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Solutions That <span className="text-primary-dim">Deliver Results</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Our AI-powered solutions consistently outperform traditional methods
@@ -621,143 +621,43 @@ const Solutions = () => {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
             <motion.div initial={{ scale: 0 }} animate={statsInView ? { scale: 1 } : {}} transition={{ type: "spring", delay: 0.1 }} className="text-center">
-              <div className="text-5xl font-bold text-blue-600 mb-2">{statsInView && <CountUp end={98} duration={2} suffix="%" />}</div>
+              <div className="text-5xl font-bold text-primary mb-2">{statsInView && <CountUp end={98} duration={2} suffix="%" />}</div>
               <p className="text-gray-600">Accuracy Rate</p>
             </motion.div>
 
             <motion.div initial={{ scale: 0 }} animate={statsInView ? { scale: 1 } : {}} transition={{ type: "spring", delay: 0.2 }} className="text-center">
-              <div className="text-5xl font-bold text-purple-600 mb-2">{statsInView && <CountUp end={10} duration={2} suffix="x" />}</div>
+              <div className="text-5xl font-bold text-primary-dim mb-2">{statsInView && <CountUp end={10} duration={2} suffix="x" />}</div>
               <p className="text-gray-600">Faster Insights</p>
             </motion.div>
 
             <motion.div initial={{ scale: 0 }} animate={statsInView ? { scale: 1 } : {}} transition={{ type: "spring", delay: 0.3 }} className="text-center">
-              <div className="text-5xl font-bold text-green-600 mb-2">{statsInView && <CountUp end={45} duration={2} suffix="%" />}</div>
+              <div className="text-5xl font-bold text-primary mb-2">{statsInView && <CountUp end={45} duration={2} suffix="%" />}</div>
               <p className="text-gray-600">Cost Reduction</p>
             </motion.div>
 
             <motion.div initial={{ scale: 0 }} animate={statsInView ? { scale: 1 } : {}} transition={{ type: "spring", delay: 0.4 }} className="text-center">
-              <div className="text-5xl font-bold text-orange-600 mb-2">{statsInView && <CountUp end={24} duration={2} suffix="/7" />}</div>
+              <div className="text-5xl font-bold text-primary mb-2">{statsInView && <CountUp end={24} duration={2} suffix="/7" />}</div>
               <p className="text-gray-600">AI Availability</p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-yellow-100 to-orange-100 px-4 py-2 rounded-full mb-4"
-              >
-                <FaAward className="text-yellow-600" />
-                <span className="text-sm font-medium text-gray-700">Success Stories</span>
-              </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Real Results from <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">AI-Powered Research</span>
-              </h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                company: "Global Retail Chain",
-                industry: "Retail",
-                challenge: "Understanding rapidly changing consumer preferences across 200+ stores",
-                solution: "AI-powered consumer analytics with real-time sentiment tracking",
-                results: [
-                  "35% increase in customer satisfaction",
-                  "Real-time trend identification",
-                  "Predictive inventory optimization"
-                ],
-                quote: "The AI insights helped us stay ahead of consumer trends like never before.",
-                author: "Maria Chen, Head of Consumer Insights"
-              },
-              {
-                company: "Healthcare Provider Network",
-                industry: "Healthcare",
-                challenge: "Analyzing patient feedback across multiple touchpoints",
-                solution: "NLP-powered patient experience platform",
-                results: [
-                  "50% reduction in analysis time",
-                  "Automated insight generation",
-                  "Improved patient outcomes"
-                ],
-                quote: "We now understand patient needs in real-time and can act immediately.",
-                author: "Dr. James Wilson, Chief Medical Officer"
-              },
-              {
-                company: "Tech Startup",
-                industry: "Technology",
-                challenge: "Limited resources for comprehensive market research",
-                solution: "Automated research bots with AI-driven analysis",
-                results: [
-                  "Found product-market fit 3x faster",
-                  "Identified key customer segments",
-                  "Data-driven product roadmap"
-                ],
-                quote: "The AI solution gave us enterprise-level insights on a startup budget.",
-                author: "Alex Kumar, Founder & CEO"
-              }
-            ].map((story, index) => (
-              <AnimatedSection key={index}>
-                <motion.div
-                  whileHover={{ y: -10 }}
-                  className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full flex flex-col"
-                >
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{story.company}</h3>
-                    <p className="text-sm text-gray-600 mb-4">{story.industry}</p>
-                    <div className="text-sm text-gray-700 mb-4">
-                      <span className="font-semibold">Challenge:</span> {story.challenge}
-                    </div>
-                    <div className="text-sm text-gray-700 mb-4">
-                      <span className="font-semibold">Solution:</span> {story.solution}
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6 flex-grow">
-                    <h4 className="font-semibold text-gray-900 mb-3">Results:</h4>
-                    <ul className="space-y-2">
-                      {story.results.map((result, idx) => (
-                        <li key={idx} className="flex items-start space-x-2">
-                          <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-gray-700">{result}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="border-t border-gray-100 pt-4">
-                    <p className="text-gray-600 italic mb-2">"{story.quote}"</p>
-                    <p className="text-sm text-gray-500">— {story.author}</p>
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Integration Ecosystem */}
-      {/* <section className="py-20 bg-gray-50">
+      {/* <section className="py-20 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full mb-4"
+                className="inline-flex items-center space-x-2 bg-surface-container border border-outline-variant/30 px-4 py-2 mb-4"
               >
                 <FaNetworkWired className="text-green-600" />
                 <span className="text-sm font-medium text-gray-700">Seamless Integration</span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Connects with Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Entire Tech Stack</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Connects with Your <span className="text-primary-dim">Entire Tech Stack</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Our AI seamlessly integrates with 100+ platforms to unify your data
@@ -779,7 +679,7 @@ const Solutions = () => {
                 className="bg-white rounded-xl p-6 flex items-center justify-center hover:shadow-lg transition-all duration-300"
               >
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center mx-auto mb-2 font-bold text-gray-700">
+                  <div className="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mx-auto mb-2 font-bold text-gray-700">
                     {partner.slice(0, 2).toUpperCase()}
                   </div>
                   <p className="text-xs text-gray-600">{partner}</p>
@@ -791,12 +691,12 @@ const Solutions = () => {
       </section> */}
 
            {/* FAQ Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Frequently Asked <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Questions</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Frequently Asked <span className="text-primary-dim">Questions</span>
               </h2>
             </div>
           </AnimatedSection>
@@ -831,9 +731,9 @@ const Solutions = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <details className="bg-gray-50 p-6 rounded-2xl group cursor-pointer">
-                    <summary className="font-semibold text-gray-900 flex items-center justify-between">
+                    <summary className="font-semibold text-primary flex items-center justify-between">
                       {faq.question}
-                      <span className="text-blue-600 group-open:rotate-180 transition-transform">
+                      <span className="text-primary group-open:rotate-180 transition-transform">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                         </svg>
@@ -849,7 +749,7 @@ const Solutions = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+      <section className="py-20 relative overflow-hidden bg-[#0B132B]">
         <div className="absolute inset-0 bg-black opacity-10" />
         
         {/* Animated background shapes */}
@@ -902,7 +802,7 @@ const Solutions = () => {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+                    className="inline-flex items-center justify-center space-x-2 bg-white text-[#0B132B] px-8 py-4 font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-slate-200 transition-all duration-300"
                   >
                     <span>Start Free Trial</span>
                     <FaArrowRight />
@@ -912,7 +812,7 @@ const Solutions = () => {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300"
+                    className="inline-flex items-center justify-center space-x-2 border-2 border-white/30 text-white px-8 py-4 font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-white/10 transition-all duration-300"
                   >
                     <span>Talk to an Expert</span>
                   </Link>
@@ -948,7 +848,7 @@ const Solutions = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-full shadow-2xl text-white group relative"
+          className="bg-primary p-4 rounded-full shadow-2xl text-white group relative"
         >
           <div className="relative">
             <FaBrain className="text-xl" />

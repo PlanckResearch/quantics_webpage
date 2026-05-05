@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vendor-X Reconciliation Detail | Intelligence Dossier</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#d4dbdd",
+                        "error": "#9e3f4e",
+                        "surface-container-high": "#e4e9ea",
+                        "on-primary-fixed": "#373e58",
+                        "error-dim": "#4f0116",
+                        "on-surface-variant": "#5a6061",
+                        "on-secondary-fixed-variant": "#993f36",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-fixed": "#d5e3fd",
+                        "on-primary-fixed-variant": "#535a76",
+                        "on-primary": "#f8f7ff",
+                        "surface-container-highest": "#dde4e5",
+                        "on-primary-container": "#49516c",
+                        "error-container": "#ff8b9a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#565d79",
+                        "surface-variant": "#dde4e5",
+                        "secondary-fixed-dim": "#ffc7c0",
+                        "surface": "#f9f9f9",
+                        "on-secondary-fixed": "#74231d",
+                        "inverse-on-surface": "#9c9d9d",
+                        "primary-fixed-dim": "#ccd3f4",
+                        "on-tertiary": "#f8f8ff",
+                        "on-surface": "#2d3435",
+                        "primary": "#0B132B",
+                        "on-secondary": "#fff7f6",
+                        "surface-container": "#ebeeef",
+                        "on-secondary-container": "#8c352d",
+                        "primary-container": "#dbe1ff",
+                        "on-background": "#2d3435",
+                        "on-error-container": "#782232",
+                        "surface-bright": "#f9f9f9",
+                        "inverse-surface": "#0c0f0f",
+                        "on-tertiary-fixed-variant": "#4e5c71",
+                        "secondary-container": "#ffdad5",
+                        "on-tertiary-container": "#455367",
+                        "inverse-primary": "#d2d9fa",
+                        "tertiary-container": "#d5e3fd",
+                        "tertiary": "#526075",
+                        "surface-container-low": "#f2f4f4",
+                        "secondary-dim": "#8e372e",
+                        "secondary-fixed": "#ffdad5",
+                        "on-tertiary-fixed": "#324054",
+                        "tertiary-dim": "#465469",
+                        "primary-dim": "#4a516d",
+                        "outline-variant": "#adb3b4",
+                        "outline": "#757c7d",
+                        "on-error": "#fff7f7",
+                        "background": "#f9f9f9",
+                        "secondary": "#4A0404",
+                        "tertiary-fixed-dim": "#c7d5ee"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "mono": ["JetBrains Mono"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .mono-data {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Remove all default rounding */
+        * { border-radius: 0 !important; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-full w-20 z-50 bg-[#f2f4f4] dark:bg-[#0B132B] flex flex-col items-center py-8">
+<div class="mb-12">
+<span class="font-mono text-[10px] uppercase tracking-widest font-bold text-primary">INTEL</span>
+<div class="text-[8px] opacity-50 text-center">V5</div>
+</div>
+<div class="flex flex-col w-full gap-0">
+<!-- Active Tab: Intel -->
+<div class="text-[#0B132B] dark:text-[#f8f7ff] opacity-40 hover:opacity-100 flex items-center justify-center py-6 transition-none">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+</div>
+<div class="bg-[#0B132B] text-white dark:bg-[#f8f7ff] dark:text-[#0B132B] w-full flex items-center justify-center py-6">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+</div>
+<div class="text-[#0B132B] dark:text-[#f8f7ff] opacity-40 hover:opacity-100 flex items-center justify-center py-6 transition-none">
+<span class="material-symbols-outlined" data-icon="settings_applications">settings_applications</span>
+</div>
+<div class="text-[#0B132B] dark:text-[#f8f7ff] opacity-40 hover:opacity-100 flex items-center justify-center py-6 transition-none">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<div class="text-[#0B132B] dark:text-[#f8f7ff] opacity-40 hover:opacity-100 flex items-center justify-center py-6 transition-none">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+</div>
+</nav>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-20 right-0 h-24 bg-[#f9f9f9] flex justify-between items-center px-12 z-40">
+<h1 class="text-4xl font-black uppercase tracking-tighter font-headline text-primary">
+            RECONCILIATION LEDGER: VENDOR-X
+        </h1>
+<div class="mono-data text-2xl font-bold tracking-tight text-primary">
+            $4,290,122.00
+        </div>
+</header>
+<!-- Main Content Shell -->
+<main class="ml-20 pt-24 pb-10 flex flex-col md:flex-row min-h-screen">
+<!-- Left Column: Ledger Workspace -->
+<section class="flex-grow p-12 bg-surface">
+<div class="mb-8 flex items-center justify-between">
+<div class="bg-surface-container-low px-4 py-2">
+<span class="font-mono text-[10px] uppercase tracking-widest font-bold">MODE: AUDIT_ACTIVE</span>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 font-mono text-xs uppercase tracking-widest hover:outline hover:outline-2 hover:outline-outline transition-none">
+                        /EXPORT_REPORTS
+                    </button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 font-mono text-xs uppercase tracking-widest hover:outline hover:outline-2 hover:outline-outline transition-none">
+                        /RECONCILE_ALL
+                    </button>
+</div>
+</div>
+<!-- Dossier Table -->
+<div class="w-full">
+<!-- Table Header -->
+<div class="grid grid-cols-5 bg-surface-container-lowest py-4 px-6 mb-2">
+<div class="font-mono text-[11px] font-bold text-outline uppercase tracking-widest">Timestamp</div>
+<div class="font-mono text-[11px] font-bold text-outline uppercase tracking-widest text-center">Transaction_ID_Hash</div>
+<div class="font-mono text-[11px] font-bold text-outline uppercase tracking-widest text-center">Asset_Reference</div>
+<div class="font-mono text-[11px] font-bold text-outline uppercase tracking-widest text-right">Value_Metric</div>
+<div class="font-mono text-[11px] font-bold text-outline uppercase tracking-widest text-right">Sync_Status</div>
+</div>
+<!-- Table Rows -->
+<div class="space-y-1">
+<!-- Row 1: Credits (Slate) -->
+<div class="grid grid-cols-5 bg-surface-container-low py-6 px-6 items-center hover:bg-surface-container-highest transition-none">
+<div class="mono-data text-sm">2023.10.24 09:12:44</div>
+<div class="mono-data text-xs text-center opacity-60">0x88A2...F912</div>
+<div class="font-bold text-xs text-center uppercase tracking-widest">COMPLETES</div>
+<div class="mono-data text-sm font-bold text-tertiary text-right">+1,400,200.00</div>
+<div class="text-right">
+<span class="inline-block w-2 h-2 bg-tertiary"></span>
+</div>
+</div>
+<!-- Row 2: Reversals (Oxblood) -->
+<div class="grid grid-cols-5 bg-surface py-6 px-6 items-center hover:bg-surface-container-low transition-none">
+<div class="mono-data text-sm">2023.10.24 10:45:01</div>
+<div class="mono-data text-xs text-center opacity-60">0x22C1...B440</div>
+<div class="font-bold text-xs text-center uppercase tracking-widest text-secondary">REVERSALS</div>
+<div class="mono-data text-sm font-bold text-secondary text-right">-450,000.00</div>
+<div class="text-right">
+<span class="inline-block w-2 h-2 bg-secondary"></span>
+</div>
+</div>
+<!-- Row 3: Credits -->
+<div class="grid grid-cols-5 bg-surface-container-low py-6 px-6 items-center hover:bg-surface-container-highest transition-none">
+<div class="mono-data text-sm">2023.10.24 11:20:18</div>
+<div class="mono-data text-xs text-center opacity-60">0xFA02...C991</div>
+<div class="font-bold text-xs text-center uppercase tracking-widest">COMPLETES</div>
+<div class="mono-data text-sm font-bold text-tertiary text-right">+2,912,442.00</div>
+<div class="text-right">
+<span class="inline-block w-2 h-2 bg-tertiary"></span>
+</div>
+</div>
+<!-- Row 4: SLA Deductions (Oxblood) -->
+<div class="grid grid-cols-5 bg-surface py-6 px-6 items-center hover:bg-surface-container-low transition-none">
+<div class="mono-data text-sm">2023.10.24 14:02:59</div>
+<div class="mono-data text-xs text-center opacity-60">0x9911...EE42</div>
+<div class="font-bold text-xs text-center uppercase tracking-widest text-secondary">SLA_DEDUCTIONS</div>
+<div class="mono-data text-sm font-bold text-secondary text-right">-572,520.00</div>
+<div class="text-right">
+<span class="inline-block w-2 h-2 bg-secondary"></span>
+</div>
+</div>
+<!-- Row 5: Credits -->
+<div class="grid grid-cols-5 bg-surface-container-low py-6 px-6 items-center hover:bg-surface-container-highest transition-none">
+<div class="mono-data text-sm">2023.10.24 16:55:12</div>
+<div class="mono-data text-xs text-center opacity-60">0xBC81...A223</div>
+<div class="font-bold text-xs text-center uppercase tracking-widest">COMPLETES</div>
+<div class="mono-data text-sm font-bold text-tertiary text-right">+1,000,000.00</div>
+<div class="text-right">
+<span class="inline-block w-2 h-2 bg-tertiary"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Terminal Command Bar -->
+<div class="mt-12 bg-primary text-primary-fixed-dim px-6 py-4 flex items-center">
+<span class="mono-data mr-4 text-xs opacity-50">&gt;</span>
+<input class="bg-transparent border-none outline-none focus:ring-0 w-full mono-data text-sm placeholder-primary-fixed-dim placeholder-opacity-30" placeholder="ENTER SYSTEM COMMAND (e.g. /RUN_RECONCILE)" type="text"/>
+</div>
+</section>
+<!-- Right Column: Authorization Side Panel -->
+<aside class="w-full md:w-80 bg-surface-container-low p-12 flex flex-col gap-12">
+<div>
+<h3 class="font-mono text-[11px] font-bold text-outline uppercase tracking-[0.2em] mb-8">
+                    Authorization Chain
+                </h3>
+<div class="space-y-6">
+<!-- Badge 1 -->
+<div class="bg-primary p-6 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-primary text-xl" data-icon="verified_user">verified_user</span>
+<span class="mono-data text-[10px] text-primary-fixed-dim">ID: #0012</span>
+</div>
+<div class="mono-data text-sm font-bold text-on-primary uppercase leading-tight">
+                            OMEGA_APPROVED
+                        </div>
+</div>
+<!-- Badge 2 -->
+<div class="bg-surface-container-highest p-6 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="sync_alt">sync_alt</span>
+<span class="mono-data text-[10px] text-outline">LAT: 24MS</span>
+</div>
+<div class="mono-data text-sm font-bold text-primary uppercase leading-tight">
+                            V-5_SYNCED
+                        </div>
+</div>
+<!-- Badge 3 -->
+<div class="bg-surface-container-lowest p-6 flex flex-col justify-between aspect-square">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="lock">lock</span>
+<span class="mono-data text-[10px] text-secondary">ENCRYPT_AES256</span>
+</div>
+<div class="mono-data text-sm font-bold text-primary uppercase leading-tight">
+                            LEDGER_LOCKED
+                        </div>
+</div>
+</div>
+</div>
+<!-- Context Info -->
+<div class="mt-auto">
+<img alt="Cybersecurity matrix" class="w-full grayscale contrast-125 mb-4" data-alt="abstract close-up of blue circuit board with glowing green and blue led lights in a dark server room atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeJYaQHoWq-SdJZtLU6JFNRI-fWnYBivIkMNWZngZ5OR_Upzr1gwP7f4lE8-VXrxa_FSyckr8CWMrygHN_5WBrmd1tTUCbzD0Rq8vFxNj11mFjSULB7hglwxOvk-ulECKzMv8lmDZUlP-wrGjl9i3EK6Bsc8WLToU0MwPdJqPBZhWVHS5gVnD3hNjX1R62V72vYN0H7beYxFvVG6wTEUa2wNSSUPYpdpOPfu0jWHMQlE491YxbCpweLm49_9pZln_O0xDV5HRv90pA"/>
+<p class="mono-data text-[10px] text-outline leading-relaxed uppercase">
+                    Security protocols active. unauthorized access to the ledger will be logged and flagged for the authorization chain.
+                </p>
+</div>
+</aside>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="fixed bottom-0 left-0 w-full flex items-center justify-between px-12 z-50 bg-[#0B132B] dark:bg-black h-10">
+<div class="font-mono text-[11px] tracking-[0.2em] uppercase text-[#f8f7ff]">
+            RESTRICTED ACCESS // LEVEL 5 CLEARANCE REQUIRED
+        </div>
+<div class="flex gap-8">
+<a class="font-mono text-[11px] tracking-[0.2em] uppercase text-slate-400 hover:text-white transition-none" href="#">PROTOCOL</a>
+<a class="font-mono text-[11px] tracking-[0.2em] uppercase text-slate-400 hover:text-white transition-none" href="#">RECOVERY</a>
+</div>
+</footer>
+</body></html>

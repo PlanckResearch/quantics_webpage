@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Command Center Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#d4e4f6",
+                        "surface-container": "#ebeeef",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#37314a",
+                        "surface-container-low": "#f2f4f4",
+                        "surface": "#f9f9f9",
+                        "tertiary-fixed": "#d6cdee",
+                        "outline": "#757c7d",
+                        "error-container": "#ff8b9a",
+                        "error": "#9e3f4e",
+                        "surface-dim": "#d4dbdd",
+                        "on-primary": "#f8f7ff",
+                        "on-error-container": "#782232",
+                        "secondary": "#52616f",
+                        "surface-bright": "#f9f9f9",
+                        "primary-container": "#dbe1ff",
+                        "tertiary": "#625b77",
+                        "on-error": "#fff7f7",
+                        "on-surface": "#2d3435",
+                        "inverse-on-surface": "#9c9d9d",
+                        "primary": "#0B132B",
+                        "tertiary-dim": "#564f6b",
+                        "primary-fixed-dim": "#ccd3f4",
+                        "on-primary-container": "#49516c",
+                        "on-tertiary-container": "#4a445e",
+                        "secondary-fixed-dim": "#c6d6e7",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-fixed-dim": "#c8bfdf",
+                        "secondary-dim": "#465563",
+                        "on-primary-fixed": "#373e58",
+                        "surface-container-highest": "#dde4e5",
+                        "secondary-fixed": "#d4e4f6",
+                        "error-dim": "#4f0116",
+                        "on-secondary": "#f6f9ff",
+                        "inverse-primary": "#d2d9fa",
+                        "on-surface-variant": "#5a6061",
+                        "on-secondary-fixed": "#32414f",
+                        "surface-variant": "#dde4e5",
+                        "on-tertiary": "#fdf7ff",
+                        "inverse-surface": "#0c0f0f",
+                        "on-secondary-container": "#445362",
+                        "on-primary-fixed-variant": "#535a76",
+                        "surface-container-high": "#e4e9ea",
+                        "on-background": "#2d3435",
+                        "tertiary-container": "#d6cdee",
+                        "primary-dim": "#4a516d",
+                        "on-tertiary-fixed-variant": "#534d68",
+                        "surface-tint": "#565d79",
+                        "background": "#f9f9f9",
+                        "on-secondary-fixed-variant": "#4e5d6c",
+                        "outline-variant": "#adb3b4"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for brutalist feel */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #f2f4f4; }
+        ::-webkit-scrollbar-thumb { background: #0B132B; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 bottom-0 w-20 flex flex-col items-center py-8 z-50 bg-[#0B132B] dark:bg-black h-full justify-between">
+<div class="flex flex-col items-center w-full space-y-8">
+<div class="flex flex-col items-center">
+<div class="w-12 h-12 bg-white flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[#0B132B]" data-icon="shield">shield</span>
+</div>
+<span class="text-white font-black tracking-tighter text-[10px] font-mono uppercase">HQ-PRIME</span>
+<span class="text-slate-400 text-[8px] font-mono tracking-widest uppercase">SECTOR 7</span>
+</div>
+<nav class="w-full">
+<!-- DOSSIER - ACTIVE -->
+<a class="bg-[#f2f4f4] text-[#0B132B] w-full flex flex-col items-center py-4 cursor-pointer active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="folder_shared">folder_shared</span>
+<span class="font-['Inter'] text-[10px] font-mono tracking-widest uppercase">DOSSIER</span>
+</a>
+<!-- INTEL -->
+<a class="text-slate-400 w-full flex flex-col items-center py-4 hover:bg-slate-800 transition-all cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-mono tracking-widest uppercase">INTEL</span>
+</a>
+<!-- OPERATIONS -->
+<a class="text-slate-400 w-full flex flex-col items-center py-4 hover:bg-slate-800 transition-all cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="ads_click">ads_click</span>
+<span class="font-['Inter'] text-[10px] font-mono tracking-widest uppercase">OPERATIONS</span>
+</a>
+<!-- ASSETS -->
+<a class="text-slate-400 w-full flex flex-col items-center py-4 hover:bg-slate-800 transition-all cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter'] text-[10px] font-mono tracking-widest uppercase">ASSETS</span>
+</a>
+<!-- ARCHIVE -->
+<a class="text-slate-400 w-full flex flex-col items-center py-4 hover:bg-slate-800 transition-all cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="inventory">inventory</span>
+<span class="font-['Inter'] text-[10px] font-mono tracking-widest uppercase">ARCHIVE</span>
+</a>
+</nav>
+</div>
+<div class="w-full">
+<a class="text-slate-400 w-full flex flex-col items-center py-4 hover:bg-slate-800 transition-all cursor-pointer active:scale-95" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="logout">logout</span>
+<span class="font-['Inter'] text-[10px] font-mono tracking-widest uppercase">LOGOUT</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-20 h-16 z-40 bg-[#f9f9f9] border-b-2 border-[#0B132B] flex justify-between items-center px-6">
+<div class="flex items-center gap-6">
+<h1 class="text-xl font-black text-[#0B132B] tracking-tighter uppercase font-['Space_Grotesk']">INTELLIGENCE DOSSIER</h1>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400" data-icon="search">search</span>
+<input class="bg-surface-container-low border-none focus:ring-0 text-xs font-mono w-64 pl-10 py-2" placeholder="QUERY DATABASE..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#f2f4f4] transition-colors cursor-pointer text-[#0B132B]">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#f2f4f4] transition-colors cursor-pointer text-[#0B132B]">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 bg-[#0B132B] flex items-center justify-center text-white font-bold text-xs">
+                UA
+            </div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-20 pt-16 min-h-screen flex flex-col lg:flex-row">
+<!-- Primary Data Column (Asymmetric 70%) -->
+<section class="flex-1 p-8 overflow-y-auto">
+<div class="mb-12">
+<span class="text-on-surface-variant font-mono text-xs tracking-widest uppercase mb-2 block">STATUS: OPERATIONAL // 14:48:22</span>
+<h2 class="font-headline text-6xl font-extrabold tracking-tighter text-primary leading-none">GLOBAL COMMAND CENTER DASHBOARD</h2>
+</div>
+<!-- REAL-TIME METRICS Monolith -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mb-12">
+<div class="bg-primary p-8 text-white flex flex-col justify-between aspect-square">
+<span class="font-mono text-xs tracking-[0.3em] opacity-60">GLOBAL_STABILITY</span>
+<div class="flex flex-col">
+<span class="font-headline text-7xl font-bold tracking-tighter">94<span class="text-3xl">%</span></span>
+<div class="h-1 w-full bg-white/20 mt-4">
+<div class="h-full bg-white w-[94%]"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 flex flex-col justify-between aspect-square">
+<span class="font-mono text-xs tracking-[0.3em] text-on-surface-variant">ACTIVE_NODES</span>
+<div class="flex flex-col">
+<span class="font-headline text-7xl font-bold tracking-tighter text-primary">1,244</span>
+<span class="text-xs font-mono text-primary mt-2">↑ 12% FROM PREVIOUS CYCLE</span>
+</div>
+</div>
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between aspect-square">
+<span class="font-mono text-xs tracking-[0.3em] text-on-surface-variant">THREAT_LEVEL</span>
+<div class="flex flex-col items-start">
+<span class="font-headline text-5xl font-bold tracking-tighter text-primary mb-4">MINIMAL</span>
+<div class="bg-primary text-white text-[10px] font-mono px-3 py-1">CODE_GREEN</div>
+</div>
+</div>
+<div class="bg-primary-dim p-8 text-white flex flex-col justify-between aspect-square">
+<span class="font-mono text-xs tracking-[0.3em] opacity-60">SYNC_RATE</span>
+<div class="flex flex-col">
+<span class="font-headline text-7xl font-bold tracking-tighter">99.9</span>
+<span class="text-xs font-mono opacity-80 mt-2">REAL-TIME TELEMETRY</span>
+</div>
+</div>
+</div>
+<!-- INTEL FLOW / DATA VISUALIZATION -->
+<div class="bg-surface-container-low p-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h3 class="font-headline text-2xl font-bold tracking-tight text-primary">INTEL_FLOW_ANALYSIS</h3>
+<p class="text-on-surface-variant font-mono text-[10px] uppercase">72-HOUR AGGREGATE TRAFFIC</p>
+</div>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-primary text-white font-mono text-[10px] uppercase">EXPORT_CSV</button>
+<button class="px-4 py-2 bg-surface text-primary font-mono text-[10px] uppercase">FILTERS</button>
+</div>
+</div>
+<!-- Mock High-Density Bar Chart -->
+<div class="flex items-end gap-1 h-64 w-full">
+<div class="flex-1 bg-primary h-[40%]"></div>
+<div class="flex-1 bg-primary h-[60%]"></div>
+<div class="flex-1 bg-primary h-[35%]"></div>
+<div class="flex-1 bg-primary h-[80%]"></div>
+<div class="flex-1 bg-primary h-[95%]"></div>
+<div class="flex-1 bg-primary h-[50%]"></div>
+<div class="flex-1 bg-primary h-[45%]"></div>
+<div class="flex-1 bg-primary h-[75%]"></div>
+<div class="flex-1 bg-primary h-[90%]"></div>
+<div class="flex-1 bg-primary h-[30%]"></div>
+<div class="flex-1 bg-primary h-[20%]"></div>
+<div class="flex-1 bg-primary h-[55%]"></div>
+<div class="flex-1 bg-primary h-[65%]"></div>
+<div class="flex-1 bg-primary h-[85%]"></div>
+<div class="flex-1 bg-primary h-[40%]"></div>
+<div class="flex-1 bg-primary h-[100%]"></div>
+<div class="flex-1 bg-primary h-[40%]"></div>
+<div class="flex-1 bg-primary h-[60%]"></div>
+<div class="flex-1 bg-primary h-[35%]"></div>
+<div class="flex-1 bg-primary h-[80%]"></div>
+</div>
+<div class="flex justify-between mt-4 border-t border-outline-variant pt-2">
+<span class="font-mono text-[9px] text-on-surface-variant">00:00</span>
+<span class="font-mono text-[9px] text-on-surface-variant">06:00</span>
+<span class="font-mono text-[9px] text-on-surface-variant">12:00</span>
+<span class="font-mono text-[9px] text-on-surface-variant">18:00</span>
+<span class="font-mono text-[9px] text-on-surface-variant">23:59</span>
+</div>
+</div>
+<!-- Geographic Context (Bento Style Item) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+<div class="bg-surface-container-low p-8 relative overflow-hidden group h-80">
+<div class="relative z-10">
+<h4 class="font-headline text-xl font-bold text-primary mb-2">SECTOR_VISUALIZATION</h4>
+<p class="font-mono text-[10px] text-on-surface-variant mb-6">LIVE DRONE FEEDS FROM SECTOR 7B</p>
+</div>
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-20 grayscale transition-transform group-hover:scale-105 duration-700" data-alt="Monochrome overhead thermal map of a highly organized urban grid with glowing data points and infrastructure labels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSjaSexWF2LwH5wo57Xo-4SYLU5Gzir_ByzLPKCn7BCxnm8aK9qo9j9Hr1-fgxSflV2_t1-BxGj2h7jPlp1Ag-HzSkh0_V0JdZmYDoYiEM5B0vM2JabJiRPCdBCfuxb83Xzlzg4uZjHn5GNAjXwWMZEB9_BiJADizMukMhKd5w9FOtMjrdV48_fHFSbPv6549P9hdZ9ENh2J27m_6Qr1JwASZSNCCs8n7WL77ZMHJ02lQ0CoWCW1e2J0AlXGBFZKKh8t8CgFff5XRe"/>
+<div class="absolute bottom-8 left-8 z-10">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+<span class="font-mono text-[10px] text-primary font-bold">LIVE_SIGNAL_ACQUIRED</span>
+</div>
+</div>
+</div>
+<div class="bg-[#0B132B] p-8 text-white h-80 flex flex-col">
+<h4 class="font-headline text-xl font-bold mb-6">ASSET_ALLOCATION</h4>
+<div class="space-y-4 flex-1">
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-mono text-[11px]">NORTH_QUADRANT</span>
+<span class="font-mono text-[11px] font-bold">412 UNITS</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-mono text-[11px]">SOUTH_QUADRANT</span>
+<span class="font-mono text-[11px] font-bold">188 UNITS</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-mono text-[11px]">EAST_QUADRANT</span>
+<span class="font-mono text-[11px] font-bold">294 UNITS</span>
+</div>
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="font-mono text-[11px]">WEST_QUADRANT</span>
+<span class="font-mono text-[11px] font-bold">350 UNITS</span>
+</div>
+</div>
+<button class="mt-4 w-full bg-white text-primary font-mono text-[10px] py-3 uppercase hover:bg-slate-200 transition-colors">INITIATE_REDISTRIBUTION</button>
+</div>
+</div>
+</section>
+<!-- Activity Feed Column (Asymmetric 30%) -->
+<aside class="w-full lg:w-96 bg-surface-container-low p-8 border-l border-outline-variant/10 overflow-y-auto max-h-screen">
+<div class="sticky top-0 bg-surface-container-low pb-6 z-10">
+<h3 class="font-headline text-2xl font-bold tracking-tight text-primary mb-1">ACTIVITY_FEED</h3>
+<p class="text-on-surface-variant font-mono text-[10px] uppercase">ENCRYPTED REAL-TIME STREAM</p>
+</div>
+<div class="space-y-1">
+<!-- Feed Items -->
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:42:01</span>
+<span class="font-mono text-[9px] bg-secondary-container px-2 text-on-secondary-container">SYNCED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Remote uplink established with SECTOR_4. No anomalies detected in packet header.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:40:55</span>
+<span class="font-mono text-[9px] bg-error text-white px-2">FLAGGED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Unauthorized access attempt at SITE_BRAVO. IP redirected to decoy server 9.1.2.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10 bg-surface-container-highest px-2">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:38:12</span>
+<span class="font-mono text-[9px] bg-primary text-white px-2">REDACTED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Personnel file [REDACTED] accessed by ADMIN_01. Tracking token injected.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:35:44</span>
+<span class="font-mono text-[9px] bg-secondary-container px-2 text-on-secondary-container">SYNCED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Atmospheric sensors in HQ-PRIME updated. Humidity: 44%. Temp: 21C.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:32:01</span>
+<span class="font-mono text-[9px] bg-secondary-container px-2 text-on-secondary-container">SYNCED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Weekly automated archival process complete. 1.2PB moved to deep storage.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:28:19</span>
+<span class="font-mono text-[9px] bg-error text-white px-2">FLAGGED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Power fluctuation detected in grid segment 09. Secondary generators on standby.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:22:01</span>
+<span class="font-mono text-[9px] bg-secondary-container px-2 text-on-secondary-container">SYNCED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Core system pulse verified. Latency at 0.04ms. Optimal performance.</p>
+</div>
+<div class="py-4 border-b border-outline-variant/10">
+<div class="flex justify-between items-start mb-1">
+<span class="font-mono text-[11px] font-bold text-primary">14:15:55</span>
+<span class="font-mono text-[9px] bg-primary text-white px-2">REDACTED</span>
+</div>
+<p class="font-mono text-[10px] leading-relaxed text-on-surface uppercase">Operational directive ALPHA-NINER issued. Distribution limited to L5 clearace.</p>
+</div>
+</div>
+<button class="w-full mt-8 bg-surface text-primary border border-primary font-mono text-[10px] py-4 uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+                VIEW_FULL_LOG_ARCHIVE
+            </button>
+</aside>
+</main>
+<!-- Contextual FAB (Supressed for Dashboard as per rules, but included if absolute needed for task focus) -->
+<!-- Suppression Logic: Suppressed because the Dashboard is a high-density summary, not a single task flow -->
+</body></html>

@@ -46,16 +46,16 @@ const PrivacyPolicy = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-white overflow-hidden">
+    <div className="min-h-screen pt-20 bg-surface overflow-hidden">
       <ParticleBackground />
 
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="relative py-20 bg-surface">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center space-x-2 bg-surface-container-low border border-outline-variant/30 px-4 py-2 mb-6"
           >
             <FaShieldAlt className="text-blue-600" />
             <span className="text-sm font-medium text-gray-700">Your Privacy Matters</span>
@@ -106,7 +106,7 @@ const PrivacyPolicy = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Introduction */}
@@ -122,7 +122,7 @@ const PrivacyPolicy = () => {
             <AnimatedSection>
               <div id="information-collection" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl flex items-center justify-center text-blue-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-blue-600">
                     <FaDatabase className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">Information We Collect</h2>
@@ -172,7 +172,7 @@ const PrivacyPolicy = () => {
             <AnimatedSection>
               <div id="how-we-use" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center text-purple-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-purple-600">
                     <FaUserShield className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">How We Use Your Information</h2>
@@ -214,7 +214,7 @@ const PrivacyPolicy = () => {
             <AnimatedSection>
               <div id="data-security" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl flex items-center justify-center text-green-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-green-600">
                     <FaShieldAlt className="text-xl" />
                   </div>
                                     <h2 className="text-3xl font-bold text-gray-900">Data Security</h2>
@@ -226,7 +226,7 @@ const PrivacyPolicy = () => {
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
+                    <div className="bg-surface-container-low p-6 rounded-xl border border-green-200">
                       <h4 className="font-semibold text-gray-900 mb-3">Technical Safeguards</h4>
                       <ul className="space-y-2 text-sm">
                         <li>• 256-bit SSL encryption</li>
@@ -235,7 +235,7 @@ const PrivacyPolicy = () => {
                         <li>• Multi-factor authentication</li>
                       </ul>
                     </div>
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl border border-blue-200">
+                    <div className="bg-surface-container-low p-6 rounded-xl border border-blue-200">
                       <h4 className="font-semibold text-gray-900 mb-3">Operational Security</h4>
                       <ul className="space-y-2 text-sm">
                         <li>• Access controls and monitoring</li>
@@ -253,7 +253,7 @@ const PrivacyPolicy = () => {
             <AnimatedSection>
               <div id="cookies" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-100 to-red-100 rounded-xl flex items-center justify-center text-orange-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-orange-600">
                     <FaCookie className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">Cookies & Tracking Technologies</h2>
@@ -292,7 +292,7 @@ const PrivacyPolicy = () => {
             <AnimatedSection>
               <div id="third-parties" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-blue-100 rounded-xl flex items-center justify-center text-indigo-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-indigo-600">
                     <FaGlobe className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">Third-Party Services</h2>
@@ -331,7 +331,7 @@ const PrivacyPolicy = () => {
             <AnimatedSection>
               <div id="your-rights" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center text-purple-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-purple-600">
                     <FaLock className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">Your Rights</h2>
@@ -370,7 +370,7 @@ const PrivacyPolicy = () => {
 
             {/* Contact Information */}
             <AnimatedSection>
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border border-blue-200">
+              <div className="bg-surface-container-low p-8 rounded-2xl border border-blue-200">
                 <div className="flex items-center space-x-3 mb-6">
                   <FaEnvelope className="text-2xl text-blue-600" />
                   <h2 className="text-2xl font-bold text-gray-900">Contact Us</h2>

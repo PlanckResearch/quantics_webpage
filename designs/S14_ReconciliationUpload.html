@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INTELLIGENCE DOSSIER - RECONCILIATION ENGINE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .font-mono-data {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .dashed-terminal {
+            background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%230B132B' stroke-width='2' stroke-dasharray='0' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        }
+        /* Custom Dashed Border for Brutalist look */
+        .brutalist-border {
+            border: 2px dashed #0B132B;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#f8f8ff",
+                        "tertiary-fixed-dim": "#c7d5ee",
+                        "secondary-container": "#ffdad5",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9f9f9",
+                        "on-error-container": "#782232",
+                        "outline-variant": "#adb3b4",
+                        "on-tertiary-fixed-variant": "#4e5c71",
+                        "background": "#f9f9f9",
+                        "tertiary-container": "#d5e3fd",
+                        "tertiary-fixed": "#d5e3fd",
+                        "on-error": "#fff7f7",
+                        "surface-tint": "#565d79",
+                        "primary": "#0B132B",
+                        "secondary-dim": "#8e372e",
+                        "outline": "#757c7d",
+                        "on-secondary-fixed-variant": "#993f36",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#ffc7c0",
+                        "on-primary-fixed": "#373e58",
+                        "surface-container-high": "#e4e9ea",
+                        "surface-container-low": "#f2f4f4",
+                        "error-dim": "#4f0116",
+                        "secondary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#74231d",
+                        "on-primary": "#f8f7ff",
+                        "surface-container": "#ebeeef",
+                        "on-surface-variant": "#5a6061",
+                        "on-secondary-container": "#8c352d",
+                        "surface-dim": "#d4dbdd",
+                        "surface-container-highest": "#dde4e5",
+                        "error-container": "#ff8b9a",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed": "#324054",
+                        "on-tertiary-container": "#455367",
+                        "inverse-primary": "#d2d9fa",
+                        "secondary": "#9e4239",
+                        "on-surface": "#2d3435",
+                        "on-secondary": "#fff7f6",
+                        "inverse-on-surface": "#9c9d9d",
+                        "inverse-surface": "#0c0f0f",
+                        "tertiary": "#526075",
+                        "on-primary-fixed-variant": "#535a76",
+                        "tertiary-dim": "#465469",
+                        "surface-variant": "#dde4e5",
+                        "primary-fixed-dim": "#ccd3f4",
+                        "primary-dim": "#4a516d",
+                        "on-primary-container": "#49516c",
+                        "primary-fixed": "#dbe1ff",
+                        "on-background": "#2d3435"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary selection:text-white">
+<!-- SIDE NAVIGATION RAIL -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-0 bg-[#f2f4f4] dark:bg-[#1a1f2e] text-[#0B132B] dark:text-slate-100 font-['Space_Grotesk'] font-bold text-xs tracking-widest w-64 z-50">
+<div class="p-8 flex flex-col gap-1">
+<div class="text-lg font-black text-[#0B132B] dark:text-white">RECONCILIATION</div>
+<div class="text-[10px] opacity-60 tracking-widest uppercase">SYSTEM_ACTIVE_V.01</div>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-4 px-4 py-4 bg-[#0B132B] text-white dark:bg-slate-100 dark:text-[#0B132B]" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span>DOSSIER</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-slate-600 dark:text-slate-400 hover:bg-[#dde4e5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>INTEL</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-slate-600 dark:text-slate-400 hover:bg-[#dde4e5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="biotech">biotech</span>
+<span>OPERATIONS</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-slate-600 dark:text-slate-400 hover:bg-[#dde4e5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>ASSETS</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 text-slate-600 dark:text-slate-400 hover:bg-[#dde4e5] dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>ARCHIVE</span>
+</a>
+</nav>
+<div class="p-6 mt-auto space-y-4">
+<button class="w-full bg-primary text-white py-4 text-center tracking-widest hover:opacity-90 active:scale-95 transition-all">
+                NEW_ENTRY
+            </button>
+<div class="flex flex-col gap-2 pt-4 border-t border-surface-container">
+<a class="flex items-center gap-3 text-slate-500 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help_outline">help_outline</span>
+<span>HELP</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 hover:text-primary" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="power_settings_new">power_settings_new</span>
+<span>LOGOUT</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- TOP NAVIGATION BAR -->
+<header class="fixed top-0 left-64 right-0 h-16 bg-[#0B132B] dark:bg-[#0B132B] text-white dark:text-slate-100 z-40 flex justify-between items-center px-8">
+<div class="font-['Space_Grotesk'] uppercase tracking-tighter text-xl font-bold tracking-widest">
+            INTELLIGENCE DOSSIER
+        </div>
+<div class="flex items-center gap-8">
+<div class="flex items-center bg-slate-800/50 px-4 py-1.5 border-none">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none text-xs focus:ring-0 placeholder:text-slate-500 uppercase tracking-widest w-48" placeholder="QUERY_SYSTEM..." type="text"/>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined hover:bg-slate-800 p-2 cursor-pointer transition-colors" data-icon="terminal">terminal</span>
+<span class="material-symbols-outlined hover:bg-slate-800 p-2 cursor-pointer transition-colors" data-icon="settings">settings</span>
+<span class="material-symbols-outlined hover:bg-slate-800 p-2 cursor-pointer transition-colors" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<!-- MAIN CONTENT CANVAS -->
+<main class="ml-64 pt-16 min-h-screen bg-surface flex flex-col">
+<!-- HEADER SECTION -->
+<section class="p-12 pb-6">
+<h1 class="font-headline font-bold text-7xl tracking-tighter leading-none mb-2">RECONCILIATION ENGINE</h1>
+<p class="font-mono-data text-on-surface-variant text-sm tracking-widest">[STATUS: STANDBY] [LATENCY: 4MS] [ENCRYPTION: AES-256-XTS]</p>
+</section>
+<!-- CORE WORKSPACE GRID -->
+<section class="flex-1 grid grid-cols-12 gap-0 px-12 pb-12 items-stretch">
+<!-- LEFT: TERMINAL DROP ZONE -->
+<div class="col-span-7 bg-surface-container-low p-10 flex flex-col items-center justify-center relative min-h-[600px] brutalist-border">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none"></div>
+<div class="text-center z-10">
+<span class="material-symbols-outlined text-8xl text-primary mb-6" data-icon="upload_file">upload_file</span>
+<h2 class="font-headline font-bold text-3xl mb-2 tracking-widest">DROP_FILES_FOR_RECONCILIATION</h2>
+<p class="font-mono-data text-primary text-lg mb-8 opacity-70 italic">MAX_PAYLOAD: 1.2PB</p>
+<button class="bg-primary text-white px-12 py-5 font-headline font-bold tracking-[0.2em] hover:bg-slate-800 transition-all active:scale-95">
+                        SELECT_MANUAL_LOAD
+                    </button>
+</div>
+<!-- Subtle Tonal Stacking Elements -->
+<div class="absolute bottom-4 left-4 font-mono-data text-[10px] text-slate-400">SECURE_TUNNEL_ESTABLISHED: 10.0.4.12</div>
+<div class="absolute bottom-4 right-4 font-mono-data text-[10px] text-slate-400">HASH_PROTOCOL: SHA-512_NESTED</div>
+</div>
+<!-- RIGHT: PROCESSING QUEUE & LIST -->
+<div class="col-span-5 bg-surface p-10 flex flex-col border-l-0">
+<div class="flex justify-between items-end mb-8 border-b-2 border-primary pb-4">
+<h3 class="font-headline font-bold text-xl tracking-widest uppercase">PROCESSING QUEUE</h3>
+<span class="font-mono-data text-xs text-primary">[04_ACTIVE]</span>
+</div>
+<div class="space-y-6 overflow-y-auto pr-4 no-scrollbar">
+<!-- Queue Item: Active -->
+<div class="bg-surface-container-low p-6 transition-all hover:bg-surface-container-high cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-mono-data text-sm font-bold text-primary">INTEL_DELTA_REPORT_2024.DAT</h4>
+<p class="font-mono-data text-[10px] text-slate-500">HASH: 8A2F...E91C</p>
+</div>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-1 tracking-widest">SYNCING</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-[74%] transition-all duration-500"></div>
+</div>
+</div>
+<!-- Queue Item: Pending -->
+<div class="bg-white p-6 transition-all hover:bg-surface-container-low cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-mono-data text-sm font-bold text-primary">ASSET_LEDGER_OMEGA.XLSB</h4>
+<p class="font-mono-data text-[10px] text-slate-500">HASH: 44D1...7B3A</p>
+</div>
+<span class="text-[10px] font-bold border border-primary text-primary px-2 py-1 tracking-widest">PENDING</span>
+</div>
+<div class="w-full h-1 bg-surface-container-low">
+<div class="h-full bg-primary w-0"></div>
+</div>
+</div>
+<!-- Queue Item: Error -->
+<div class="bg-error/5 p-6 transition-all hover:bg-error/10 cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-mono-data text-sm font-bold text-error">NODE_ACCESS_LOGS_FINAL.DB</h4>
+<p class="font-mono-data text-[10px] text-error/60">HASH: C912...22FF</p>
+</div>
+<span class="text-[10px] font-bold bg-error text-white px-2 py-1 tracking-widest uppercase">ERROR</span>
+</div>
+<div class="w-full h-1 bg-error/20">
+<div class="h-full bg-error w-[42%]"></div>
+</div>
+</div>
+<!-- Queue Item: Syncing -->
+<div class="bg-surface-container-low p-6 transition-all hover:bg-surface-container-high cursor-default">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-mono-data text-sm font-bold text-primary">FIELD_INTEL_GHOST_B.MP4</h4>
+<p class="font-mono-data text-[10px] text-slate-500">HASH: 11B3...F92A</p>
+</div>
+<span class="text-[10px] font-bold bg-primary text-white px-2 py-1 tracking-widest">SYNCING</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest">
+<div class="h-full bg-primary w-[12%] transition-all duration-500"></div>
+</div>
+</div>
+</div>
+<!-- Footer Action -->
+<div class="mt-auto pt-10 flex gap-4">
+<button class="flex-1 bg-primary text-white py-5 font-headline font-bold tracking-widest hover:bg-slate-800">
+                        EXECUTE_BATCH
+                    </button>
+<button class="px-6 bg-surface-container-highest text-primary font-headline font-bold tracking-widest hover:bg-surface-dim">
+<span class="material-symbols-outlined align-middle" data-icon="refresh">refresh</span>
+</button>
+</div>
+</div>
+</section>
+<!-- RUNTIME LOGS (Terminal) -->
+<section class="mx-12 mb-12 bg-black p-8 font-mono-data text-xs leading-relaxed border-t-8 border-primary">
+<div class="flex justify-between items-center mb-6 text-slate-500 border-b border-slate-800 pb-2">
+<div class="flex items-center gap-4 uppercase tracking-[0.3em]">
+<span class="material-symbols-outlined text-sm" data-icon="developer_mode">developer_mode</span>
+                    RUNTIME_LOGS_STREAM
+                </div>
+<button class="hover:text-white transition-colors uppercase tracking-widest text-[10px]">CLEAR_TERMINAL</button>
+</div>
+<div class="space-y-1.5 h-48 overflow-y-auto text-slate-300 no-scrollbar">
+<p><span class="text-slate-600">[2024-10-27 14:02:11]</span> <span class="text-tertiary">SYSTEM_BOOT: OK</span></p>
+<p><span class="text-slate-600">[2024-10-27 14:02:15]</span> INITIATING_CONNECTION_NODE_BETA_IV...</p>
+<p><span class="text-slate-600">[2024-10-27 14:02:18]</span> <span class="text-green-500">CONNECTION_ESTABLISHED: UPLINK_STABLE</span></p>
+<p><span class="text-slate-600">[2024-10-27 14:03:02]</span> PARSING_FILE_HEADER: INTEL_DELTA_REPORT_2024.DAT</p>
+<p><span class="text-slate-600">[2024-10-27 14:03:05]</span> <span class="text-error font-bold tracking-widest">[ERR_774] CHECKSUM_MISMATCH: NODE_OMEGA_9</span></p>
+<p><span class="text-slate-600">[2024-10-27 14:03:06]</span> RETRY_POLICY_A1: ATTEMPT_01_IN_PROGRESS...</p>
+<p><span class="text-slate-600">[2024-10-27 14:03:10]</span> BUFFERING_STREAM: ASSET_LEDGER_OMEGA.XLSB</p>
+<p><span class="text-slate-600">[2024-10-27 14:03:12]</span> <span class="text-error font-bold tracking-widest">[ERR_401] UNAUTHORIZED_ACCESS: NODE_ACCESS_LOGS_FINAL.DB</span></p>
+<p><span class="text-slate-600">[2024-10-27 14:03:12]</span> TERMINATING_PROCESS_ID: 9942</p>
+<p class="animate-pulse"><span class="text-slate-600">[2024-10-27 14:03:15]</span> LISTENING_FOR_PACKETS_ON_PORT_8080...</p>
+<p><span class="text-primary-fixed-dim bg-white/10 px-1">_</span></p>
+</div>
+</section>
+</main>
+<!-- FLOATING STATUS INDICATOR -->
+<div class="fixed bottom-12 right-12 z-50 flex items-center bg-primary text-white p-6 shadow-2xl">
+<div class="mr-6 pr-6 border-r border-white/20">
+<div class="text-[10px] tracking-[0.2em] opacity-60 uppercase mb-1">Queue Load</div>
+<div class="font-mono-data font-bold text-2xl">84.2%</div>
+</div>
+<div>
+<div class="text-[10px] tracking-[0.2em] opacity-60 uppercase mb-1">Est Time Remaining</div>
+<div class="font-mono-data font-bold text-2xl">00:14:22</div>
+</div>
+<div class="ml-10">
+<span class="material-symbols-outlined text-4xl animate-spin" data-icon="settings_slow_motion" style="animation-duration: 3s;">settings_slow_motion</span>
+</div>
+</div>
+</body></html>

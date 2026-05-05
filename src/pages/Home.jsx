@@ -114,7 +114,7 @@ const Home = () => {
       icon: <SiTensorflow className="text-4xl" />,
       title: "Deep Learning Models",
       description: "Neural networks process complex market patterns with 99.9% accuracy",
-      metric: "50M+ parameters",
+      metric: "100K+ parameters",
       color: "from-orange-500 to-red-500",
     },
     {
@@ -185,40 +185,15 @@ const Home = () => {
     },
   ];
 
-  // Client testimonials
-  const testimonials = [
-    {
-      quote: "The AI-powered insights helped us identify a $5M market opportunity we would have missed.",
-      author: "Sarah Johnson",
-      role: "Chief Marketing Officer",
-      company: "TechCorp Global",
-      rating: 5,
-    },
-    {
-      quote: "We cut our research time by 75% while getting 10x more actionable insights.",
-      author: "Michael Chen",
-      role: "VP of Strategy",
-      company: "RetailMax",
-      rating: 5,
-    },
-    {
-      quote: "The real-time consumer analytics transformed our product development process.",
-      author: "Emma Williams",
-      role: "Head of Innovation",
-      company: "FoodTech Inc",
-      rating: 5,
-    },
-  ];
-
   return (
-    <div className="overflow-hidden bg-white">
+    <div className="overflow-hidden bg-surface">
       {/* Hero Section with Sliding Headlines */}
-      <section className="relative min-h-screen flex items-center py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="relative min-h-screen flex items-center py-20 bg-surface">
         <ParticleBackground />
 
         {/* Animated background elements */}
-        <motion.div style={{ y: y1 }} className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full blur-3xl opacity-30" />
-        <motion.div style={{ y: y2 }} className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-purple-100 to-pink-100 rounded-full blur-3xl opacity-30" />
+        <motion.div style={{ y: y1 }} className="absolute top-20 left-10 w-72 h-72 bg-surface-container rounded-full blur-3xl opacity-30" />
+        <motion.div style={{ y: y2 }} className="absolute bottom-20 right-10 w-96 h-96 bg-surface-container rounded-full blur-3xl opacity-30" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-7xl mx-auto">
@@ -230,9 +205,9 @@ const Home = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-6"
+                  className="inline-flex items-center space-x-2 bg-surface-container-low border border-outline-variant/30 px-4 py-2 mb-6"
                 >
-                  <HiSparkles className="text-purple-600" />
+                  <HiSparkles className="text-primary-dim" />
                   <span className="text-sm font-medium text-gray-700">Powered by Advanced AI Technology</span>
                 </motion.div>
 
@@ -245,11 +220,11 @@ const Home = () => {
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gray-900 leading-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold mb-6 text-primary leading-tight tracking-tighter">
                       {headlines[activeHeadline].title.split(" ").map((word, index) => (
                         <span key={index}>
                           {word.includes("AI") || word.includes("Real-Time") || word.includes("Predictive") ? (
-                            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{word}</span>
+                            <span className="text-primary underline decoration-2 underline-offset-4">{word}</span>
                           ) : (
                             word
                           )}{" "}
@@ -265,7 +240,7 @@ const Home = () => {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       to="/demo"
-                      className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 rounded-full text-white font-semibold hover:shadow-xl transition-all duration-300"
+                      className="inline-flex items-center justify-center space-x-2 bg-primary px-8 py-4 text-white font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-primary-dim transition-all duration-300"
                     >
                       <span>Start Free Trial</span>
                       <FaArrowRight />
@@ -275,7 +250,7 @@ const Home = () => {
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     {/* <Link
                       to="/contact"
-                      className="inline-flex items-center justify-center space-x-2 bg-white border-2 border-gray-300 px-8 py-4 rounded-full text-gray-700 font-semibold hover:border-gray-400 hover:shadow-lg transition-all duration-300"
+                      className="inline-flex items-center justify-center space-x-2 bg-white border-2 border-primary/30 px-8 py-4 text-primary font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:border-primary hover:shadow-lg transition-all duration-300"
                     >
                       <span>Schedule Demo</span>
                     </Link> */}
@@ -286,7 +261,7 @@ const Home = () => {
                 <div className="flex items-center space-x-8">
                   <div className="flex -space-x-3">
                     {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold border-2 border-white">
+                      <div key={i} className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold border-2 border-white">
                         {i + 1}K+
                       </div>
                     ))}
@@ -311,7 +286,7 @@ const Home = () => {
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                       <span className="text-sm font-medium text-gray-700">Real-Time Conversion Metrics</span>
                     </div>
-                    <FaSync className="text-blue-600 animate-spin" />
+                    <FaSync className="text-primary animate-spin" />
                   </div>
 
                   {/* Metrics Grid */}
@@ -322,26 +297,26 @@ const Home = () => {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.5 + index * 0.1, type: "spring" }}
-                        className={`bg-gradient-to-br ${
-                          activeMetric === index ? "from-blue-50 to-purple-50 ring-2 ring-blue-500" : "from-gray-50 to-gray-100"
-                        } p-4 rounded-xl transition-all duration-300`}
+                        className={`${
+                          activeMetric === index ? "bg-surface-container-high ring-2 ring-primary" : "bg-surface-container-low"
+                        } p-4 transition-all duration-300`}
                       >
                         <div className="flex items-center justify-between mb-2">
-                          <div className="text-2xl text-blue-600">{metric.icon}</div>
-                          <span className={`text-xs font-semibold ${
+                          <div className="text-2xl text-primary">{metric.icon}</div>
+                          <span className={`text-xs font-mono font-semibold ${
                             metric.change.startsWith("+") ? "text-green-600" : "text-red-600"
                           }`}>
                             {metric.change}
                           </span>
                         </div>
-                        <div className="text-2xl font-bold text-gray-900">{metric.value}</div>
-                        <div className="text-xs text-gray-600">{metric.label}</div>
+                        <div className="text-2xl font-bold text-primary">{metric.value}</div>
+                        <div className="text-xs text-on-surface-variant font-mono uppercase tracking-wider">{metric.label}</div>
                       </motion.div>
                     ))}
                   </div>
 
                   {/* Real-Time Survey Stats */}
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-4 rounded-xl mb-4">
+                  <div className="bg-surface-container-low p-4 rounded-xl mb-4">
                     <h3 className="text-sm font-semibold text-gray-700 mb-3">Real-Time Survey Stats</h3>
                     <div className="space-y-3">
                       <div className="flex items-center justify-between">
@@ -352,7 +327,7 @@ const Home = () => {
                               initial={{ width: 0 }}
                               animate={{ width: "87%" }}
                               transition={{ duration: 1, delay: 0.5 }}
-                              className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                              className="h-full bg-primary"
                             />
                           </div>
                           <span className="text-xs font-semibold text-gray-700">87%</span>
@@ -366,7 +341,7 @@ const Home = () => {
                               initial={{ width: 0 }}
                               animate={{ width: "94%" }}
                               transition={{ duration: 1, delay: 0.7 }}
-                              className="h-full bg-gradient-to-r from-green-500 to-emerald-500"
+                              className="h-full bg-primary"
                             />
                           </div>
                           <span className="text-xs font-semibold text-gray-700">94%</span>
@@ -380,7 +355,7 @@ const Home = () => {
                               initial={{ width: 0 }}
                               animate={{ width: "98%" }}
                               transition={{ duration: 1, delay: 0.9 }}
-                              className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
+                              className="h-full bg-primary-dim"
                             />
                           </div>
                           <span className="text-xs font-semibold text-gray-700">98%</span>
@@ -399,7 +374,7 @@ const Home = () => {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-3 rounded-lg flex items-center justify-between"
+                    className="bg-primary text-white p-3 rounded-lg flex items-center justify-between"
                   >
                     <div className="flex items-center space-x-3">
                       <FaBrain className="text-xl" />
@@ -420,7 +395,7 @@ const Home = () => {
                 <motion.div
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+                  className="absolute -top-4 -right-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
                 >
                   LIVE
                 </motion.div>
@@ -431,20 +406,20 @@ const Home = () => {
       </section>
 
       {/* AI Features Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-4"
+                className="inline-flex items-center space-x-2 bg-surface-container border border-outline-variant/30 px-4 py-2 mb-4"
               >
-                <FaBrain className="text-purple-600" />
+                <FaBrain className="text-primary-dim" />
                 <span className="text-sm font-medium text-gray-700">Powered by Advanced AI</span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                AI Technology That <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Drives Results</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                AI Technology That <span className="text-primary-dim">Drives Results</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Our proprietary AI models analyze billions of data points to deliver insights that matter
@@ -459,13 +434,13 @@ const Home = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col"
                 >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center text-white mb-4`}>
+                  <div className={`w-16 h-16 rounded-xl bg-primary flex items-center justify-center text-white mb-4`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{feature.title}</h3>
                   <p className="text-gray-600 mb-4 flex-grow">{feature.description}</p>
                   <div className="pt-4 border-t border-gray-100">
-                    <span className="text-sm font-semibold text-blue-600">{feature.metric}</span>
+                    <span className="text-sm font-semibold text-primary">{feature.metric}</span>
                   </div>
                 </motion.div>
               </AnimatedSection>
@@ -475,20 +450,20 @@ const Home = () => {
       </section>
 
       {/* Services Section with Interactive Cards */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-4"
+                className="inline-flex items-center space-x-2 bg-surface-container border border-outline-variant/30 px-4 py-2 mb-4"
               >
-                <FaChartLine className="text-blue-600" />
+                <FaChartLine className="text-primary" />
                 <span className="text-sm font-medium text-gray-700">Comprehensive Research Solutions</span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Everything You Need for <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Market Research</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Everything You Need for <span className="text-primary-dim">Market Research</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 From surveys to advanced analytics, we provide the complete toolkit for understanding your market
@@ -503,10 +478,10 @@ const Home = () => {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col border border-gray-100"
                 >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center text-white mb-4`}>
+                  <div className={`w-16 h-16 rounded-xl bg-primary flex items-center justify-center text-white mb-4`}>
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-gray-900">{service.title}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{service.title}</h3>
                   <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
                   <ul className="space-y-2 mb-4">
                     {service.features.map((feature, idx) => (
@@ -518,7 +493,7 @@ const Home = () => {
                   </ul>
                   <Link
                     to="/services"
-                    className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                    className="inline-flex items-center text-primary font-medium hover:text-primary-dim transition-colors"
                   >
                     Learn more <FaArrowRight className="ml-2 text-sm" />
                   </Link>
@@ -530,20 +505,20 @@ const Home = () => {
       </section>
 
       {/* Management Features Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-surface-container-low">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full mb-4"
+                className="inline-flex items-center space-x-2 bg-surface-container border border-outline-variant/30 px-4 py-2 mb-4"
               >
                 <FaCogs className="text-green-600" />
                 <span className="text-sm font-medium text-gray-700">Complete Research Platform</span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Streamlined <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Research Management</span>
+              <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                Streamlined <span className="text-primary-dim">Research Management</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Everything you need to manage research projects from start to finish
@@ -558,10 +533,10 @@ const Home = () => {
                   whileHover={{ y: -10 }}
                   className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                  <div className="w-16 h-16 bg-surface-container rounded-xl flex items-center justify-center text-primary mb-6">
                     {feature.icon}
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">{feature.title}</h3>
+                  <h3 className="text-2xl font-semibold mb-4 text-primary">{feature.title}</h3>
                   <p className="text-gray-600 mb-6">{feature.description}</p>
                   <ul className="space-y-3">
                     {feature.features.map((item, idx) => (
@@ -579,7 +554,7 @@ const Home = () => {
       </section>
 
       {/* Quality Data Analysis Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="max-w-6xl mx-auto">
@@ -588,13 +563,13 @@ const Home = () => {
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-100 to-pink-100 px-4 py-2 rounded-full mb-4"
+                    className="inline-flex items-center space-x-2 bg-surface-container border border-outline-variant/30 px-4 py-2 mb-4"
                   >
-                    <FaMicroscope className="text-purple-600" />
+                    <FaMicroscope className="text-primary-dim" />
                     <span className="text-sm font-medium text-gray-700">Quality Data Analysis</span>
                   </motion.div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                    Transform Data into <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Actionable Insights</span>
+                  <h2 className="text-4xl md:text-5xl font-headline font-extrabold mb-6 text-primary tracking-tighter uppercase">
+                    Transform Data into <span className="text-primary-dim">Actionable Insights</span>
                   </h2>
                   <p className="text-xl text-gray-600 mb-8">
                     Our AI-powered analysis engine ensures you get the highest quality insights from your research data
@@ -602,31 +577,31 @@ const Home = () => {
 
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white flex-shrink-0">
                         <FaDatabase />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Automated Data Cleaning</h3>
+                        <h3 className="text-lg font-semibold text-primary mb-2">Automated Data Cleaning</h3>
                         <p className="text-gray-600">AI algorithms automatically detect and fix data quality issues, ensuring 99.9% accuracy</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary-dim rounded-lg flex items-center justify-center text-white flex-shrink-0">
                         <HiLightningBolt />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Real-Time Processing</h3>
+                        <h3 className="text-lg font-semibold text-primary mb-2">Real-Time Processing</h3>
                         <p className="text-gray-600">Process millions of responses instantly with our distributed computing infrastructure</p>
                       </div>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center text-white flex-shrink-0">
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white flex-shrink-0">
                         <FaChartBar />
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Advanced Visualization</h3>
+                        <h3 className="text-lg font-semibold text-primary mb-2">Advanced Visualization</h3>
                         <p className="text-gray-600">Interactive dashboards that make complex data easy to understand and act upon</p>
                       </div>
                     </div>
@@ -638,23 +613,23 @@ const Home = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8"
+                    className="bg-surface-container-low rounded-2xl p-8"
                   >
                     {/* Data Quality Metrics */}
-                    <h3 className="text-lg font-semibold text-gray-900 mb-6">Data Quality Metrics</h3>
+                    <h3 className="text-lg font-semibold text-primary mb-6">Data Quality Metrics</h3>
                     
                     <div className="space-y-4">
                       <div>
                         <div className="flex justify-between mb-2">
                           <span className="text-sm text-gray-600">Data Completeness</span>
-                          <span className="text-sm font-semibold text-gray-900">99.7%</span>
+                          <span className="text-sm font-semibold text-primary">99.7%</span>
                         </div>
                         <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: "99.7%" }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="h-full bg-gradient-to-r from-green-500 to-emerald-500"
+                            className="h-full bg-primary"
                           />
                         </div>
                       </div>
@@ -662,14 +637,14 @@ const Home = () => {
                       <div>
                         <div className="flex justify-between mb-2">
                           <span className="text-sm text-gray-600">Response Validity</span>
-                          <span className="text-sm font-semibold text-gray-900">98.5%</span>
+                          <span className="text-sm font-semibold text-primary">98.5%</span>
                         </div>
                         <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: "98.5%" }}
                             transition={{ duration: 1, delay: 0.4 }}
-                            className="h-full bg-gradient-to-r from-blue-500 to-purple-500"
+                            className="h-full bg-primary"
                           />
                         </div>
                       </div>
@@ -677,14 +652,14 @@ const Home = () => {
                       <div>
                         <div className="flex justify-between mb-2">
                           <span className="text-sm text-gray-600">Statistical Significance</span>
-                          <span className="text-sm font-semibold text-gray-900">95.2%</span>
+                          <span className="text-sm font-semibold text-primary">95.2%</span>
                         </div>
                         <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: "95.2%" }}
                             transition={{ duration: 1, delay: 0.6 }}
-                            className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
+                            className="h-full bg-primary-dim"
                           />
                         </div>
                       </div>
@@ -692,14 +667,14 @@ const Home = () => {
                       <div>
                         <div className="flex justify-between mb-2">
                           <span className="text-sm text-gray-600">AI Confidence Score</span>
-                          <span className="text-sm font-semibold text-gray-900">97.8%</span>
+                          <span className="text-sm font-semibold text-primary">97.8%</span>
                         </div>
                         <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: "97.8%" }}
                             transition={{ duration: 1, delay: 0.8 }}
-                            className="h-full bg-gradient-to-r from-orange-500 to-red-500"
+                            className="h-full bg-primary-dim"
                           />
                         </div>
                       </div>
@@ -708,11 +683,11 @@ const Home = () => {
                     {/* Processing Status */}
                     <div className="mt-8 bg-white rounded-xl p-4 flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white">
+                        <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white">
                           <FaServer />
                         </div>
                         <div>
-                          <div className="text-sm font-semibold text-gray-900">Processing Status</div>
+                          <div className="text-sm font-semibold text-primary">Processing Status</div>
                           <div className="text-xs text-gray-600">125,432 records analyzed</div>
                         </div>
                       </div>
@@ -734,7 +709,7 @@ const Home = () => {
                       repeat: Infinity,
                       ease: "easeInOut",
                     }}
-                    className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
+                    className="absolute -top-4 -right-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
                   >
                     AI-Powered
                   </motion.div>
@@ -745,47 +720,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Trusted by <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Industry Leaders</span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                See how companies are transforming their decision-making with our platform
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedSection key={index}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="bg-white p-8 rounded-2xl shadow-lg h-full flex flex-col"
-                >
-                  <FaQuoteLeft className="text-3xl text-blue-200 mb-4" />
-                  <p className="text-lg text-gray-700 mb-6 flex-grow">{testimonial.quote}</p>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold text-gray-900">{testimonial.author}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
-                      <p className="text-xs text-gray-500">{testimonial.company}</p>
-                    </div>
-                    <div className="flex">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <FaStar key={i} className="text-yellow-500 text-sm" />
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Integration Partners Section */}
       {/* <section className="py-20 bg-white"> */}
@@ -795,13 +729,13 @@ const Home = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-100 to-emerald-100 px-4 py-2 rounded-full mb-4"
+                className="inline-flex items-center space-x-2 bg-surface-container px-4 py-2 rounded-full mb-4"
               >
                 <FaNetworkWired className="text-green-600" />
                 <span className="text-sm font-medium text-gray-700">Seamless Integrations</span>
               </motion.div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Works With Your <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Favorite Tools</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                Works With Your <span className="text-primary">Favorite Tools</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Connect with 100+ platforms to streamline your research workflow
@@ -833,7 +767,7 @@ const Home = () => {
                 className="bg-gray-50 rounded-xl p-6 flex items-center justify-center hover:shadow-lg transition-all duration-300"
               >
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-gray-200 to-gray-300 rounded-lg flex items-center justify-center mx-auto mb-2 font-bold text-gray-700">
+                  <div className="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mx-auto mb-2 font-bold text-gray-700">
                     {partner.icon}
                   </div>
                   <p className="text-xs text-gray-600">{partner.name}</p>
@@ -849,8 +783,8 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <AnimatedSection>
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-                Simple, Transparent <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Pricing</span>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">
+                Simple, Transparent <span className="text-primary">Pricing</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                 Choose the plan that fits your research needs. Scale up or down anytime.
@@ -859,26 +793,26 @@ const Home = () => {
           </AnimatedSection>
 
           <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 md:p-12 rounded-3xl border border-gray-200">
+            <div className="bg-surface-container-low p-8 md:p-12 rounded-3xl border border-gray-200">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <FaClipboardList className="text-4xl text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Starter</h3>
-                  <p className="text-3xl font-bold text-gray-900 mb-1">$299<span className="text-lg text-gray-600">/mo</span></p>
+                  <FaClipboardList className="text-4xl text-primary mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Starter</h3>
+                  <p className="text-3xl font-bold text-primary mb-1">$299<span className="text-lg text-gray-600">/mo</span></p>
                   <p className="text-sm text-gray-600">Perfect for small teams</p>
                 </div>
                 
                 <div className="text-center border-l border-r border-gray-300 px-4">
-                  <FaChartLine className="text-4xl text-purple-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Professional</h3>
-                  <p className="text-3xl font-bold text-gray-900 mb-1">$999<span className="text-lg text-gray-600">/mo</span></p>
+                  <FaChartLine className="text-4xl text-primary-dim mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Professional</h3>
+                  <p className="text-3xl font-bold text-primary mb-1">$999<span className="text-lg text-gray-600">/mo</span></p>
                   <p className="text-sm text-gray-600">Most popular choice</p>
                 </div>
                 
                 <div className="text-center">
                   <FaRocket className="text-4xl text-pink-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Enterprise</h3>
-                  <p className="text-3xl font-bold text-gray-900 mb-1">Custom</p>
+                  <h3 className="text-xl font-semibold mb-2 text-primary">Enterprise</h3>
+                  <p className="text-3xl font-bold text-primary mb-1">Custom</p>
                   <p className="text-sm text-gray-600">Tailored solutions</p>
                 </div>
               </div>
@@ -886,7 +820,7 @@ const Home = () => {
               <div className="text-center mt-8">
                 <Link
                   to="/pricing"
-                  className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors"
+                  className="inline-flex items-center text-primary font-medium hover:text-primary-dim transition-colors"
                 >
                   View detailed pricing <FaArrowRight className="ml-2" />
                 </Link>
@@ -897,7 +831,7 @@ const Home = () => {
       </section> */}
 
       {/* Final CTA Section */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600">
+      <section className="py-20 relative overflow-hidden bg-[#0B132B]">
         <div className="absolute inset-0 bg-black opacity-10" />
         
         {/* Animated background shapes */}
@@ -938,8 +872,8 @@ const Home = () => {
                 <HiSparkles className="text-4xl text-white" />
               </motion.div>
 
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                Start Making <span className="text-yellow-300">Data-Driven Decisions</span> Today
+              <h2 className="text-5xl md:text-6xl font-headline font-extrabold mb-6 text-white tracking-tighter uppercase">
+                Start Making <span className="text-slate-400">Data-Driven Decisions</span> Today
               </h2>
 
               <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">
@@ -950,7 +884,7 @@ const Home = () => {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/demo"
-                    className="inline-flex items-center justify-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-300"
+                    className="inline-flex items-center justify-center space-x-2 bg-white text-[#0B132B] px-8 py-4 font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-slate-200 transition-all duration-300"
                   >
                     <span>Start Free Trial</span>
                     <FaArrowRight />
@@ -960,7 +894,7 @@ const Home = () => {
                 {/* <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white/10 transition-all duration-300"
+                    className="inline-flex items-center justify-center space-x-2 border-2 border-white/30 text-white px-8 py-4 font-mono text-[11px] tracking-[0.15em] font-bold uppercase hover:bg-white/10 transition-all duration-300"
                   >
                     <span>Talk to Sales</span>
                   </Link>
@@ -996,7 +930,7 @@ const Home = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 rounded-full shadow-2xl text-white group relative"
+          className="bg-primary p-4 rounded-full shadow-2xl text-white group relative"
         >
           <div className="relative">
             <FaBrain className="text-xl" />

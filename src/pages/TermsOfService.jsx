@@ -46,16 +46,16 @@ const TermsOfService = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20 bg-white overflow-hidden">
+    <div className="min-h-screen pt-20 bg-surface overflow-hidden">
       <ParticleBackground />
 
             {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50">
+      <section className="relative py-20 bg-surface">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 px-4 py-2 rounded-full mb-6"
+            className="inline-flex items-center space-x-2 bg-surface-container-low border border-outline-variant/30 px-4 py-2 mb-6"
           >
             <FaFileContract className="text-blue-600" />
             <span className="text-sm font-medium text-gray-700">Legal Agreement</span>
@@ -106,7 +106,7 @@ const TermsOfService = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-surface">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             {/* Introduction */}
@@ -122,7 +122,7 @@ const TermsOfService = () => {
             <AnimatedSection>
               <div id="acceptance" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl flex items-center justify-center text-blue-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-blue-600">
                     <FaHandshake className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">1. Acceptance of Terms</h2>
@@ -158,7 +158,7 @@ const TermsOfService = () => {
             <AnimatedSection>
               <div id="use-of-services" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center text-purple-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-purple-600">
                     <FaFileContract className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">2. Use of Services</h2>
@@ -232,7 +232,7 @@ const TermsOfService = () => {
             <AnimatedSection>
               <div id="user-obligations" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                                    <div className="w-12 h-12 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl flex items-center justify-center text-green-600">
+                                    <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-green-600">
                     <FaBalanceScale className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">3. User Obligations</h2>
@@ -275,7 +275,7 @@ const TermsOfService = () => {
             <AnimatedSection>
               <div id="intellectual-property" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-indigo-100 to-blue-100 rounded-xl flex items-center justify-center text-indigo-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-indigo-600">
                     <FaGavel className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">4. Intellectual Property</h2>
@@ -318,7 +318,7 @@ const TermsOfService = () => {
             <AnimatedSection>
               <div id="limitations" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-100 to-red-100 rounded-xl flex items-center justify-center text-orange-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-orange-600">
                     <FaExclamationTriangle className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">5. Limitations of Liability</h2>
@@ -353,7 +353,7 @@ const TermsOfService = () => {
             <AnimatedSection>
               <div id="termination" className="mb-16 scroll-mt-32">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl flex items-center justify-center text-gray-600">
+                  <div className="w-12 h-12 bg-surface-container rounded-xl flex items-center justify-center text-gray-600">
                     <FaBan className="text-xl" />
                   </div>
                   <h2 className="text-3xl font-bold text-gray-900">6. Termination</h2>
@@ -436,7 +436,7 @@ const TermsOfService = () => {
 
             {/* Contact Information */}
             <AnimatedSection>
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-2xl border border-blue-200 mt-12">
+              <div className="bg-surface-container-low p-8 rounded-2xl border border-blue-200 mt-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <FaHandshake className="text-2xl text-blue-600" />
                   <h2 className="text-2xl font-bold text-gray-900">Questions About These Terms?</h2>
@@ -494,7 +494,7 @@ const TermsOfService = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 rounded-full shadow-lg z-40"
+        className="fixed bottom-8 right-8 bg-primary text-white p-4 rounded-full shadow-lg z-40"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />

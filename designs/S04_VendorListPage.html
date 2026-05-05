@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INTELLIGENCE DOSSIER - SURVEY MASTER LEDGER</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Inter+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container": "#eceeee",
+              "on-tertiary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#ffdad7",
+              "on-tertiary-fixed-variant": "#77302d",
+              "tertiary-fixed-dim": "#ffb3ad",
+              "on-secondary-fixed-variant": "#3a485b",
+              "secondary-fixed": "#d5e3fc",
+              "on-error-container": "#93000a",
+              "secondary-fixed-dim": "#b9c7df",
+              "outline-variant": "#c6c6ce",
+              "on-primary": "#ffffff",
+              "primary-container": "#131a33",
+              "on-tertiary-fixed": "#3d0506",
+              "secondary": "#515f74",
+              "secondary-container": "#d5e3fc",
+              "inverse-primary": "#bec5e5",
+              "primary-fixed": "#dbe1ff",
+              "surface-container-highest": "#e1e3e3",
+              "on-primary-fixed-variant": "#3e4660",
+              "tertiary": "#000000",
+              "surface-variant": "#e1e3e3",
+              "on-tertiary-container": "#c26b65",
+              "on-secondary-fixed": "#0d1c2e",
+              "surface-bright": "#f8fafa",
+              "inverse-surface": "#2e3131",
+              "on-primary-container": "#7b83a0",
+              "surface": "#f8fafa",
+              "on-error": "#ffffff",
+              "inverse-on-surface": "#eff1f1",
+              "surface-dim": "#d8dada",
+              "on-background": "#191c1d",
+              "primary": "#000000",
+              "on-primary-fixed": "#131a33",
+              "on-secondary": "#ffffff",
+              "on-surface": "#191c1d",
+              "primary-fixed-dim": "#bec5e5",
+              "surface-tint": "#565d79",
+              "error": "#ba1a1a",
+              "background": "#f8fafa",
+              "outline": "#76767e",
+              "on-surface-variant": "#45464d",
+              "surface-container-high": "#e6e8e8",
+              "surface-container-low": "#f2f4f4",
+              "error-container": "#ffdad6",
+              "on-secondary-container": "#57657a",
+              "tertiary-container": "#3d0506"
+            },
+            fontFamily: {
+              "headline": ["Public Sans"],
+              "body": ["Inter"],
+              "label": ["Inter Mono"],
+              "mono": ["Inter Mono"]
+            },
+            borderRadius: {
+              "none": "0px",
+              "DEFAULT": "0px",
+              "lg": "0px",
+              "xl": "0px",
+              "full": "0px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #f8fafa;
+        font-family: 'Inter', sans-serif;
+        border-radius: 0 !important;
+      }
+      * {
+        border-radius: 0 !important;
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+</head>
+<body class="text-on-surface overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-14 bg-[#f8fafa]/80 backdrop-blur-[20px] z-50 transition-colors duration-150">
+<div class="flex items-center gap-8">
+<span class="font-['Public_Sans'] font-bold text-lg tracking-[0.15em] text-[#000000]">INTELLIGENCE DOSSIER</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-['Public_Sans'] uppercase tracking-[0.1em] font-semibold text-sm text-[#000000] border-b-2 border-black pb-1 hover:text-[#000000] transition-colors duration-150" href="#">SYSTEM</a>
+<a class="font-['Public_Sans'] uppercase tracking-[0.1em] font-semibold text-sm text-[#515f74] hover:text-[#000000] transition-colors duration-150" href="#">ENCRYPT</a>
+<a class="font-['Public_Sans'] uppercase tracking-[0.1em] font-semibold text-sm text-[#515f74] hover:text-[#000000] transition-colors duration-150" href="#">REDACT</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<input class="bg-surface-container-low border-none border-b border-outline outline-none text-xs font-mono px-4 py-1.5 w-64 focus:bg-surface-container-highest transition-all" placeholder="QUERY DATABASE..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">notifications</span>
+<span class="material-symbols-outlined text-secondary cursor-pointer hover:text-primary">settings</span>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-8 z-[60] bg-[#0B132B] w-20">
+<div class="mb-10 text-center">
+<div class="w-10 h-10 bg-secondary flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-white text-xl">account_circle</span>
+</div>
+<div class="font-['Inter_Mono'] uppercase tracking-[0.05em] text-[10px] text-white">ARCHIVIST_01</div>
+</div>
+<div class="flex flex-col gap-6 w-full items-center">
+<!-- Active Tab: Intel -->
+<button class="flex flex-col items-center gap-1 group w-full py-3 text-secondary opacity-60 hover:bg-[#131a33] hover:opacity-100 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="folder_shared">folder_shared</span>
+<span class="font-['Inter_Mono'] uppercase tracking-[0.05em] text-[10px]">Dossier</span>
+</button>
+<button class="flex flex-col items-center gap-1 group w-full py-3 bg-[#515f74] text-[#ffffff] scale-100 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="analytics">analytics</span>
+<span class="font-['Inter_Mono'] uppercase tracking-[0.05em] text-[10px]">Intel</span>
+</button>
+<button class="flex flex-col items-center gap-1 group w-full py-3 text-secondary opacity-60 hover:bg-[#131a33] hover:opacity-100 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="settings_input_component">settings_input_component</span>
+<span class="font-['Inter_Mono'] uppercase tracking-[0.05em] text-[10px]">Operations</span>
+</button>
+<button class="flex flex-col items-center gap-1 group w-full py-3 text-secondary opacity-60 hover:bg-[#131a33] hover:opacity-100 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter_Mono'] uppercase tracking-[0.05em] text-[10px]">Assets</span>
+</button>
+<button class="flex flex-col items-center gap-1 group w-full py-3 text-secondary opacity-60 hover:bg-[#131a33] hover:opacity-100 transition-all duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="inventory">inventory</span>
+<span class="font-['Inter_Mono'] uppercase tracking-[0.05em] text-[10px]">Archive</span>
+</button>
+</div>
+<div class="mt-auto">
+<div class="text-[9px] font-mono text-secondary-container opacity-40 rotate-90 origin-center whitespace-nowrap tracking-widest">
+                VER: 4.09.2-ALPHA
+            </div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-20 mt-14 p-8 min-h-screen">
+<!-- Header Section -->
+<header class="mb-12">
+<div class="flex flex-col md:flex-row justify-between items-end gap-4 border-b border-outline-variant/30 pb-6">
+<div>
+<div class="text-[10px] font-mono text-secondary mb-2 tracking-[0.3em] uppercase">Sector 7 // Intelligence Management</div>
+<h1 class="text-4xl md:text-5xl font-['Public_Sans'] font-extrabold tracking-[0.25em] uppercase text-primary leading-none">
+                        SURVEY MASTER LEDGER
+                    </h1>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-6 py-2 text-xs font-mono font-bold tracking-widest flex items-center gap-2 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+                        NEW_ENTRY
+                    </button>
+<button class="bg-surface-container-high text-primary px-6 py-2 text-xs font-mono font-bold tracking-widest border border-outline/10 hover:bg-surface-container-highest transition-colors">
+                        EXPORT_CSV
+                    </button>
+</div>
+</div>
+</header>
+<!-- Multi-filter bar -->
+<section class="mb-8 flex flex-wrap items-center gap-6 bg-surface-container-low p-4">
+<div class="flex flex-col gap-1 flex-grow max-w-sm">
+<label class="text-[9px] font-mono text-secondary uppercase font-bold tracking-tighter">Search Dossier</label>
+<div class="flex items-center gap-2 border-b border-outline">
+<span class="material-symbols-outlined text-secondary text-sm">search</span>
+<input class="bg-transparent border-none outline-none text-xs font-mono py-1 w-full focus:ring-0" placeholder="FILTER BY ID OR NAME..." type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1 min-w-[140px]">
+<label class="text-[9px] font-mono text-secondary uppercase font-bold tracking-tighter">Status Filter</label>
+<select class="bg-surface-container-lowest border border-outline/20 text-[11px] font-mono uppercase px-2 py-1.5 focus:ring-0">
+<option>ALL_STATUSES</option>
+<option>ACTIVE</option>
+<option>PAUSED</option>
+<option>TERMINATED</option>
+</select>
+</div>
+<div class="flex flex-col gap-1 min-w-[140px]">
+<label class="text-[9px] font-mono text-secondary uppercase font-bold tracking-tighter">Client Domain</label>
+<select class="bg-surface-container-lowest border border-outline/20 text-[11px] font-mono uppercase px-2 py-1.5 focus:ring-0">
+<option>ALL_DOMAINS</option>
+<option>ALPHA_CORE</option>
+<option>NEBULA_CORP</option>
+<option>TITAN_LOGIC</option>
+</select>
+</div>
+<div class="flex flex-col gap-1 min-w-[140px]">
+<label class="text-[9px] font-mono text-secondary uppercase font-bold tracking-tighter">Temporal Range</label>
+<select class="bg-surface-container-lowest border border-outline/20 text-[11px] font-mono uppercase px-2 py-1.5 focus:ring-0">
+<option>LAST_24_HOURS</option>
+<option>LAST_7_DAYS</option>
+<option>FULL_QUARTER</option>
+</select>
+</div>
+<button class="mt-4 sm:mt-0 flex items-center justify-center bg-secondary/10 hover:bg-secondary/20 p-2 transition-colors">
+<span class="material-symbols-outlined text-secondary">refresh</span>
+</button>
+</section>
+<!-- The Data Table (The Dossier) -->
+<section class="overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[1000px]">
+<thead>
+<tr class="bg-primary text-on-primary font-mono text-[10px] tracking-widest uppercase">
+<th class="py-4 px-6 font-semibold">Survey ID</th>
+<th class="py-4 px-6 font-semibold">Project Name</th>
+<th class="py-4 px-6 font-semibold text-right">CPI ($)</th>
+<th class="py-4 px-6 font-semibold text-right">IR (%)</th>
+<th class="py-4 px-6 font-semibold text-right">LOI (min)</th>
+<th class="py-4 px-6 font-semibold text-right">Completes</th>
+<th class="py-4 px-6 font-semibold text-center">Operational Status</th>
+</tr>
+</thead>
+<tbody class="font-mono text-xs divide-y-0">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#9X-DELTA-01</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Alpha Ops Survey</td>
+<td class="py-4 px-6 text-right">$4.50</td>
+<td class="py-4 px-6 text-right">88%</td>
+<td class="py-4 px-6 text-right">12</td>
+<td class="py-4 px-6 text-right">1,200</td>
+<td class="py-4 px-6">
+<div class="bg-[#475569] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">ACTIVE</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="bg-surface-container-low hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#2Y-OMEGA-09</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Bravo Intel Report</td>
+<td class="py-4 px-6 text-right">$6.00</td>
+<td class="py-4 px-6 text-right">45%</td>
+<td class="py-4 px-6 text-right">15</td>
+<td class="py-4 px-6 text-right">450</td>
+<td class="py-4 px-6">
+<div class="bg-[#4A0E0E] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">PAUSED</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#5V-SIGMA-44</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Consumer Core Metrics</td>
+<td class="py-4 px-6 text-right">$1.25</td>
+<td class="py-4 px-6 text-right">92%</td>
+<td class="py-4 px-6 text-right">08</td>
+<td class="py-4 px-6 text-right">5,600</td>
+<td class="py-4 px-6">
+<div class="bg-[#475569] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">ACTIVE</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="bg-surface-container-low hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#1R-KAPPA-22</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Global Logistic Audit</td>
+<td class="py-4 px-6 text-right">$12.50</td>
+<td class="py-4 px-6 text-right">12%</td>
+<td class="py-4 px-6 text-right">45</td>
+<td class="py-4 px-6 text-right">88</td>
+<td class="py-4 px-6">
+<div class="bg-[#475569] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">ACTIVE</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#8L-THETA-67</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Market Sentiment Beta</td>
+<td class="py-4 px-6 text-right">$3.75</td>
+<td class="py-4 px-6 text-right">67%</td>
+<td class="py-4 px-6 text-right">20</td>
+<td class="py-4 px-6 text-right">2,105</td>
+<td class="py-4 px-6">
+<div class="bg-[#131a33] text-on-primary-container text-[10px] font-bold text-center py-1 px-3 tracking-widest border border-outline/20">CLOSED</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="bg-surface-container-low hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#3M-EPSILON-11</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Urban Mobility Study</td>
+<td class="py-4 px-6 text-right">$2.10</td>
+<td class="py-4 px-6 text-right">81%</td>
+<td class="py-4 px-6 text-right">10</td>
+<td class="py-4 px-6 text-right">940</td>
+<td class="py-4 px-6">
+<div class="bg-[#475569] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">ACTIVE</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#0Q-ZETA-05</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Privacy Protocol Test</td>
+<td class="py-4 px-6 text-right">$8.20</td>
+<td class="py-4 px-6 text-right">31%</td>
+<td class="py-4 px-6 text-right">18</td>
+<td class="py-4 px-6 text-right">122</td>
+<td class="py-4 px-6">
+<div class="bg-[#4A0E0E] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">PAUSED</div>
+</td>
+</tr>
+<!-- Row 8 -->
+<tr class="bg-surface-container-low hover:bg-surface-dim transition-colors group">
+<td class="py-4 px-6 text-secondary font-bold">#4F-PHI-89</td>
+<td class="py-4 px-6 font-bold text-primary group-hover:underline cursor-pointer">Neural Link Research</td>
+<td class="py-4 px-6 text-right">$25.00</td>
+<td class="py-4 px-6 text-right">05%</td>
+<td class="py-4 px-6 text-right">60</td>
+<td class="py-4 px-6 text-right">14</td>
+<td class="py-4 px-6">
+<div class="bg-[#475569] text-white text-[10px] font-bold text-center py-1 px-3 tracking-widest">ACTIVE</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- Pagination / Metadata -->
+<footer class="mt-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-surface-container-high p-4 border-t border-primary/10">
+<div class="text-[10px] font-mono text-secondary tracking-widest uppercase">
+                SHOWING 08 OF 1,492 ENTRIES | PAGE 1 OF 187
+            </div>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center bg-surface hover:bg-surface-dim text-primary border border-outline/10 transition-colors">
+<span class="material-symbols-outlined">first_page</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface hover:bg-surface-dim text-primary border border-outline/10 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary font-mono text-xs">1</div>
+<button class="w-10 h-10 flex items-center justify-center bg-surface hover:bg-surface-dim text-primary border border-outline/10 transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface hover:bg-surface-dim text-primary border border-outline/10 transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface hover:bg-surface-dim text-primary border border-outline/10 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface hover:bg-surface-dim text-primary border border-outline/10 transition-colors">
+<span class="material-symbols-outlined">last_page</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[10px] font-mono text-secondary uppercase">ROWS PER PAGE</span>
+<select class="bg-surface-container-lowest border border-outline/20 text-[11px] font-mono px-2 py-1 focus:ring-0">
+<option>50</option>
+<option selected="">100</option>
+<option>500</option>
+</select>
+</div>
+</footer>
+<!-- Bottom Status Bar -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-low p-6 flex flex-col gap-2">
+<span class="text-[9px] font-mono text-secondary tracking-widest uppercase font-bold">Operational Load</span>
+<div class="text-2xl font-['Public_Sans'] font-extrabold text-primary">78.4%</div>
+<div class="h-1 bg-surface-container-highest w-full overflow-hidden">
+<div class="h-full bg-primary w-[78%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-2">
+<span class="text-[9px] font-mono text-secondary tracking-widest uppercase font-bold">Total Capital Float</span>
+<div class="text-2xl font-['Public_Sans'] font-extrabold text-primary">$124,500</div>
+<span class="text-[10px] font-mono text-[#475569]">+12.4% VS PREVIOUS_CYC</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-2">
+<span class="text-[9px] font-mono text-secondary tracking-widest uppercase font-bold">Data Integrity</span>
+<div class="text-2xl font-['Public_Sans'] font-extrabold text-primary">99.98%</div>
+<span class="text-[10px] font-mono text-[#475569]">SECURE_ENCRYPTION_ACTIVE</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-2">
+<span class="text-[9px] font-mono text-secondary tracking-widest uppercase font-bold">System Latency</span>
+<div class="text-2xl font-['Public_Sans'] font-extrabold text-primary">14ms</div>
+<span class="text-[10px] font-mono text-[#475569]">OPTIMIZED_TRAFFIC_FLOW</span>
+</div>
+</div>
+</main>
+<!-- Side Terminal/Notifications Panel (Hidden by default on mobile) -->
+<div class="fixed right-0 top-14 bottom-0 w-80 bg-surface-container-low border-l border-outline/10 hidden xl:flex flex-col p-6 z-40 overflow-y-auto no-scrollbar">
+<div class="text-[10px] font-mono text-secondary tracking-[0.2em] mb-6 uppercase flex justify-between">
+<span>System Log</span>
+<span class="material-symbols-outlined text-sm">open_in_full</span>
+</div>
+<div class="space-y-6 font-mono text-[11px]">
+<div class="flex flex-col gap-1 border-l-2 border-primary pl-3">
+<span class="text-secondary opacity-50">[14:22:01]</span>
+<span class="text-primary font-bold">ENTRY_MODIFIED: #9X-DELTA-01</span>
+<span class="text-secondary">Archivist_01 adjusted CPI to $4.50</span>
+</div>
+<div class="flex flex-col gap-1 border-l-2 border-[#4A0E0E] pl-3">
+<span class="text-secondary opacity-50">[14:18:45]</span>
+<span class="text-[#4A0E0E] font-bold">SYSTEM_PAUSE: #2Y-OMEGA-09</span>
+<span class="text-secondary">Quota reached for target demographic: GRP_B</span>
+</div>
+<div class="flex flex-col gap-1 border-l-2 border-secondary pl-3">
+<span class="text-secondary opacity-50">[13:55:12]</span>
+<span class="text-primary font-bold">BATCH_EXPORT_COMPLETE</span>
+<span class="text-secondary">Archive_12.csv generated (2.4MB)</span>
+</div>
+<div class="flex flex-col gap-1 border-l-2 border-primary pl-3">
+<span class="text-secondary opacity-50">[13:40:02]</span>
+<span class="text-primary font-bold">NEW_ENTRY: #4F-PHI-89</span>
+<span class="text-secondary">Client: TITAN_LOGIC initialized project.</span>
+</div>
+</div>
+<div class="mt-auto pt-10">
+<div class="bg-primary p-4 flex flex-col gap-2">
+<span class="text-[9px] font-mono text-white/50 uppercase tracking-widest">Network Status</span>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-green-500"></div>
+<span class="text-[10px] font-mono text-white">ENCRYPTED_UPLINK_STABLE</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

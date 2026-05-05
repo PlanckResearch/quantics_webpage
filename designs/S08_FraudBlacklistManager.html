@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GLOBAL DIRECTIVE: FRAUD &amp; SECURITY MATRIX</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Public+Sans:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-fixed-variant": "#444748",
+                        "on-surface-variant": "#45464d",
+                        "surface-variant": "#e2e2e2",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2f3131",
+                        "on-background": "#1a1c1c",
+                        "on-surface": "#1a1c1c",
+                        "surface": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#920703",
+                        "on-primary-fixed": "#131a33",
+                        "error-container": "#ffdad6",
+                        "primary": "#000000",
+                        "on-tertiary-fixed": "#410000",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#f9f9f9",
+                        "tertiary-fixed-dim": "#ffb4a8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-container": "#606363",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bec5e5",
+                        "secondary-container": "#dee0e0",
+                        "tertiary-fixed": "#ffdad4",
+                        "background": "#f9f9f9",
+                        "surface-tint": "#565d79",
+                        "on-primary-fixed-variant": "#3e4660",
+                        "secondary-fixed": "#e1e3e3",
+                        "primary-fixed-dim": "#bec5e5",
+                        "tertiary": "#000000",
+                        "tertiary-container": "#410000",
+                        "outline": "#76767e",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#131a33",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-container": "#ea4c3a",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container-highest": "#e2e2e2",
+                        "surface-dim": "#dadada",
+                        "surface-container-high": "#e8e8e8",
+                        "secondary-fixed-dim": "#c4c7c7",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c6c6ce",
+                        "on-primary-container": "#7b83a0",
+                        "on-secondary-fixed": "#191c1d",
+                        "secondary": "#5c5f5f"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Public Sans"],
+                        "label": ["Public Sans"],
+                        "mono": ["JetBrains Mono"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f9f9f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #eeeeee;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #0B132B;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen text-on-surface overflow-hidden">
+<!-- SideNavBar (Blueprint) -->
+<aside class="fixed left-0 top-0 h-full w-20 md:w-64 z-40 bg-[#0B132B] flex flex-col transition-all duration-0">
+<div class="p-6 flex items-center gap-3">
+<div class="w-8 h-8 bg-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[#0B132B]" data-icon="security">security</span>
+</div>
+<div class="hidden md:block">
+<h2 class="text-white font-['Space_Grotesk'] font-bold text-lg leading-none uppercase">INTELLIGENCE</h2>
+<p class="font-['Public_Sans'] uppercase text-[10px] tracking-widest font-bold text-slate-400">LEVEL 5 AUTH</p>
+</div>
+</div>
+<nav class="flex-1 mt-6">
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white transition-none group" href="#">
+<span class="material-symbols-outlined" data-icon="folder_shared">folder_shared</span>
+<span class="hidden md:inline font-['Public_Sans'] uppercase text-[10px] tracking-widest font-bold">Dossier</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white transition-none group" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="hidden md:inline font-['Public_Sans'] uppercase text-[10px] tracking-widest font-bold">Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white transition-none group" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span class="hidden md:inline font-['Public_Sans'] uppercase text-[10px] tracking-widest font-bold">Security</span>
+</a>
+<!-- Active Tab: Matrix -->
+<a class="flex items-center gap-4 px-6 py-4 bg-[#131a33] text-white border-l-4 border-white transition-none" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="hidden md:inline font-['Public_Sans'] uppercase text-[10px] tracking-widest font-bold">Matrix</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-slate-400 hover:text-white transition-none group" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="hidden md:inline font-['Public_Sans'] uppercase text-[10px] tracking-widest font-bold">Logs</span>
+</a>
+</nav>
+<div class="p-6 mt-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="account_circle">account_circle</span>
+</div>
+<div class="hidden md:block">
+<p class="text-white text-[10px] font-bold uppercase tracking-tighter">ADMIN_SYS_01</p>
+<p class="text-slate-500 text-[10px] font-mono">ID: 882-X9</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="flex-1 ml-20 md:ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar (Blueprint) -->
+<header class="bg-slate-50 flex justify-between items-center w-full px-6 h-16 shrink-0 border-b-0">
+<h1 class="font-['Space_Grotesk'] uppercase tracking-tight font-bold text-lg text-[#0B132B]">GLOBAL DIRECTIVE: FRAUD &amp; SECURITY MATRIX</h1>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-[#eeeeee] px-3 py-1 border-b-2 border-[#0B132B]">
+<span class="material-symbols-outlined text-sm mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-[10px] font-mono uppercase w-48 p-0" placeholder="QUERY_SYSTEM..." type="text"/>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 flex items-center justify-center hover:bg-[#e2e2e2] transition-none">
+<span class="material-symbols-outlined text-lg" data-icon="notifications_active">notifications_active</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-[#e2e2e2] transition-none">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-[#e2e2e2] transition-none">
+<span class="material-symbols-outlined text-lg" data-icon="terminal">terminal</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Dynamic Content Area -->
+<section class="flex-1 overflow-y-auto p-8 custom-scrollbar bg-[#f9f9f9]">
+<div class="max-w-[1400px] mx-auto space-y-12">
+<!-- 1. BLACKLIST INPUT SECTION -->
+<div class="space-y-4">
+<div class="flex items-end gap-4">
+<div class="flex-1">
+<label class="block text-[11px] font-bold uppercase tracking-[0.2em] text-[#0B132B] mb-2">BLACKLIST_INPUT_STREAM</label>
+<div class="bg-surface-container-low border-b-2 border-primary">
+<textarea class="w-full bg-transparent border-none focus:ring-0 font-mono text-sm p-4 resize-none placeholder:opacity-30" placeholder="PASTE_IP_OR_HASH_SEQUENCE_HERE...
+0x4A...
+192.168.0.1..." rows="4"></textarea>
+</div>
+</div>
+<button class="bg-primary-container text-white px-8 h-[50px] font-['Space_Grotesk'] font-bold uppercase tracking-widest text-xs hover:bg-[#0B132B] active:bg-black transition-none">
+                            COMMIT_HASH
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8">
+<!-- 2. SYSTEM CONTROL ARRAY (Brutalist Grid) -->
+<div class="xl:col-span-4 space-y-6">
+<h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0B132B]">SYSTEM_CONTROL_ARRAY</h3>
+<div class="grid grid-cols-1 gap-px bg-outline-variant/20">
+<!-- Toggle Item -->
+<div class="bg-surface-container p-6 flex items-center justify-between border-b border-outline-variant/10">
+<span class="font-mono text-xs font-bold text-[#0B132B]">PROTOCOL_THROTTLING</span>
+<button class="w-12 h-6 bg-[#0B132B] relative flex items-center px-1">
+<div class="w-4 h-4 bg-white"></div>
+</button>
+</div>
+<!-- Toggle Item -->
+<div class="bg-surface-container p-6 flex items-center justify-between border-b border-outline-variant/10">
+<span class="font-mono text-xs font-bold text-[#0B132B]">ENCRYPT_REDACT</span>
+<button class="w-12 h-6 bg-slate-300 relative flex items-center px-1">
+<div class="w-4 h-4 bg-[#0B132B]"></div>
+</button>
+</div>
+<!-- Toggle Item -->
+<div class="bg-surface-container p-6 flex items-center justify-between border-b border-outline-variant/10">
+<span class="font-mono text-xs font-bold text-[#0B132B]">UPLINK_QUARANTINE</span>
+<button class="w-12 h-6 bg-[#0B132B] relative flex items-center px-1">
+<div class="w-4 h-4 bg-white"></div>
+</button>
+</div>
+<!-- Toggle Item -->
+<div class="bg-surface-container p-6 flex items-center justify-between">
+<span class="font-mono text-xs font-bold text-[#0B132B]">TERMINAL_OVERRIDE</span>
+<button class="w-12 h-6 bg-slate-300 relative flex items-center px-1">
+<div class="w-4 h-4 bg-[#0B132B]"></div>
+</button>
+</div>
+</div>
+<!-- System Status Overlay -->
+<div class="bg-[#0B132B] text-white p-6 space-y-4">
+<div class="flex justify-between items-start">
+<span class="text-[10px] font-bold tracking-[0.3em]">ENCRYPTION_LAYER_09</span>
+<div class="w-2 h-2 bg-error animate-pulse"></div>
+</div>
+<div class="h-1 bg-white/10 w-full">
+<div class="h-full bg-white w-2/3"></div>
+</div>
+<p class="font-mono text-[9px] opacity-60">FRAG_STATUS: ASYMMETRIC_STABLE</p>
+</div>
+</div>
+<!-- 3. LIVE THREATS GRID -->
+<div class="xl:col-span-8 space-y-6">
+<div class="flex justify-between items-center">
+<h3 class="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0B132B]">LIVE_THREATS_STREAMING</h3>
+<span class="font-mono text-[10px] text-error">ACTIVE_INCIDENTS: 24</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2">
+<!-- Threat Card Component -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none group cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:41</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xFA92-BX</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 182.02.1</p>
+</div>
+</div>
+<!-- Threat Card -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:42</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xCC18-X9</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 142.11.9</p>
+</div>
+</div>
+<!-- Threat Card -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:44</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xEE02-LK</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 09.223.1</p>
+</div>
+</div>
+<!-- Threat Card -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:44</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xZZ12-OP</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 44.112.0</p>
+</div>
+</div>
+<!-- Threat Card -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:45</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0x88JK-KL</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 12.09.2</p>
+</div>
+</div>
+<!-- Threat Card -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:46</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xPP99-QA</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 77.221.8</p>
+</div>
+</div>
+<!-- Repeat cards for density effect -->
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:48</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0x66TT-UI</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 19.33.1</p>
+</div>
+</div>
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:50</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xMM12-ZX</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 82.11.4</p>
+</div>
+</div>
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:51</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0x99AA-ER</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 43.12.8</p>
+</div>
+</div>
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:52</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xLL10-BB</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 01.44.2</p>
+</div>
+</div>
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:55</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xGG33-WW</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 22.09.4</p>
+</div>
+</div>
+<div class="bg-[#f2f4f4] aspect-square p-4 flex flex-col justify-between border border-transparent hover:border-error transition-none cursor-crosshair">
+<div class="flex justify-between items-start">
+<div class="w-2 h-2 bg-error"></div>
+<span class="font-mono text-[8px] opacity-40">09:58</span>
+</div>
+<div>
+<p class="font-mono text-[10px] font-bold text-[#0B132B]">0xRR11-KL</p>
+<p class="text-[8px] font-bold uppercase text-slate-400 mt-1">IP: 66.33.1</p>
+</div>
+</div>
+</div>
+<!-- Data Module: Asymmetric Meta -->
+<div class="bg-[#e8e8e8] p-8 flex gap-12">
+<div class="flex-none w-1/3">
+<h4 class="text-[9px] font-bold uppercase tracking-widest text-[#0B132B] mb-4">GEOLOCATION_MAP_INTEL</h4>
+<div class="h-40 bg-surface-container-highest">
+<img class="w-full h-full object-cover grayscale opacity-80 mix-blend-multiply" data-alt="Monochrome satellite view of a city grid at night with glowing red data points marking security incidents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBezCC1eJuT0fHEuQB_DuTL7TVXmBXMoW9MRwpkyuNdQvi8ZuMSt4WgxD0lsXS1sJmsGjujo9SQs7saTDEPsfYjMK_wHo7BKfEicV_Miorqsl-nKkzulkGo4ZP1i8qyL2kWEujHpZMYZYKU2weL_wKSpa4vlQQ9c6nLoaR83h3zD-gWE_L6nAEkperCdoL5lJ-uoRy8Eu9jJQHem4J_Yz1P679z6W97yKJGLBXIhTEe9tZl4FfYrwGegdWRCHyfHiQIMiZn37FHb1EJ"/>
+</div>
+</div>
+<div class="flex-1 space-y-4">
+<h4 class="text-[9px] font-bold uppercase tracking-widest text-[#0B132B]">SYSTEM_LOG_FEED</h4>
+<div class="font-mono text-[10px] space-y-2">
+<p class="text-error">[CRITICAL] 0xFA92-BX DETECTED BRUTE_FORCE_ATTEMPT</p>
+<p class="text-[#0B132B]">[INFO] UPLINK_QUARANTINE_ENABLED ON PORT_8080</p>
+<p class="text-[#0B132B]">[INFO] ANALYTICS_ENGINE_RECALIBRATED_SUCCESS</p>
+<p class="text-error">[ALERT] UNAUTHORIZED_IP_ADDRESS_DETECTED 192.168.1.104</p>
+<p class="text-slate-400">[SYSTEM] KERNEL_LOG_DUMP_COMPLETE</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Blueprint) -->
+<footer class="bg-[#eeeeee] flex justify-between items-center px-6 py-2 w-full z-50 shrink-0 border-t-2 border-[#0B132B]">
+<p class="font-mono text-[11px] uppercase tracking-tighter text-[#0B132B]">
+                RESTRICTED ACCESS: AUTHORIZED PERSONNEL ONLY // SYSTEM_STATUS: <span class="text-error font-bold">OPERATIONAL</span>
+</p>
+<div class="flex gap-6">
+<a class="font-mono text-[11px] uppercase tracking-tighter text-[#0B132B] opacity-80 hover:bg-black hover:text-white underline font-bold px-2" href="#">TERMINAL_RECAP</a>
+<a class="font-mono text-[11px] uppercase tracking-tighter text-[#0B132B] opacity-80 hover:bg-black hover:text-white px-2" href="#">ENCRYPTION_LOGS</a>
+<a class="font-mono text-[11px] uppercase tracking-tighter text-[#0B132B] opacity-80 hover:bg-black hover:text-white px-2" href="#">AUTH_MATRIX</a>
+</div>
+</footer>
+</main>
+</body></html>

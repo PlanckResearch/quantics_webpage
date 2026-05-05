@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>INTELLIGENCE DOSSIER - OPERATOR_01</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        @font-face {
+            font-family: 'Helvetica Now Display';
+            src: local('Helvetica Neue'), local('Helvetica'), sans-serif;
+            font-weight: 900;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #0B132B;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .heading-heavy {
+            font-family: 'Helvetica Now Display', sans-serif;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+        }
+        .mono-data {
+            font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+        }
+        /* Custom scrollbar for brutalist look */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f3f3f3; }
+        ::-webkit-scrollbar-thumb { background: #0B132B; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e8e8e8",
+                        "inverse-on-surface": "#f1f1f1",
+                        "surface-bright": "#f9f9f9",
+                        "on-primary-fixed": "#131a33",
+                        "on-background": "#1a1c1c",
+                        "secondary-container": "#d8e4ef",
+                        "surface": "#f9f9f9",
+                        "secondary-fixed-dim": "#bcc8d3",
+                        "surface-tint": "#565d79",
+                        "outline-variant": "#c6c6ce",
+                        "on-secondary-container": "#5a666f",
+                        "background": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed-dim": "#c4c7c7",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d8e4ef",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1a1c1c",
+                        "on-tertiary-fixed": "#191c1d",
+                        "surface-dim": "#dadada",
+                        "on-primary-container": "#7b83a0",
+                        "on-secondary-fixed-variant": "#3d4851",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed": "#121d25",
+                        "inverse-primary": "#bec5e5",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#3e4660",
+                        "secondary": "#546069",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#818485",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#e1e3e3",
+                        "primary-container": "#131a33",
+                        "surface-container-highest": "#e2e2e2",
+                        "primary-fixed-dim": "#bec5e5",
+                        "inverse-surface": "#2f3131",
+                        "primary": "#0B132B",
+                        "tertiary": "#000000",
+                        "highlight": "#E2EEF9"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "0px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface selection:bg-highlight selection:text-primary">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-8 z-[60] bg-[#0B132B] w-20 border-r-0">
+<div class="mb-12">
+<span class="font-['Helvetica_Now_Display'] font-black text-xl tracking-tighter text-[#f9f9f9]">DOSSIER</span>
+</div>
+<nav class="flex flex-col gap-8 w-full">
+<div class="group flex flex-col items-center gap-1 cursor-pointer bg-[#E2EEF9] text-[#0B132B] border-l-4 border-[#0B132B] py-3">
+<span class="material-symbols-outlined" data-icon="folder_open" style="font-variation-settings: 'FILL' 1;">folder_open</span>
+<span class="font-['Inter'] font-medium tracking-tight text-[10px] uppercase">Dossier</span>
+</div>
+<div class="group flex flex-col items-center gap-1 cursor-pointer text-[#f9f9f9]/60 hover:text-[#f9f9f9] transition-colors py-3">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span class="font-['Inter'] font-medium tracking-tight text-[10px] uppercase">Intel</span>
+</div>
+<div class="group flex flex-col items-center gap-1 cursor-pointer text-[#f9f9f9]/60 hover:text-[#f9f9f9] transition-colors py-3">
+<span class="material-symbols-outlined" data-icon="ads_click">ads_click</span>
+<span class="font-['Inter'] font-medium tracking-tight text-[10px] uppercase">Operations</span>
+</div>
+<div class="group flex flex-col items-center gap-1 cursor-pointer text-[#f9f9f9]/60 hover:text-[#f9f9f9] transition-colors py-3">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-['Inter'] font-medium tracking-tight text-[10px] uppercase">Assets</span>
+</div>
+<div class="group flex flex-col items-center gap-1 cursor-pointer text-[#f9f9f9]/60 hover:text-[#f9f9f9] transition-colors py-3">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Inter'] font-medium tracking-tight text-[10px] uppercase">Archive</span>
+</div>
+</nav>
+<div class="mt-auto flex flex-col items-center gap-4">
+<div class="w-10 h-10 bg-[#131a33] flex items-center justify-center border border-[#f9f9f9]/10">
+<img alt="OPERATOR_01" class="w-full h-full grayscale" data-alt="close-up portrait of a serious man in professional attire with sharp lighting and neutral background, black and white style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYo1WOceEThsRHAJduTnRVVHBf1py7IJ9sUcnutTM2IIyk8jlbzKxQjMEE9TL3WWEuHfCo3_ezGO43wUgxn0pmdJPFBcPRtFFh0XKRcjZwbqJ7b0_3n00rJY_XvXPQpp6BIJiE5aBpDj0OnGIBuLqaZtqi0-XR9YuPN4eMSPG438wsYYGz3sWgf8kqxdKM0g0k7fFfWf3Mph_eh0UUlIwpxTgGsGuuBpiCxC90OAynAQ5jSllE2gLY7YzDMvUr9CtLSvEqhZqWwfQo"/>
+</div>
+<div class="text-center px-2">
+<p class="font-['Inter'] font-bold text-[9px] text-[#f9f9f9] uppercase tracking-widest">LEVEL 5</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-20 z-50 h-16 flex items-center justify-between px-8 bg-[#0B132B]/90 backdrop-blur-[10px] text-[#f9f9f9]">
+<div class="flex items-center gap-4">
+<h1 class="font-['Helvetica_Now_Display'] font-black tracking-tighter uppercase text-lg">INTELLIGENCE DOSSIER</h1>
+<div class="h-4 w-[1px] bg-[#f9f9f9]/20"></div>
+<span class="font-['Inter'] font-medium text-[11px] tracking-widest text-[#f9f9f9]/60 uppercase">System_Active: 100%</span>
+</div>
+<div class="flex items-center gap-8">
+<div class="relative flex items-center bg-[#131a33] px-3 py-1.5 border-b border-[#f9f9f9]/20">
+<span class="material-symbols-outlined text-[18px] opacity-60 mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-[11px] font-medium tracking-wider w-48 p-0 placeholder:text-[#f9f9f9]/30" placeholder="QUERY_SYSTEM..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#f9f9f9]/10 p-1" data-icon="notifications_none">notifications_none</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#f9f9f9]/10 p-1" data-icon="settings">settings</span>
+<span class="material-symbols-outlined cursor-pointer hover:bg-[#f9f9f9]/10 p-1 text-red-400" data-icon="power_settings_new">power_settings_new</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-20 pt-16 min-h-screen">
+<!-- Header Section (Tonal Shift) -->
+<section class="bg-surface-container px-12 py-16 flex justify-between items-end">
+<div>
+<p class="text-xs font-bold tracking-[0.2em] mb-4 opacity-60 uppercase">INTERNAL_USE_ONLY // NODE_ID: 992-QX</p>
+<h2 class="heading-heavy text-7xl uppercase">Operational<br/>Status_Matrix</h2>
+</div>
+<div class="flex gap-4">
+<!-- SECURITY_CLEARANCE Badge -->
+<div class="bg-red-900 text-white p-6 flex flex-col justify-between items-start aspect-square w-40">
+<span class="material-symbols-outlined text-3xl" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+<div>
+<p class="text-[10px] font-bold tracking-widest leading-tight">OMEGA_AUTHORIZED</p>
+<p class="text-[8px] opacity-70 mt-1">CLEARANCE LEVEL 5</p>
+</div>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-12 gap-0">
+<!-- GLOBAL_INTEL_REPORT (Monolithic KPI Block) -->
+<section class="col-span-12 md:col-span-8 bg-surface p-12 border-b border-surface-container">
+<div class="flex justify-between items-start mb-12">
+<h3 class="font-['Helvetica_Now_Display'] font-black text-2xl tracking-tighter uppercase">GLOBAL_INTEL_REPORT</h3>
+<span class="bg-primary text-white text-[10px] px-2 py-0.5 font-bold tracking-widest">LIVE_FEED</span>
+</div>
+<div class="grid grid-cols-3 gap-12 mb-16">
+<div class="space-y-2">
+<p class="text-[10px] font-bold opacity-40 tracking-widest uppercase">Geopolitical_Stability</p>
+<div class="flex items-baseline gap-2">
+<p class="heading-heavy text-5xl">84</p>
+<p class="text-xs font-bold text-green-600">%_NOMINAL</p>
+</div>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-bold opacity-40 tracking-widest uppercase">Threat_Vector_Index</p>
+<div class="flex items-baseline gap-2 text-red-600">
+<p class="heading-heavy text-5xl">04</p>
+<p class="text-xs font-bold">LEVEL_CRITICAL</p>
+</div>
+</div>
+<div class="space-y-2">
+<p class="text-[10px] font-bold opacity-40 tracking-widest uppercase">Asset_Deployment</p>
+<div class="flex items-baseline gap-2">
+<p class="heading-heavy text-5xl">112</p>
+<p class="text-xs font-bold">ACTIVE_NODES</p>
+</div>
+</div>
+</div>
+<!-- Grayscale Visualization -->
+<div class="bg-surface-container-low h-64 w-full flex items-end p-8 gap-1">
+<div class="bg-primary/20 flex-1 h-[40%]"></div>
+<div class="bg-primary/40 flex-1 h-[60%]"></div>
+<div class="bg-primary/30 flex-1 h-[55%]"></div>
+<div class="bg-primary flex-1 h-[90%]"></div>
+<div class="bg-primary/50 flex-1 h-[70%]"></div>
+<div class="bg-primary/10 flex-1 h-[30%]"></div>
+<div class="bg-primary/60 flex-1 h-[65%]"></div>
+<div class="bg-primary flex-1 h-[85%]"></div>
+<div class="bg-primary/20 flex-1 h-[45%]"></div>
+<div class="bg-primary/40 flex-1 h-[55%]"></div>
+</div>
+<div class="mt-4 flex justify-between text-[9px] font-bold opacity-40 tracking-widest uppercase">
+<span>JAN_24_RECAP</span>
+<span>Q1_PROJECTION_ALPHA</span>
+</div>
+</section>
+<!-- FIELD_AUDIT_REPORT (Survey Section) -->
+<section class="col-span-12 md:col-span-4 bg-surface-container-low p-12 flex flex-col">
+<div class="mb-12">
+<h3 class="font-['Helvetica_Now_Display'] font-black text-2xl tracking-tighter uppercase mb-2">FIELD_AUDIT_REPORT</h3>
+<p class="text-[10px] font-bold tracking-widest opacity-60">PROTOCOL_ALPHA_2</p>
+</div>
+<form class="space-y-10 flex-grow">
+<div class="space-y-4">
+<label class="block text-[10px] font-bold tracking-widest opacity-40 uppercase">Assigned_Operator_ID</label>
+<input class="w-full bg-transparent border-t-0 border-l-0 border-r-0 border-b-2 border-primary focus:ring-0 p-0 pb-2 text-sm font-bold tracking-wider uppercase" type="text" value="092-B-DELTA"/>
+</div>
+<div class="space-y-4">
+<label class="block text-[10px] font-bold tracking-widest opacity-40 uppercase">Mission_Critical_Markers</label>
+<div class="space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-0" type="checkbox"/>
+<span class="text-xs font-bold tracking-wide uppercase group-hover:opacity-60">Perimeter_Secure</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-0" type="checkbox"/>
+<span class="text-xs font-bold tracking-wide uppercase group-hover:opacity-60">Intel_Scrubbed_Local</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-5 h-5 rounded-none border-2 border-primary text-primary focus:ring-0" type="checkbox"/>
+<span class="text-xs font-bold tracking-wide uppercase group-hover:opacity-60">Secondary_Evac_Ready</span>
+</label>
+</div>
+</div>
+<div class="space-y-4">
+<label class="block text-[10px] font-bold tracking-widest opacity-40 uppercase">Override_Notes</label>
+<textarea class="w-full bg-surface-container-high border-none focus:ring-0 p-4 text-xs font-medium tracking-wide leading-relaxed placeholder:opacity-20" placeholder="ENTER_ENCRYPTED_DATA_HERE..." rows="4"></textarea>
+</div>
+<button class="w-full bg-primary text-white py-4 font-bold tracking-[0.3em] text-xs uppercase hover:bg-primary/90 transition-colors">
+                        SUBMIT_DOSSIER_UPDATE
+                    </button>
+</form>
+</section>
+<!-- TRANSACTION_LEDGER (Data Table) -->
+<section class="col-span-12 bg-white p-12">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-['Helvetica_Now_Display'] font-black text-2xl tracking-tighter uppercase">TRANSACTION_LEDGER</h3>
+<div class="flex gap-4">
+<span class="text-[10px] font-bold opacity-40 tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500"></span> 04_SYNCED
+                        </span>
+<span class="text-[10px] font-bold opacity-40 tracking-widest flex items-center gap-2">
+<span class="w-2 h-2 bg-red-500"></span> 01_FLAGGED
+                        </span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-[10px] font-bold tracking-widest opacity-40 uppercase">Timestamp</th>
+<th class="px-6 py-4 text-[10px] font-bold tracking-widest opacity-40 uppercase">Transaction_ID_Hash</th>
+<th class="px-6 py-4 text-[10px] font-bold tracking-widest opacity-40 uppercase">Asset_Reference</th>
+<th class="px-6 py-4 text-[10px] font-bold tracking-widest opacity-40 uppercase">Value_Metric</th>
+<th class="px-6 py-4 text-[10px] font-bold tracking-widest opacity-40 uppercase">Sync_Status</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<tr class="hover:bg-highlight/40 group">
+<td class="px-6 py-5 text-xs font-bold mono-data">2024.10.12_14:22:01</td>
+<td class="px-6 py-5 text-xs font-medium mono-data opacity-60">0x7F2B...4A19</td>
+<td class="px-6 py-5 text-xs font-bold tracking-wide">SILICON_VALLEY_NODE_9</td>
+<td class="px-6 py-5 text-xs font-bold mono-data text-right pr-12">1,244.09</td>
+<td class="px-6 py-5">
+<span class="inline-block bg-green-100 text-green-800 text-[9px] font-black px-2 py-0.5 tracking-tighter">SYNCED</span>
+</td>
+</tr>
+<tr class="hover:bg-highlight/40 group">
+<td class="px-6 py-5 text-xs font-bold mono-data">2024.10.12_15:04:12</td>
+<td class="px-6 py-5 text-xs font-medium mono-data opacity-60">0xA11F...90BC</td>
+<td class="px-6 py-5 text-xs font-bold tracking-wide">ZURICH_VAULT_DEPOSIT</td>
+<td class="px-6 py-5 text-xs font-bold mono-data text-right pr-12">9,000.00</td>
+<td class="px-6 py-5">
+<span class="inline-block bg-green-100 text-green-800 text-[9px] font-black px-2 py-0.5 tracking-tighter">SYNCED</span>
+</td>
+</tr>
+<tr class="hover:bg-red-50 group">
+<td class="px-6 py-5 text-xs font-bold mono-data">2024.10.12_16:45:55</td>
+<td class="px-6 py-5 text-xs font-medium mono-data opacity-60">0xDD01...22EE</td>
+<td class="px-6 py-5 text-xs font-bold tracking-wide">UNIDENTIFIED_UPLINK_B</td>
+<td class="px-6 py-5 text-xs font-bold mono-data text-right pr-12 text-red-600">ERROR_642</td>
+<td class="px-6 py-5">
+<span class="inline-block bg-red-600 text-white text-[9px] font-black px-2 py-0.5 tracking-tighter">FLAGGED</span>
+</td>
+</tr>
+<tr class="hover:bg-highlight/40 group">
+<td class="px-6 py-5 text-xs font-bold mono-data">2024.10.12_17:11:09</td>
+<td class="px-6 py-5 text-xs font-medium mono-data opacity-60">0x992B...CC81</td>
+<td class="px-6 py-5 text-xs font-bold tracking-wide">LONDON_EXCHANGE_HUB</td>
+<td class="px-6 py-5 text-xs font-bold mono-data text-right pr-12">452.18</td>
+<td class="px-6 py-5">
+<span class="inline-block bg-green-100 text-green-800 text-[9px] font-black px-2 py-0.5 tracking-tighter">SYNCED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Footer / Technical Metadata -->
+<footer class="bg-primary text-[#f9f9f9]/30 px-12 py-8 flex justify-between items-center text-[9px] font-bold tracking-[0.2em] uppercase">
+<div class="flex gap-12">
+<span>ENCRYPTION: AES-256-GCM</span>
+<span>KERNEL: 0.12.9-STABLE</span>
+<span>UPTIME: 1,244H_42M</span>
+</div>
+<div>
+                PROPERTY_OF_INTELLIGENCE_AGENCY_CLASSIFIED
+            </div>
+</footer>
+</main>
+<!-- Contextual FAB (Restricted to Home/Main Dossier intent) -->
+<div class="fixed bottom-12 right-12 z-[70]">
+<button class="bg-primary text-white w-16 h-16 flex items-center justify-center hover:bg-[#131a33] transition-colors shadow-none border-0">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</div>
+</body></html>
